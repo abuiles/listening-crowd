@@ -1,3 +1,6 @@
+import Collection from 'ember-cli-mirage/orm/collection';
+import Mirage, { faker } from 'ember-cli-mirage';
+
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -22,5 +25,18 @@ export default function() {
     this.del('/posts/:id');
 
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
-  */
+   */
+
+  this.loadFixtures();
+  this.get('/podcasts');
+  this.get('/podcasts/:id');
+  this.get('/episodes', function(schema, request) {
+    let collection = new Collection('episode');
+
+    collection.models = schema.episodes.all().models.sort(function(a, b) {
+      return new Date(a.pubDate) < new Date(b.pubDate);
+    });;
+
+    return collection;
+  });
 }

@@ -1,0 +1,15 @@
+<h1>Listenign Crowd</h1>
+
+{{#each model as |episode|}}
+  <div class="p1">
+    <img class="p1" src={{episode.podcast.itunesImage}} style="width: 200px;">
+    <ul class="">
+      <li><a href={{episode.podcast.link}}>{{episode.title}}</a></li>
+      <li>{{episode.podcast.itunesSubtitle}}</li>
+      <li>{{episode.summary}}</li>
+      <li>{{episode.podcast.copyright}}</li>
+      <li>{{episode.podcast.itunesAuthor}}</li>
+      <li>{{episode.podcast.itunesCategories}}</li>
+    </ul>
+  </div>
+{{/each}}
