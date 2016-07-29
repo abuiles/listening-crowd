@@ -12,5 +12,6 @@ export default DS.Model.extend({
   itunesDuration: DS.attr(),
   itunesExplicit: DS.attr('string'),
   guid: DS.attr(),
-  podcast: DS.belongsTo('podcast')
+  podcast: DS.belongsTo('podcast'),
+  references: DS.hasMany('references')
 });

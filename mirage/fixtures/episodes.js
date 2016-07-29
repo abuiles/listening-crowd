@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     "title": "a16z Podcast: We Gotta Talk Pokémon Go",
     "pubDate": "Fri, 22 Jul 2016 22:37:43 +0000",
     "itunesSubtitle": "Seemingly overnight, a single game -- Pokémon Go …",
@@ -24,54 +25,7 @@ export default [
     }
   },
   {
-    "title": "a16z Podcast: Getting Network Effects",
-    "pubDate": "Fri, 15 Jul 2016 22:43:33 +0000",
-    "itunesSubtitle": "One of the biggest misconceptions around network …",
-    "description": "One of the biggest misconceptions around network effects (which are one of the key dynamics behind many successful and highly defensible software companies) is confusing growth with engagement. So how does one tell the difference between viral growth and network effects? How does one create network effects in different businesses? (Hint: it's not by accident!) How do you know when to hang in there because you see signs of network effects or just drop it and move on to something else? And what are some examples of teasing all of the above apart?\n\nIn this episode of the a16z Podcast -- based on an event we hosted and slide deck we released all about network effects -- a16z partners Anu Hariharan and Jeff Jordan (who cover all things marketplaces, consumer, and more) share (in conversation with Sonal Chokshi) their observations, insights, and experiences. Because, why reinvent the, er, flywheel?\n",
-    "summary": "One of the biggest misconceptions around network effects (which are one of the key dynamics behind many successful and highly defensible software companies) is confusing growth with engagement. So how does one tell the difference between viral growth and network effects? How does one create network effects in different businesses? (Hint: it's not by accident!) How do you know when to hang in there because you see signs of network effects or just drop it and move on to something else? And what are some examples of teasing all of the above apart?\n\nIn this episode of the a16z Podcast -- based on an event we hosted and slide deck we released all about network effects -- a16z partners Anu Hariharan and Jeff Jordan (who cover all things marketplaces, consumer, and more) share (in conversation with Sonal Chokshi) their observations, insights, and experiences. Because, why reinvent the, er, flywheel?\n",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://feeds.soundcloud.com/stream/273881788-a16z-network-effects.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "00:48:09",
-      "hour": 0,
-      "minute": 48,
-      "second": 9
-    },
-    "itunesExplicit": "no",
-    "podcastId": 1,
-    "guid": {
-      "isPermaLink": false,
-      "content": "tag:soundcloud,2010:tracks/274932912"
-    }
-  },
-  {
-    "title": "a16z Podcast: On Government as Software Builder, Not Just Buyer",
-    "pubDate": "Thu, 14 Jul 2016 02:31:02 +0000",
-    "itunesSubtitle": "We already know that the government is one of the…",
-    "description": "We already know that the government is one of the largest IT buyers, but in many ways it is also an IT builder. Especially for areas where the government is doing something that no one else is doing, like running Medicare and Social Security -- i.e., unique services no other company out there is building software for. That's where the USDS comes in. Now almost two years old, the United States Digital Services is \"a startup at the White House\" responsible for mission-critical, citizen-facing services like improving Veterans' Affairs healthcare applications and benefit claims appeals, or student loan repayments.\n\nBut can one really operate as a startup while embedded in an entity as complex and huge -- remember, each agency would be like a Fortune 500 company -- as government? It may not be move fast and break things, observes Mikey Dickerson, Google engineer-turned-administrator of the USDS (and one of the fixers of the original healthcare.gov), but \"There's a world of difference between moving a little slower than you're used to and not moving at all.\" And it's not like large companies don't have huge, bureaucratic structures either. In fact, argues USDS co-founder and deputy administrator Haley Van Dyck, both government and big companies are going through the same shift right now, one where technology is moving \"from what used to be the periphery into the core mission of business\".\n\nSo what are the similarities and differences between operating in government vs. big companies? How to draw talent from the private sector into the public sector while avoiding adverse selection (hint: through tours of duty)? And finally, what about fixing the procurement process (because \"you don't buy software the same way you would buy a battleship\")? Dickerson and Van Dyck share their thoughts on these issues, as well as peacetime/wartime tactics, in this episode of the a16z Podcast.",
-    "summary": "We already know that the government is one of the largest IT buyers, but in many ways it is also an IT builder. Especially for areas where the government is doing something that no one else is doing, like running Medicare and Social Security -- i.e., unique services no other company out there is building software for. That's where the USDS comes in. Now almost two years old, the United States Digital Services is \"a startup at the White House\" responsible for mission-critical, citizen-facing services like improving Veterans' Affairs healthcare applications and benefit claims appeals, or student loan repayments.\n\nBut can one really operate as a startup while embedded in an entity as complex and huge -- remember, each agency would be like a Fortune 500 company -- as government? It may not be move fast and break things, observes Mikey Dickerson, Google engineer-turned-administrator of the USDS (and one of the fixers of the original healthcare.gov), but \"There's a world of difference between moving a little slower than you're used to and not moving at all.\" And it's not like large companies don't have huge, bureaucratic structures either. In fact, argues USDS co-founder and deputy administrator Haley Van Dyck, both government and big companies are going through the same shift right now, one where technology is moving \"from what used to be the periphery into the core mission of business\".\n\nSo what are the similarities and differences between operating in government vs. big companies? How to draw talent from the private sector into the public sector while avoiding adverse selection (hint: through tours of duty)? And finally, what about fixing the procurement process (because \"you don't buy software the same way you would buy a battleship\")? Dickerson and Van Dyck share their thoughts on these issues, as well as peacetime/wartime tactics, in this episode of the a16z Podcast.",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://feeds.soundcloud.com/stream/273589089-a16z-usds.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "00:23:44",
-      "hour": 0,
-      "minute": 23,
-      "second": 44
-    },
-    "itunesExplicit": "no",
-    "podcastId": 1,
-    "guid": {
-      "isPermaLink": false,
-      "content": "tag:soundcloud,2010:tracks/274932912"
-    }
-  },
-  {
+    id: 4,
     "title": "Angela Duckworth on Grit",
     "pubDate": "Mon, 25 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How important is grit relative to talent? Can grit be taught? Angela Duckworth talks with with host Russ Roberts about the nature of success in work, play and life. How much does grit matter? Is it malleable or something we're born with? Duckworth discusses her research on these questions and how to think about what it means for a child and an adult to thrive.",
@@ -104,6 +58,7 @@ export default [
     }
   },
   {
+    id: 5,
     "title": "Ryan Holiday on Ego is the Enemy",
     "pubDate": "Mon, 18 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How does our attitude toward ourselves affect our success or failure in the world of business or in friendship? Ryan Holiday talks with host Russ Roberts about the role of ego in business, our personal lives, and world history.",
@@ -139,41 +94,7 @@ export default [
     }
   },
   {
-    "title": "Jonathan Skinner on Health Care Costs, Technology, and Rising Mortality",
-    "pubDate": "Mon, 11 Jul 2016 06:30:00 -0500",
-    "itunesSubtitle": "Jonathan Skinner talks with host Russ Roberts about how technology and innovation affect the cost and efficacy of health care. The conversation concludes with the rise in mortality among middle-age white males--a surprising reversal of trend--that has been linked to use of opioid painkillers.",
-    "description": "Technology and innovation usually mean higher quality and lower prices. Is health care different? Jonathan Skinner of Dartmouth College talks with EconTalk host Russ Roberts about how technology and innovation affect the cost and efficacy of health care. The conversation concludes with a discussion of the rise in mortality among middle-age white males--a surprising reversal of trend--that has been linked to use of opioid painkillers.",
-    "summary": "Technology and innovation usually mean higher quality and lower prices. Is health care different? Jonathan Skinner of Dartmouth College talks with EconTalk host Russ Roberts about how technology and innovation affect the cost and efficacy of health care. The conversation concludes with a discussion of the rise in mortality among middle-age white males--a surprising reversal of trend--that has been linked to use of opioid painkillers.",
-    "itunesKeywords": [
-      "economics",
-      "Jonathan Skinner",
-      "opiates",
-      "drugs",
-      "pharmaceuticals",
-      "prescriptions",
-      "health insurance",
-      "doctors",
-      "innovations",
-      "econlib"
-    ],
-    "enclosure": {
-      "url": "http://files.libertyfund.org/econtalk/y2016/Skinnerhealth.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "1:03:08",
-      "hour": 1,
-      "minute": 3,
-      "second": 8
-    },
-    "itunesExplicit": "clean",
-    "podcastId": 2,
-    "guid": {
-      "isPermaLink": null,
-      "content": "http://files.libertyfund.org/econtalk/y2016/Duckworthgrit.mp3"
-    }
-  },
-  {
+    id: 7,
     "title": "Marketplace for Wednesday, July 27, 2016",
     "pubDate": "Wed, 27 Jul 2016 10:15:22 -0500",
     "itunesSubtitle": "Marketplace for Wednesday, July 27, 2016",
@@ -198,78 +119,7 @@ export default [
     }
   },
   {
-    "title": "S01-6: The road not taken",
-    "pubDate": "Thu, 07 Jul 2016 13:19:25 -0500",
-    "itunesSubtitle": "S01-6: The road not taken",
-    "description": "20 years ago, welfare reformers chose to emphasize work over education",
-    "summary": "20 years ago, welfare reformers chose to emphasize work over education",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://play.podtrac.com/APM-Marketplace/play.publicradio.org/rss/d/podcast/marketplace/uncertain_hour/2016/07/07/uncertainhour_20160707_20160707_128.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "00:43:05",
-      "hour": 0,
-      "minute": 43,
-      "second": 5
-    },
-    "itunesExplicit": null,
-    "podcastId": 3,
-    "guid": {
-      "isPermaLink": true,
-      "content": "http://www.marketplace.org/shows/marketplace/marketplace-wednesday-july-27-2016"
-    }
-  },
-  {
-    "title": "Marketplace for Tuesday, July 26, 2016",
-    "pubDate": "Tue, 26 Jul 2016 06:39:46 -0500",
-    "itunesSubtitle": "Marketplace for Tuesday, July 26, 2016",
-    "description": "<p>Facebook has pledged to build 1,500 units for general public housing in response to major housing shortages in Silicon Valley; New York City's Metropolitan Transit Authority announced plans to shut down the L train for 18 months to repair damage from Hurricane Sandy; and why New York City may be at risk of losing its title as the world's financial capital.</p>",
-    "summary": "<p>Facebook has pledged to build 1,500 units for general public housing in response to major housing shortages in Silicon Valley; New York City's Metropolitan Transit Authority announced plans to shut down the L train for 18 months to repair damage from Hurricane Sandy; and why New York City may be at risk of losing its title as the world's financial capital.</p>",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://play.podtrac.com/APM-Marketplace/play.publicradio.org/rss/d/podcast/marketplace/pm/2016/07/26/pm_20160726_pod_64.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "00:25:34",
-      "hour": 0,
-      "minute": 25,
-      "second": 34
-    },
-    "itunesExplicit": null,
-    "podcastId": 3,
-    "guid": {
-      "isPermaLink": true,
-      "content": "http://www.marketplace.org/shows/marketplace/marketplace-wednesday-july-27-2016"
-    }
-  },
-  {
-    "title": "#71 The Picture Taker",
-    "pubDate": "Thu, 28 Jul 2016 03:48:19 -0000",
-    "itunesSubtitle": "Rachel was a faithful user of a photo storage website called Picturelife, until one day all of her photos disappeared. Alex investigates.",
-    "description": "Rachel was a faithful user of a photo storage website called Picturelife, until one day all of her photos disappeared. As she investigated, she realized that every Picturelife user was having the same problem. Alex tries to find out if there's any hope of getting her photos back. Also, a preview of the new Gimlet show,&nbsp;<a href=\"https://gimletmedia.com/show/science-vs/\">Science Vs</a>!<br><br><a href=\"https://itunes.apple.com/us/podcast/science-vs-new-season/id1051557000?mt=2\">Subscribe to Science Vs. by clicking this link</a>.<br><br><a href=\"https://gimletmedia.com/join-gimlet/\">Become a Gimlet Member by clicking this link</a>.<br><br><br><br><br><br>",
-    "summary": "Rachel was a faithful user of a photo storage website called Picturelife, until one day all of her photos disappeared. As she investigated, she realized that every Picturelife user was having the same problem. Alex tries to find out if there's any hope of getting her photos back. Also, a preview of the new Gimlet show,&nbsp;<a href=\"https://gimletmedia.com/show/science-vs/\">Science Vs</a>!<br><br><a href=\"https://itunes.apple.com/us/podcast/science-vs-new-season/id1051557000?mt=2\">Subscribe to Science Vs. by clicking this link</a>.<br><br><a href=\"https://gimletmedia.com/join-gimlet/\">Become a Gimlet Member by clicking this link</a>.<br><br><br><br><br><br>",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://traffic.megaphone.fm/GLT5679995980.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "2738",
-      "hour": 0,
-      "minute": 0,
-      "second": 2738
-    },
-    "itunesExplicit": "yes",
-    "podcastId": 4,
-    "guid": {
-      "isPermaLink": false,
-      "content": "7298dcde-5439-11e6-91b9-57afedc6b0dc"
-    }
-  },
-  {
+    id: 11,
     "title": "#70 Stolen Valor",
     "pubDate": "Thu, 14 Jul 2016 18:28:00 -0000",
     "itunesSubtitle": "PJ dives into the world of military impostors and the vigilantes who hunt them. Plus, a dispatch from Dallas.",
@@ -285,30 +135,6 @@ export default [
       "hour": 0,
       "minute": 0,
       "second": 1553
-    },
-    "itunesExplicit": "yes",
-    "podcastId": 4,
-    "guid": {
-      "isPermaLink": false,
-      "content": "7298dcde-5439-11e6-91b9-57afedc6b0dc"
-    }
-  },
-  {
-    "title": "#69 Disappeared",
-    "pubDate": "Thu, 07 Jul 2016 07:00:00 -0000",
-    "itunesSubtitle": "This week a man decides to sabotage the entire internet. Plus, PJ discovers the secret code he’s accidentally been speaking, and learns about the people who created it.",
-    "description": "This week a man decides to sabotage the entire internet. Plus, PJ discovers the secret code he’s accidentally been speaking, and learns about the people who created it.",
-    "summary": "This week a man decides to sabotage the entire internet. Plus, PJ discovers the secret code he’s accidentally been speaking, and learns about the people who created it.",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://traffic.megaphone.fm/GLT7155540804.mp3?updated=1468015418",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "1898",
-      "hour": 0,
-      "minute": 0,
-      "second": 1898
     },
     "itunesExplicit": "yes",
     "podcastId": 4,
