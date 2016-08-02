@@ -1,6 +1,6 @@
 export default [
   {
-    id: 1,
+    "id": "a16z-podcast-we-gotta-talk-pokemon-go",
     "title": "a16z Podcast: We Gotta Talk Pokémon Go",
     "pubDate": "Fri, 22 Jul 2016 22:37:43 +0000",
     "itunesSubtitle": "Seemingly overnight, a single game -- Pokémon Go …",
@@ -18,14 +18,14 @@ export default [
       "second": 19
     },
     "itunesExplicit": "no",
-    "podcastId": 1,
+    "podcastId": "a16z",
     "guid": {
       "isPermaLink": false,
       "content": "tag:soundcloud,2010:tracks/274932912"
     }
   },
   {
-    id: 4,
+    id: "angela-duckworth-on-grit",
     "title": "Angela Duckworth on Grit",
     "pubDate": "Mon, 25 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How important is grit relative to talent? Can grit be taught? Angela Duckworth talks with with host Russ Roberts about the nature of success in work, play and life. How much does grit matter? Is it malleable or something we're born with? Duckworth discusses her research on these questions and how to think about what it means for a child and an adult to thrive.",
@@ -51,14 +51,14 @@ export default [
       "second": 28
     },
     "itunesExplicit": "clean",
-    "podcastId": 2,
+    "podcastId": "econtalk",
     "guid": {
       "isPermaLink": null,
       "content": "http://files.libertyfund.org/econtalk/y2016/Duckworthgrit.mp3"
     }
   },
   {
-    id: 5,
+    id: "ryan-holiday-on-ego-is-the-enemy",
     "title": "Ryan Holiday on Ego is the Enemy",
     "pubDate": "Mon, 18 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How does our attitude toward ourselves affect our success or failure in the world of business or in friendship? Ryan Holiday talks with host Russ Roberts about the role of ego in business, our personal lives, and world history.",
@@ -87,14 +87,14 @@ export default [
       "second": 43
     },
     "itunesExplicit": "clean",
-    "podcastId": 2,
+    "podcastId": "econtalk",
     "guid": {
       "isPermaLink": null,
       "content": "http://files.libertyfund.org/econtalk/y2016/Duckworthgrit.mp3"
     }
   },
   {
-    id: 7,
+    id: "marketplace-for-wednesday-july-27-2016",
     "title": "Marketplace for Wednesday, July 27, 2016",
     "pubDate": "Wed, 27 Jul 2016 10:15:22 -0500",
     "itunesSubtitle": "Marketplace for Wednesday, July 27, 2016",
@@ -112,14 +112,14 @@ export default [
       "second": 13
     },
     "itunesExplicit": null,
-    "podcastId": 3,
+    "podcastId": "marketplace",
     "guid": {
       "isPermaLink": true,
       "content": "http://www.marketplace.org/shows/marketplace/marketplace-wednesday-july-27-2016"
     }
   },
   {
-    id: 11,
+    id: "70-stolen-valor",
     "title": "#70 Stolen Valor",
     "pubDate": "Thu, 14 Jul 2016 18:28:00 -0000",
     "itunesSubtitle": "PJ dives into the world of military impostors and the vigilantes who hunt them. Plus, a dispatch from Dallas.",
@@ -137,7 +137,7 @@ export default [
       "second": 1553
     },
     "itunesExplicit": "yes",
-    "podcastId": 4,
+    "podcastId": "reply-all",
     "guid": {
       "isPermaLink": false,
       "content": "7298dcde-5439-11e6-91b9-57afedc6b0dc"

@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
@@ -13,5 +14,15 @@ export default DS.Model.extend({
   itunesExplicit: DS.attr('string'),
   guid: DS.attr(),
   podcast: DS.belongsTo('podcast'),
-  references: DS.hasMany('references')
+  references: DS.hasMany('references'),
+  groupedReferences: Ember.computed('refences.[]', {
+    get() {
+      return this.get('references').reduce(function(mem, item) {
+        mem[item.get('kind')] = mem[item.get('kind')] || [];
+        mem[item.get('kind')].push(item);
+
+        return mem;
+      }, {});
+    }
+  }).readOnly()
 });

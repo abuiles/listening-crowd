@@ -1,6 +1,6 @@
 export default [
   {
-    "id": 1,
+    "id": 'a16z',
     "title": "a16z",
     "link": "http://www.a16z.com",
     "description": "The a16z Podcast discusses trends, news, and the future of a world being shaped by technology, especially as ‘software eats the world’. It features industry experts, business leaders, and other interesting thinkers and voices from around the world. This podcast is produced by Andreessen Horowitz (aka “a16z”), a Silicon Valley-based venture capital firm that invests in entrepreneurs building the next great consumer and enterprise companies. Multiple podcasts are released every week and sometimes on weekends; visit a16z.com for more details.",
@@ -17,7 +17,7 @@ export default [
     }
   },
   {
-    "id": 2,
+    "id": 'econtalk',
     "title": "EconTalk",
     "link": "http://www.EconTalk.org",
     "description": "EconTalk is an award-winning weekly talk show about economics in daily life. Featured guests include renowned economics professors, Nobel Prize winners, and exciting speakers on all kinds of topical matters related to economic thought.  Host Russ Roberts, of the Library of Economics and Liberty and the Hoover Institution, draws you in with lively guests and creative repartee.  Topics include health care, business cycles, economic growth, free trade, education, finance, politics, sports, book reviews, and the curiosities of everyday decision-making. Look for related readings and the complete archive of previous shows at EconTalk.org, where you can also comment on the podcasts and ask questions.",
@@ -36,7 +36,7 @@ export default [
     }
   },
   {
-    "id": 3,
+    "id": "marketplace",
     "title": "Marketplace",
     "link": "http://www.marketplace.org/shows/marketplace",
     "description": "Marketplace® is the leading business news program in the nation. Host Kai Ryssdal and our team of reporters bring you clear explorations of how economic news affects you, through stories, conversations, newsworthy numbers and more. Airing each weekday evening on your local public radio station or on-demand anytime, Marketplace is your liaison between economics and life. Marketplace with Kai Ryssdal is part of the Marketplace portfolio of public radio programs broadcasting nationwide, which additionally includes Marketplace Morning Report®, Marketplace Weekend®, and Marketplace Tech®. Visit marketplace.org for more. From American Public Media. Twitter: @Marketplace",
@@ -53,7 +53,7 @@ export default [
     }
   },
   {
-    "id": 4,
+    "id": 'reply-all',
     "title": "Reply All",
     "link": "http://gimletmedia.com/shows/reply-all",
     "description": "A show about the internet, hosted by PJ Vogt and Alex Goldman.  From Gimlet.",

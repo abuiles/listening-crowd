@@ -30,6 +30,7 @@ export default function() {
   this.loadFixtures();
   this.get('/podcasts');
   this.get('/podcasts/:id');
+  this.get('/episodes/:id');
   this.get('/episodes', function(schema, request) {
     let collection = new Collection('episode');
 
