@@ -4,7 +4,6 @@ import Ember from 'ember';
 export default DS.Model.extend({
   title: DS.attr('string'),
   pubDate: DS.attr('string'),
-  itunesSubtitle: DS.attr('string'),
   description: DS.attr('string'),
   summary: DS.attr('string'),
   itunesSubtitle: DS.attr('string'),
