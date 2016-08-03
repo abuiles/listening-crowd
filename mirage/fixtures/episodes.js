@@ -1,5 +1,30 @@
 export default [
   {
+    "id": "hallelujah",
+    "title": "hallelujah",
+    "pubDate": "2016-07-28T02:00:00Z",
+    "description": "How does genius emerge? An exploration of different types of innovation—through the lens of Elvis Costello’s extraordinary song “Deportee,” once utterly forgettable and then, through time and iteration, a work of beauty and genius.&nbsp;<br><br><strong>If you're looking to go deeper into the subjects on Revisionist History, visit Malcolm's collection on iBooks at&nbsp;</strong><a href=\"http://www.apple.co/MalcolmGladwell\"><strong>http://www.apple.co/MalcolmGladwell</strong></a><strong>&nbsp;-- iBooks will update the page every week with new recommendations.&nbsp;</strong><br><br>To learn more about the topics covered in this episode, visit&nbsp;<a href=\"http://www.RevisionistHistory.com\">www.RevisionistHistory.com</a>",
+    "summary": "How does genius emerge? An exploration of different types of innovation—through the lens of Elvis Costello’s extraordinary song “Deportee,” once utterly forgettable and then, through time and iteration, a work of beauty and genius.&nbsp;<br><br><strong>If you're looking to go deeper into the subjects on Revisionist History, visit Malcolm's collection on iBooks at&nbsp;</strong><a href=\"http://www.apple.co/MalcolmGladwell\"><strong>http://www.apple.co/MalcolmGladwell</strong></a><strong>&nbsp;-- iBooks will update the page every week with new recommendations.&nbsp;</strong><br><br>To learn more about the topics covered in this episode, visit&nbsp;<a href=\"http://www.RevisionistHistory.com\">www.RevisionistHistory.com</a>",
+    "itunesSubtitle": "How does genius emerge?",
+    "itunesKeywords": null,
+    "enclosure": {
+      "url": "http://leopard.megaphone.fm/PP4639166845.mp3",
+      "type": "audio/mpeg"
+    },
+    "itunesDuration": {
+      "content": "2347",
+      "hour": 0,
+      "minute": 0,
+      "second": 2347
+    },
+    "itunesExplicit": "clean",
+    "podcastId": "revisionist-history",
+    "guid": {
+      "isPermaLink": false,
+      "content": "27e40ee8-5439-11e6-976e-ef287b528667"
+    }
+  },
+  {
     "id": "a16z-podcast-we-gotta-talk-pokemon-go",
     "title": "a16z Podcast: We Gotta Talk Pokémon Go",
     "pubDate": "Fri, 22 Jul 2016 22:37:43 +0000",
@@ -91,31 +116,6 @@ export default [
     "guid": {
       "isPermaLink": null,
       "content": "http://files.libertyfund.org/econtalk/y2016/Duckworthgrit.mp3"
-    }
-  },
-  {
-    id: "marketplace-for-wednesday-july-27-2016",
-    "title": "Marketplace for Wednesday, July 27, 2016",
-    "pubDate": "Wed, 27 Jul 2016 10:15:22 -0500",
-    "itunesSubtitle": "Marketplace for Wednesday, July 27, 2016",
-    "description": "<p>Kai talks with Ron Suskind and his son Owen Suskind about the new documentary film \"Life, Animated\" that follows their son's story of overcoming autism; Banks in Silicon Valley are trying to attract more customers by offering 24 hour approvals and zero-money-down mortgages.; and a group of students from Yale University is setting up Connecticut's first bail fund to pay the bail of low income people who would otherwise be stuck in jail for minor offenses</p>",
-    "summary": "<p>Kai talks with Ron Suskind and his son Owen Suskind about the new documentary film \"Life, Animated\" that follows their son's story of overcoming autism; Banks in Silicon Valley are trying to attract more customers by offering 24 hour approvals and zero-money-down mortgages.; and a group of students from Yale University is setting up Connecticut's first bail fund to pay the bail of low income people who would otherwise be stuck in jail for minor offenses</p>",
-    "itunesKeywords": null,
-    "enclosure": {
-      "url": "http://play.podtrac.com/APM-Marketplace/play.publicradio.org/rss/d/podcast/marketplace/pm/2016/07/27/pm_20160727_pod_64.mp3",
-      "type": "audio/mpeg"
-    },
-    "itunesDuration": {
-      "content": "00:25:13",
-      "hour": 0,
-      "minute": 25,
-      "second": 13
-    },
-    "itunesExplicit": null,
-    "podcastId": "marketplace",
-    "guid": {
-      "isPermaLink": true,
-      "content": "http://www.marketplace.org/shows/marketplace/marketplace-wednesday-july-27-2016"
     }
   },
   {

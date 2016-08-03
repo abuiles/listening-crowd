@@ -36,23 +36,6 @@ export default [
     }
   },
   {
-    "id": "marketplace",
-    "title": "Marketplace",
-    "link": "http://www.marketplace.org/shows/marketplace",
-    "description": "Marketplace® is the leading business news program in the nation. Host Kai Ryssdal and our team of reporters bring you clear explorations of how economic news affects you, through stories, conversations, newsworthy numbers and more. Airing each weekday evening on your local public radio station or on-demand anytime, Marketplace is your liaison between economics and life. Marketplace with Kai Ryssdal is part of the Marketplace portfolio of public radio programs broadcasting nationwide, which additionally includes Marketplace Morning Report®, Marketplace Weekend®, and Marketplace Tech®. Visit marketplace.org for more. From American Public Media. Twitter: @Marketplace",
-    "itunesCategories": [
-      "Business"
-    ],
-    "itunesImage": "http://cms.marketplace.org/sites/default/files/marketplace_250.png",
-    "copyright": "Copyright 2016 American Public Media",
-    "itunesAuthor": "Marketplace",
-    "itunesSubtitle": null,
-    "itunesOwner": {
-      "itunesName": "American Public Media",
-      "itunesEmail": "Letters@marketplace.org"
-    }
-  },
-  {
     "id": 'reply-all',
     "title": "Reply All",
     "link": "http://gimletmedia.com/shows/reply-all",
@@ -67,6 +50,23 @@ export default [
     "itunesOwner": {
       "itunesName": "",
       "itunesEmail": "feeds@soundcloud.com"
+    }
+  },
+  {
+    "id": "revisionist-history",
+    "title": "Revisionist History",
+    "link": "http://revisionisthistory.com/",
+    "description": "Welcome to Revisionist History, a new podcast from Malcolm Gladwell and Panoply Media. Each week, over the course of 10 weeks, Revisionist History will go back and reinterpret something from the past. An event. A person. An idea.  Something overlooked. Something misunderstood. Because sometimes the past deserves a second chance.",
+    "itunesCategories": [
+      "Society & Culture"
+    ],
+    "itunesImage": "http://panoply-prod.s3.amazonaws.com/podcasts/1427a2f4-2674-11e6-a3d7-cf7ee2a2c03c/image/uploads_2F1464956596674-zye6snpaow-1199f5fc375124c66575217a8ac7dbd1_2FPodcast%2BArtwork%2B-%2BNo%2BShadow.jpeg",
+    "copyright": "2016",
+    "itunesAuthor": "Malcolm Gladwell / Panoply",
+    "itunesSubtitle": "Because sometimes the past deserves a second chance",
+    "itunesOwner": {
+      "itunesName": "Malcolm Gladwell / Panoply",
+      "itunesEmail": "podcasts@slate.com"
     }
   }
 ];
