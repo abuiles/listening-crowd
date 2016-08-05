@@ -1,0 +1,7 @@
+sidebar {
+  @include flex(1 1 3/12*100%);
+  background-color: rgba(51,51,51,0.05);
+}
+main {
+  @include flex(1 1 9/12*100%);
+}

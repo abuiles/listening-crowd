@@ -1,21 +1,19 @@
 {{#each model as |episode|}}
-  <div class="flex p1">
-    <div>
-      <img src={{episode.podcast.itunesImage}} style="width: 300px;">
+  <div class="clearfix mxn1 mb3" style="max-width:952px;">
+    <div class="sm-col md-col-3 sm-col-12 px1">
+      <img src={{episode.podcast.itunesImage}} class="fit" style="border:1px solid rgba(51,51,51,0.05);">
     </div>
-    <div class="flex-auto">
-      <ul class="">
-        <li>
-          {{link-to episode.title "podcasts.show.episode" episode.podcast episode}}
+    <div class="sm-col md-col-9 sm-col-12 px1">
+      <h3>{{link-to episode.title "podcasts.show.episode" episode.podcast episode}}</h3>
+      <ul class="list-reset mt0">
+        <li class="inline-block mr2">
+          <i class="fa fa-book" aria-hidden="true"></i> Books ({{episode.groupedReferences.book.length}})
         </li>
-        <li>
-          Books: {{episode.groupedReferences.book.length}}
+        <li class="inline-block mr2">
+          <i class="fa fa-user" aria-hidden="true"></i> People ({{episode.groupedReferences.person.length}})
         </li>
-        <li>
-          People: {{episode.groupedReferences.person.length}}
-        </li>
-        <li>
-          Links: {{episode.groupedReferences.link.length}}
+        <li class="inline-block">
+          <i class="fa fa-link" aria-hidden="true"></i> Links ({{episode.groupedReferences.link.length}})
         </li>
         {{!--
         <li>{{episode.podcast.copyright}}</li>
@@ -23,6 +21,7 @@
         <li>{{episode.podcast.itunesCategories}}</li>
         --}}
       </ul>
+      {{truncate-multiline text=episode.summary showButton=false lines=3}}
     </div>
   </div>
 {{/each}}
