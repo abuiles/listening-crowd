@@ -20,5 +20,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import(app.bowerDirectory + '/plyr/src/js/plyr.js');
+  app.import(app.bowerDirectory + '/plyr/dist/plyr.css');
+  app.import(app.bowerDirectory + '/plyr/dist/plyr.svg', { destDir: 'assets/sprites' });
+
   return app.toTree();
 };

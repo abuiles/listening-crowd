@@ -1,0 +1,45 @@
+<div class="flex p1">
+  <div class="flex-auto">
+    <h2><a href={{model.podcast.link}}>{{model.title}}</a></h2>
+    {{#lc-player timeupdate=(action timeupdate) mediaTag="audio"}}
+      <audio controls>
+        <source src={{unbound model.enclosure.url}} type="audio/mp3">
+
+        <!-- Fallback for browsers that don't support the <audio> element -->
+
+      </audio>
+    {{/lc-player}}
+    <p>{{{model.summary}}}</p>
+  </div>
+</div>
+<div class="p1">
+  <h3>Community Annotations</h3>
+  <ul class="row">
+    {{#each model.references as |reference|}}
+      <li>
+        {{#if (eq reference.kind "person")}}
+          <i class="fa fa-user" aria-hidden="true"></i>
+          {{#if reference.wikiLink }}
+            <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+          {{/if}}
+        {{ else if (eq reference.kind "book") }}
+          <i class="fa fa-book" aria-hidden="true"></i>
+        {{ else if reference.wikiLink }}
+          <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+        {{ else if  reference.youtubeVideo}}
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+        {{else}}
+          <i class="fa fa-link" aria-hidden="true"></i>
+        {{/if}}
+        {{#if reference.youtubeVideo}}
+          <p>{{reference.summary}}</p>
+          {{#lc-player mediaTag="div"}}
+            <div data-type="youtube" data-video-id={{reference.youtubeVideo}}></div>
+          {{/lc-player}}
+        {{else}}
+          <a href={{reference.url}}>{{reference.summary}}</a>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

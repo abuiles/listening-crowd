@@ -1,5 +1,4 @@
 import Collection from 'ember-cli-mirage/orm/collection';
-import Mirage, { faker } from 'ember-cli-mirage';
 
 export default function() {
 
@@ -31,12 +30,12 @@ export default function() {
   this.get('/podcasts');
   this.get('/podcasts/:id');
   this.get('/episodes/:id');
-  this.get('/episodes', function(schema, request) {
+  this.get('/episodes', function(schema) {
     let collection = new Collection('episode');
 
     collection.models = schema.episodes.all().models.sort(function(a, b) {
       return new Date(a.pubDate) < new Date(b.pubDate);
-    });;
+    });
 
     return collection;
   });
