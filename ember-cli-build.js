@@ -23,6 +23,7 @@ module.exports = function(defaults) {
   app.import(app.bowerDirectory + '/plyr/src/js/plyr.js');
   app.import(app.bowerDirectory + '/plyr/dist/plyr.css');
   app.import(app.bowerDirectory + '/plyr/dist/plyr.svg', { destDir: 'assets/sprites' });
+  app.import(app.bowerDirectory + '/juration/juration.js');
 
   return app.toTree();
 };

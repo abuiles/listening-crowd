@@ -39,4 +39,9 @@ export default function() {
 
     return collection;
   });
+
+  this.passthrough(
+    'https://podzy.herokuapp.com/**',
+    'http://ia902606.us.archive.org/**'
+  );
 }

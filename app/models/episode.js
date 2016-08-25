@@ -23,5 +23,11 @@ export default DS.Model.extend({
         return mem;
       }, {});
     }
+  }).readOnly(),
+  podzyUrl: Ember.computed('enclosure.url', {
+    get() {
+      let url = this.get('enclosure.url');
+      return `https://podzy.herokuapp.com/${url}`;
+    }
   }).readOnly()
 });

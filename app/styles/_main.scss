@@ -5,3 +5,7 @@ sidebar {
 main {
   @include flex(1 1 9/12*100%);
 }
+
+[data-ember-action]:not(:disabled) {
+  cursor: pointer;
+}

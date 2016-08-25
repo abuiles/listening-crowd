@@ -1,15 +1,65 @@
 <div class="flex p1">
   <div class="flex-auto">
     <h2><a href={{model.podcast.link}}>{{model.title}}</a></h2>
-    {{#lc-player timeupdate=(action timeupdate) mediaTag="audio"}}
-      <audio controls>
-        <source src={{unbound model.enclosure.url}} type="audio/mp3">
+    {{lc-player
+      src=model.podzyUrl
+      timeupdate=(action timeupdate)
+      reference=reference
+      feedbackLoop=feedbackLoop}}
+    <div class="mt1">
+      {{#if currentTime}}
+        <a {{action newReference currentTime}} class="btn btn-outline btn-big blue">New annotation</a>
+      {{/if}}
+      {{#if reference}}
+        <form class="mt1">
+          <div class="flex-auto center m1 p1 border border-lime">
+            <h3>New note at ({{reference.timestampPretty}})</h3>
+            <p>When adding a new note there is 10 seconds loop</p>
+            <p>Change loop to:
+              <a
+                 class="p1 {{if (eq feedbackLoop 10) "border border-black"}}"
+                 onclick={{action (mut feedbackLoop) 10}}>
+                10
+              </a>
+              <a
+                 class="p1 {{if (eq feedbackLoop 15) "p1 border border-black"}}"
+                 onclick={{action (mut feedbackLoop) 15}}>
+                15
+              </a>
+              <a
+                 class="p1 {{if (eq feedbackLoop 20) "p1 border border-black"}}"
+                 onclick={{action (mut feedbakLoop) 20}}>
+                20
+              </a>
+            </p>
 
-        <!-- Fallback for browsers that don't support the <audio> element -->
+          </div>
 
-      </audio>
-    {{/lc-player}}
-    <p>{{{model.summary}}}</p>
+          <select
+              onchange={{action (mut reference.kind) value="target.value"}}
+              class="select">
+            <option disabled>Select a type</option>
+            <option value="person" selected={{eq reference.kind person}}>Person</option>
+            <option value="link" selected={{eq reference.kind link}}>Link</option>
+            <option value="book" selected={{eq reference.kind book}}>Book</option>
+            <option value="podcast" selected={{eq reference.kind podcast}}>Podcast</option>
+          </select>
+          <input
+              type="text"
+              placeholder="URL (Optional)"
+              class="input"
+              value={{reference.url}}
+          />
+          <textarea
+              class="textarea"
+              placeholder="Summary"
+              rows="4"
+              value={{reference.summary}}>
+          </textarea>
+        </form>
+      {{/if}}
+      <p>{{{model.summary}}}</p>
+    </div>
   </div>
 </div>
 <div class="p1">
@@ -33,9 +83,9 @@
         {{/if}}
         {{#if reference.youtubeVideo}}
           <p>{{reference.summary}}</p>
-          {{#lc-player mediaTag="div"}}
+          {{#plyr-player mediaTag="div"}}
             <div data-type="youtube" data-video-id={{reference.youtubeVideo}}></div>
-          {{/lc-player}}
+          {{/plyr-player}}
         {{else}}
           <a href={{reference.url}}>{{reference.summary}}</a>
         {{/if}}
