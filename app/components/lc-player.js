@@ -22,10 +22,11 @@ export default Ember.Component.extend({
         progressColor: 'purple',
         normalize: true,
         fillParent: true,
-        barWidth: 2
+        barWidth: 2,
+        backend: 'MediaElement'
       });
 
-      wavesurfer.load(src);
+      wavesurfer.load(src, this.get('waveformData'));
 
       wavesurfer.on('ready', () => {
         Ember.run(() => {
@@ -42,6 +43,18 @@ export default Ember.Component.extend({
         Ember.run(() => {
           reject(error);
         });
+      });
+
+      wavesurfer.on('region-mouseenter', () => {
+        this.set('outRegion', true);
+      });
+
+      wavesurfer.on('region-mouseleave', () => {
+        this.set('outRegion', false);
+      });
+
+      wavesurfer.on('click', () => {
+        Ember.Logger.log('region click');
       });
 
       wavesurfer.on('region-created', () => {

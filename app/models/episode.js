@@ -13,6 +13,7 @@ export default DS.Model.extend({
   itunesExplicit: DS.attr('string'),
   guid: DS.attr(),
   podcast: DS.belongsTo('podcast'),
+  waveform: DS.belongsTo('waveform'),
   references: DS.hasMany('references'),
   groupedReferences: Ember.computed('refences.[]', {
     get() {

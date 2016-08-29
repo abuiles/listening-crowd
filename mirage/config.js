@@ -26,7 +26,22 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
    */
 
+  this.logging = true;
+
+  this.passthrough(
+    'https://podzy.herokuapp.com/**',
+    'http://ia902606.us.archive.org/**',
+    '/waveforms.json'
+  );
+
+  $.getJSON('/waveforms.json').then((data) => {
+    data.forEach((waveform) => {
+      this.db.waveforms.update(waveform.id, waveform);
+    });
+  });
+
   this.loadFixtures();
+
   this.get('/podcasts');
   this.get('/podcasts/:id');
   this.get('/episodes/:id');
@@ -40,8 +55,6 @@ export default function() {
     return collection;
   });
 
-  this.passthrough(
-    'https://podzy.herokuapp.com/**',
-    'http://ia902606.us.archive.org/**'
-  );
+  this.get('/waveforms');
+  this.get('/waveforms/:id');
 }

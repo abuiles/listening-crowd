@@ -3,9 +3,11 @@
     <h2><a href={{model.podcast.link}}>{{model.title}}</a></h2>
     {{lc-player
       src=model.podzyUrl
+      waveformData=model.waveform.points
       timeupdate=(action timeupdate)
       reference=reference
-      feedbackLoop=feedbackLoop}}
+      feedbackLoop=feedbackLoop
+    }}
     <div class="mt1">
       {{#if currentTime}}
         <a {{action newReference currentTime}} class="btn btn-outline btn-big blue">New annotation</a>

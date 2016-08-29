@@ -1,6 +1,7 @@
 export default [
   {
     "id": "hallelujah",
+    "waveformId": "hallelujah",
     "title": "hallelujah",
     "pubDate": "2016-07-28T02:00:00Z",
     "description": "How does genius emerge? An exploration of different types of innovation—through the lens of Elvis Costello’s extraordinary song “Deportee,” once utterly forgettable and then, through time and iteration, a work of beauty and genius.&nbsp;<br><br><strong>If you're looking to go deeper into the subjects on Revisionist History, visit Malcolm's collection on iBooks at&nbsp;</strong><a href=\"http://www.apple.co/MalcolmGladwell\"><strong>http://www.apple.co/MalcolmGladwell</strong></a><strong>&nbsp;-- iBooks will update the page every week with new recommendations.&nbsp;</strong><br><br>To learn more about the topics covered in this episode, visit&nbsp;<a href=\"http://www.RevisionistHistory.com\">www.RevisionistHistory.com</a>",
@@ -26,6 +27,7 @@ export default [
   },
   {
     "id": "a16z-podcast-we-gotta-talk-pokemon-go",
+    "waveformId": "a16z-podcast-we-gotta-talk-pokemon-go",
     "title": "a16z Podcast: We Gotta Talk Pokémon Go",
     "pubDate": "Fri, 22 Jul 2016 22:37:43 +0000",
     "itunesSubtitle": "Seemingly overnight, a single game -- Pokémon Go …",
@@ -50,7 +52,8 @@ export default [
     }
   },
   {
-    id: "angela-duckworth-on-grit",
+    "id": "angela-duckworth-on-grit",
+    "waveformId": "angela-duckworth-on-grit",
     "title": "Angela Duckworth on Grit",
     "pubDate": "Mon, 25 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How important is grit relative to talent? Can grit be taught? Angela Duckworth talks with with host Russ Roberts about the nature of success in work, play and life. How much does grit matter? Is it malleable or something we're born with? Duckworth discusses her research on these questions and how to think about what it means for a child and an adult to thrive.",
@@ -83,7 +86,8 @@ export default [
     }
   },
   {
-    id: "ryan-holiday-on-ego-is-the-enemy",
+    "id": "ryan-holiday-on-ego-is-the-enemy",
+    "waveformId": "ryan-holiday-on-ego-is-the-enemy",
     "title": "Ryan Holiday on Ego is the Enemy",
     "pubDate": "Mon, 18 Jul 2016 06:30:00 -0500",
     "itunesSubtitle": "How does our attitude toward ourselves affect our success or failure in the world of business or in friendship? Ryan Holiday talks with host Russ Roberts about the role of ego in business, our personal lives, and world history.",
@@ -119,7 +123,8 @@ export default [
     }
   },
   {
-    id: "70-stolen-valor",
+    "id": "70-stolen-valor",
+    "waveformId": "70-stolen-valor",
     "title": "#70 Stolen Valor",
     "pubDate": "Thu, 14 Jul 2016 18:28:00 -0000",
     "itunesSubtitle": "PJ dives into the world of military impostors and the vigilantes who hunt them. Plus, a dispatch from Dallas.",
