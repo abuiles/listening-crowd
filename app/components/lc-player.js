@@ -17,13 +17,14 @@ export default Ember.Component.extend({
 
     let promise = new Ember.RSVP.Promise((resolve, reject) => {
       const wavesurfer = Wavesurfer.create({
-        container: '#waveform',
-        waveColor: 'red',
-        progressColor: 'purple',
-        normalize: true,
-        fillParent: true,
+        backend: 'MediaElement',
         barWidth: 2,
-        backend: 'MediaElement'
+        container: '#waveform',
+        fillParent: true,
+        hideScrollbar: false,
+        normalize: true,
+        progressColor: 'purple',
+        waveColor: 'red'
       });
 
       wavesurfer.load(src, this.get('waveformData'));
@@ -35,6 +36,7 @@ export default Ember.Component.extend({
             slop: 0,
             loop: true
           });
+
           resolve();
         });
       });
