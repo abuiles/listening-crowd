@@ -41,6 +41,14 @@ export default Ember.Component.extend({
         });
       });
 
+      wavesurfer.on('play', () => {
+        this.set('playing', true);
+      });
+
+      wavesurfer.on('pause', () => {
+        this.set('playing', false);
+      });
+
       wavesurfer.on('error', error => {
         Ember.run(() => {
           reject(error);
