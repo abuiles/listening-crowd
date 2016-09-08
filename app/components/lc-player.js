@@ -47,33 +47,13 @@ export default Ember.Component.extend({
         });
       });
 
-      wavesurfer.on('region-mouseenter', () => {
-        this.set('outRegion', true);
+      document.querySelector('wave').addEventListener('dblclick', function (e) {
+        wavesurfer.regions.clear();
       });
 
-      wavesurfer.on('region-mouseleave', () => {
-        this.set('outRegion', false);
-      });
-
-      wavesurfer.on('click', () => {
-        Ember.Logger.log('region click');
-      });
 
       wavesurfer.on('region-created', () => {
         wavesurfer.regions.clear();
-        Ember.Logger.log('region created');
-      });
-
-      wavesurfer.on('region-updated', () => {
-        Ember.Logger.log('region updated');
-      });
-
-      wavesurfer.on('region-removed', () => {
-        Ember.Logger.log('region removed');
-      });
-
-      wavesurfer.on('region-update-end', () => {
-        Ember.Logger.log('region update end');
       });
 
       this.set('wavesurfer', wavesurfer);

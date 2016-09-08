@@ -9,7 +9,7 @@
     "Faker": "~3.1.0",
     "plyr": "abuiles/plyr#use-forEach",
     "juration": "*",
-    "wavesurfer.js": "^1.1.12"
+    "wavesurfer.js": "katspaugh/wavesurfer.js#master"
   },
   "resolutions": {
     "ember": "canary"
