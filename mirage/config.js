@@ -57,4 +57,9 @@ export default function() {
 
   this.get('/waveforms');
   this.get('/waveforms/:id');
+
+  this.get('/references');
+  this.get('/references/:id');
+  this.post('/references');
+  this.patch('/references/:id');
 }

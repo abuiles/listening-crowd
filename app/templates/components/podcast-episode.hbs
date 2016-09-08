@@ -4,39 +4,26 @@
     {{lc-player
       src=model.podzyUrl
       waveformData=model.waveform.points
+      registerPlayer=(action (mut player))
+      unregisterPlayer=(action (mut player null))
       timeupdate=(action timeupdate)
-      reference=reference
+      regionCreated=(action regionCreated)
+      regionUpdated=(action regionUpdated)
+      deleteRegion=(action deleteRegion)
+      region=region
       feedbackLoop=feedbackLoop
     }}
     <div class="mt1">
       {{#if currentTime}}
         <a {{action newReference currentTime}} class="btn btn-outline btn-big blue">New annotation</a>
       {{/if}}
-      {{#if reference}}
+      {{#liquid-if reference}}
         <form class="mt1">
           <div class="flex-auto center m1 p1 border border-lime">
-            <h3>New note at ({{reference.timestampPretty}})</h3>
-            <p>When adding a new note there is 10 seconds loop</p>
-            <p>Change loop to:
-              <a
-                 class="p1 {{if (eq feedbackLoop 10) "border border-black"}}"
-                 onclick={{action (mut feedbackLoop) 10}}>
-                10
-              </a>
-              <a
-                 class="p1 {{if (eq feedbackLoop 15) "p1 border border-black"}}"
-                 onclick={{action (mut feedbackLoop) 15}}>
-                15
-              </a>
-              <a
-                 class="p1 {{if (eq feedbackLoop 20) "p1 border border-black"}}"
-                 onclick={{action (mut feedbakLoop) 20}}>
-                20
-              </a>
-            </p>
-
+            <h3>New note</h3>
+            <button class="btn" {{action save}}>Save</button>
+            <p> Double click outside region to dismiss</p>
           </div>
-
           <select
               onchange={{action (mut reference.kind) value="target.value"}}
               class="select">
@@ -51,15 +38,18 @@
               placeholder="URL (Optional)"
               class="input"
               value={{reference.url}}
+              onchange={{action (mut reference.url)  value="target.value"}}
           />
           <textarea
               class="textarea"
               placeholder="Summary"
               rows="4"
-              value={{reference.summary}}>
+              value={{reference.summary}}
+              onchange={{action (mut reference.summary) value="target.value"}}
+          >
           </textarea>
         </form>
-      {{/if}}
+      {{/liquid-if}}
       <p>{{{model.summary}}}</p>
     </div>
   </div>

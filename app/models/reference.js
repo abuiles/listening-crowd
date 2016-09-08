@@ -4,17 +4,18 @@ import Ember from 'ember';
 export default DS.Model.extend({
   kind: DS.attr('string'),
   url: DS.attr('string'),
-  timestamp: DS.attr('number'),
-  timestampPretty: Ember.computed('timestamp', {
-    get() {
-      return window.juration.stringify(
-        this.get('timestamp'),
-        {
-          format: 'chrono'
-        }
-      );
-    }
-  }).readOnly(),
+  start: DS.attr('number'),
+  end: DS.attr('number'),
+  // timestampPretty: Ember.computed('timestamp', {
+  //   get() {
+  //     return window.juration.stringify(
+  //       this.get('timestamp'),
+  //       {
+  //         format: 'chrono'
+  //       }
+  //     );
+  //   }
+  // }).readOnly(),
   summary : DS.attr('string'),
   episode: DS.belongsTo('episode'),
   wikiLink: Ember.computed('url', {

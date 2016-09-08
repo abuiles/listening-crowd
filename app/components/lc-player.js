@@ -31,6 +31,9 @@ export default Ember.Component.extend({
 
       wavesurfer.on('ready', () => {
         Ember.run(() => {
+          if (this.registerPlayer) {
+            this.registerPlayer(wavesurfer);
+          }
           // Enable creating regions by dragging
           wavesurfer.enableDragSelection({
             slop: 0,
@@ -55,13 +58,24 @@ export default Ember.Component.extend({
         });
       });
 
-      document.querySelector('wave').addEventListener('dblclick', function (e) {
-        wavesurfer.regions.clear();
+      document.querySelector('wave').addEventListener('dblclick',  (e) => {
+        if (this.deleteRegion) {
+          this.deleteRegion();
+        }
       });
 
 
-      wavesurfer.on('region-created', () => {
+      wavesurfer.on('region-created', (region) => {
         wavesurfer.regions.clear();
+        if (this.regionCreated) {
+          this.regionCreated(region);
+        }
+      });
+
+      wavesurfer.on('region-updated', (region) => {
+        if (this.regionUpdated) {
+          this.regionUpdated(region);
+        }
       });
 
       this.set('wavesurfer', wavesurfer);
@@ -101,10 +115,18 @@ export default Ember.Component.extend({
       this.get('wavesurfer').playPause();
     }
   },
+  playAt(start, end) {
+    this.get('wavesurfer').play(start, end);
+  },
   zoom(zoomLevel) {
     if (this.get('wavesurfer')) {
       Ember.Logger.log('zoom : ', zoomLevel);
       this.get('wavesurfer').zoom(zoomLevel);
+    }
+  },
+  willDestroyElement() {
+    if (this.unregisterPlayer) {
+      this.unregisterPlayer(this.get('wavesurfer'));
     }
   }
 });
