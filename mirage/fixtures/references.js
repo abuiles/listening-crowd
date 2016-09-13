@@ -1,15 +1,15 @@
 export default [
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Elvis_Costello",
-    "summary": "Elvis Costello",
-    "time": "",
+    "kind": "",
+    "start":465.1308582333333,
+    "end":593.3678705499999,
+    "deltas": [{"insert":"The Deportee "},{"attributes":{"header":2},"insert":"\n"},{"insert":"\n"},{"insert":{"video":"https://www.youtube.com/embed/FIzTXbixEaQ?showinfo=0"}},{"insert":"\n"}],
     "episodeId": "hallelujah"
   },
   {
-    "kind": "link",
-    "url": "https://www.youtube.com/watch?v=FIzTXbixEaQ",
-    "summary": "Deportee - Youtube",
+    "kind": "person",
+    "url": "https://en.wikipedia.org/wiki/Elvis_Costello",
+    "summary": "Elvis Costello",
     "time": "",
     "episodeId": "hallelujah"
   },

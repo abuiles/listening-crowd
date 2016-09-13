@@ -7,6 +7,16 @@ export default Ember.Component.extend({
     this.set('currentTime', 0);
     this.set('feedbackLoop', 10);
   },
+  references: Ember.computed.filterBy('model.references', 'isNew', false),
+  sortedReferences: Ember.computed.sort('references', function(a,b) {
+    let weight = 0;
+
+    if (a.get('deltas')) {
+      weight = -1;
+    }
+
+    return weight;
+  }),
   currentTime: null,
   timeupdate(event) {
     this.set('currentTime', event.target.currentTime);

@@ -16,6 +16,7 @@ export default DS.Model.extend({
   //     );
   //   }
   // }).readOnly(),
+  deltas: DS.attr(),
   summary : DS.attr('string'),
   episode: DS.belongsTo('episode'),
   wikiLink: Ember.computed('url', {

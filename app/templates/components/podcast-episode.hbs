@@ -14,40 +14,16 @@
       feedbackLoop=feedbackLoop
     }}
     <div class="mt1">
-      {{#if currentTime}}
-        <a {{action newReference currentTime}} class="btn btn-outline btn-big blue">New annotation</a>
-      {{/if}}
       {{#liquid-if reference}}
         <form class="mt1">
           <div class="flex-auto center m1 p1 border border-lime">
-            <h3>New note</h3>
+            <h3>New annotation</h3>
             <button class="btn" {{action save}}>Save</button>
             <p> Double click outside region to dismiss</p>
           </div>
-          <select
-              onchange={{action (mut reference.kind) value="target.value"}}
-              class="select">
-            <option disabled>Select a type</option>
-            <option value="person" selected={{eq reference.kind person}}>Person</option>
-            <option value="link" selected={{eq reference.kind link}}>Link</option>
-            <option value="book" selected={{eq reference.kind book}}>Book</option>
-            <option value="podcast" selected={{eq reference.kind podcast}}>Podcast</option>
-          </select>
-          <input
-              type="text"
-              placeholder="URL (Optional)"
-              class="input"
-              value={{reference.url}}
-              onchange={{action (mut reference.url)  value="target.value"}}
-          />
-          <textarea
-              class="textarea"
-              placeholder="Summary"
-              rows="4"
-              value={{reference.summary}}
-              onchange={{action (mut reference.summary) value="target.value"}}
-          >
-          </textarea>
+          {{text-editor
+            textChanged=(action (mut reference.deltas))
+          }}
         </form>
       {{/liquid-if}}
       <p>{{{model.summary}}}</p>
@@ -56,30 +32,38 @@
 </div>
 <div class="p1">
   <h3>Community Annotations</h3>
-  <ul class="row">
-    {{#each model.references as |reference|}}
-      <li>
-        {{#if (eq reference.kind "person")}}
-          <i class="fa fa-user" aria-hidden="true"></i>
-          {{#if reference.wikiLink }}
+  <ul class="flex flex-column">
+    {{#each sortedReferences as |reference|}}
+      <li class="p2">
+        {{#if reference.deltas}}
+          {{text-editor
+            deltas=reference.deltas
+            readOnly=true
+            class="col-4"
+          }}
+        {{else}}
+          {{#if (eq reference.kind "person")}}
+            <i class="fa fa-user" aria-hidden="true"></i>
+            {{#if reference.wikiLink }}
+              <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+            {{/if}}
+            {{ else if (eq reference.kind "book") }}
+            <i class="fa fa-book" aria-hidden="true"></i>
+            {{ else if reference.wikiLink }}
             <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+            {{ else if  reference.youtubeVideo}}
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+          {{else}}
+            <i class="fa fa-link" aria-hidden="true"></i>
           {{/if}}
-        {{ else if (eq reference.kind "book") }}
-          <i class="fa fa-book" aria-hidden="true"></i>
-        {{ else if reference.wikiLink }}
-          <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
-        {{ else if  reference.youtubeVideo}}
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        {{else}}
-          <i class="fa fa-link" aria-hidden="true"></i>
-        {{/if}}
-        {{#if reference.youtubeVideo}}
-          <p>{{reference.summary}}</p>
-          {{#plyr-player mediaTag="div"}}
-            <div data-type="youtube" data-video-id={{reference.youtubeVideo}}></div>
-          {{/plyr-player}}
-        {{else}}
-          <a href={{reference.url}}>{{reference.summary}}</a>
+          {{#if reference.youtubeVideo}}
+            <p>{{reference.summary}}</p>
+            {{#plyr-player mediaTag="div"}}
+              <div data-type="youtube" data-video-id={{reference.youtubeVideo}}></div>
+            {{/plyr-player}}
+          {{else}}
+            <a href={{reference.url}}>{{reference.summary}}</a>
+          {{/if}}
         {{/if}}
       </li>
     {{/each}}

@@ -9,3 +9,11 @@ main {
 [data-ember-action]:not(:disabled) {
   cursor: pointer;
 }
+
+.text-editor-container {
+  height: 300px;
+}
+
+.text-preview {
+  height: 200px;
+}
