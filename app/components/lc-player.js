@@ -11,6 +11,7 @@ export default Ember.Component.extend({
       Ember.Test.registerWaiter(() => this._loading === false);
     }
   },
+  currentTime: 0,
 
   loadWavesurferPromise() {
     const src = this.get('src');
@@ -57,6 +58,27 @@ export default Ember.Component.extend({
           reject(error);
         });
       });
+
+      wavesurfer.on('audioprocess', () => {
+        let time = window.juration.stringify(
+          wavesurfer.getCurrentTime(),
+          {
+            format: 'chrono'
+          }
+        );
+        this.set('currentTime', time);
+      });
+
+      wavesurfer.on('seek', () => {
+        let time = window.juration.stringify(
+          wavesurfer.getCurrentTime(),
+          {
+            format: 'chrono'
+          }
+        );
+        this.set('currentTime', time);
+      });
+
 
       document.querySelector('wave').addEventListener('dblclick',  (e) => {
         if (this.deleteRegion) {

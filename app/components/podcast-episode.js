@@ -8,11 +8,14 @@ export default Ember.Component.extend({
     this.set('feedbackLoop', 10);
   },
   references: Ember.computed.filterBy('model.references', 'isNew', false),
+  // sortedReferences: Ember.computed.alias('references'),
   sortedReferences: Ember.computed.sort('references', function(a,b) {
     let weight = 0;
 
     if (a.get('deltas')) {
       weight = -1;
+    } else if (b.get('deltas')) {
+      weight = 1;
     }
 
     return weight;
@@ -54,15 +57,31 @@ export default Ember.Component.extend({
       end: region.get('end')
     });
     reference.save().then(() =>  {
-
       this.setProperties({
         reference: null,
         region: null
       });
+      this.saveLocally(this.get('model.id'), reference);
 
       this.get('player').regions.list[region.get('id')].remove();
     });
 
     return false;
+  },
+  saveLocally(id, reference) {
+    let item = window.localStorage.getItem(id);
+    let references;
+
+    if (item) {
+      references = JSON.parse(item);
+    } else {
+      references = [];
+    }
+
+    let payload = reference.getProperties('end', 'start', 'deltas');
+
+    payload.episodeId = reference.get('episode.id');
+    references.push(payload);
+    window.localStorage.setItem(id, JSON.stringify(references));
   }
 });

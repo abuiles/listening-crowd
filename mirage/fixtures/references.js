@@ -1,58 +1,10 @@
 export default [
+  {"end":2135.399368144409,"start":2122.3999807476034,"deltas":{"ops":[{"insert":"Without the obsessives and the perpetually dissatisfied, and the artist who go back over and over again, repainting what other see as finished, we would never have seen the beauty of deportee."},{"attributes":{"blockquote":true},"insert":"\n"}]},"episodeId":"hallelujah"},{"end":104.9950520511182,"start":95.99547616102237,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Elvis_Costello"},"insert":"Elvis Costello"},{"attributes":{"header":2},"insert":"\n"}]},"episodeId":"hallelujah"},{"end":184.82549902944993,"start":166.1590256724413,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Clive_Langer"},"insert":"Clive Langer"},{"insert":"\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Alan_Winstanley"},"insert":"Alan Winstanley"},{"insert":"\n\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"},"insert":"Dexys Midnight Runners"},{"insert":"\n\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"},"insert":"Dexys Midnight Runners"},{"insert":" - Come on Eileen\n\n"},{"insert":{"video":"https://www.youtube.com/embed/rVxcwe7EcaY?showinfo=0"}},{"insert":"\n\n\n"}]},"episodeId":"hallelujah"},{"end":313.84080863290114,"start":297.5070853267381,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Punch_the_Clock"},"insert":"Punch the Clock - Elvis Costello albom produce by Clive AlLanger and Alan Winstaley"},{"insert":"\n\n"},{"insert":{"video":"https://upload.wikimedia.org/wikipedia/en/1/19/Ecaptc.jpg"}},{"insert":"\n\n\n"}]},"episodeId":"hallelujah"},{"end":346.7984307277839,"start":325.99852484791677,"deltas":{"ops":[{"insert":" Elvis Costello didn't like Punch the Clock because it was \"too commercial at that time\", he wanted something simpler, more light."},{"attributes":{"blockquote":true},"insert":"\n"}]},"episodeId":"hallelujah"},
   {
     "kind": "",
     "start":465.1308582333333,
     "end":593.3678705499999,
     "deltas": [{"insert":"The Deportee "},{"attributes":{"header":2},"insert":"\n"},{"insert":"\n"},{"insert":{"video":"https://www.youtube.com/embed/FIzTXbixEaQ?showinfo=0"}},{"insert":"\n"}],
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Elvis_Costello",
-    "summary": "Elvis Costello",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Clive_Langer",
-    "summary": "Clive Langer",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Alan_Winstanley",
-    "summary": "Alan Winstanley",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://en.wikipedia.org/wiki/Dexys_Midnight_Runners",
-    "summary": "Dexys Midnight Runners",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://www.youtube.com/watch?v=oc-P8oDuS0Q",
-    "summary": "Dexys Midnight Runners - Come on Eileen",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://en.wikipedia.org/wiki/Punch_the_Clock",
-    "summary": "Punch the Clock - Elvis Costello albom produce by Clive AlLanger and Alan Winstaley",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/5:40",
-    "summary": "Elvis Costello didn't like Punch the Clock because it was \"too commercial at that time\", he wanted something simpler, more light.",
-    "time": "",
     "episodeId": "hallelujah"
   },
   {

@@ -15,7 +15,7 @@
     }}
     <div class="mt1">
       {{#liquid-if reference}}
-        <form class="mt1">
+        <form class="mt2 mb2">
           <div class="flex-auto center m1 p1 border border-lime">
             <h3>New annotation</h3>
             <button class="btn" {{action save}}>Save</button>
@@ -23,6 +23,7 @@
           </div>
           {{text-editor
             textChanged=(action (mut reference.deltas))
+            class="text-editor-container"
           }}
         </form>
       {{/liquid-if}}
@@ -32,16 +33,16 @@
 </div>
 <div class="p1">
   <h3>Community Annotations</h3>
-  <ul class="flex flex-column">
+  <div class="flex flex-wrap content-start border">
     {{#each sortedReferences as |reference|}}
-      <li class="p2">
-        {{#if reference.deltas}}
-          {{text-editor
-            deltas=reference.deltas
-            readOnly=true
-            class="col-4"
-          }}
-        {{else}}
+      {{#if reference.deltas}}
+        {{text-editor
+          deltas=reference.deltas
+          readOnly=true
+          class="col-4 border"
+        }}
+      {{else}}
+        <div class="col-4 border mt6 p4">
           {{#if (eq reference.kind "person")}}
             <i class="fa fa-user" aria-hidden="true"></i>
             {{#if reference.wikiLink }}
@@ -64,8 +65,8 @@
           {{else}}
             <a href={{reference.url}}>{{reference.summary}}</a>
           {{/if}}
-        {{/if}}
-      </li>
+        </div>
+      {{/if}}
     {{/each}}
-  </ul>
+  </div>
 </div>

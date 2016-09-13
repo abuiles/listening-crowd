@@ -42,6 +42,21 @@ export default function() {
 
   this.loadFixtures();
 
+  this.db.episodes.forEach((episode) => {
+    let item = window.localStorage.getItem(episode.id);
+    let references;
+
+    if (item) {
+      references = JSON.parse(item);
+    } else {
+      references = [];
+    }
+
+    references.forEach((ref) => {
+      this.create('reference', ref);
+    });
+  });
+
   this.get('/podcasts');
   this.get('/podcasts/:id');
   this.get('/episodes/:id');
