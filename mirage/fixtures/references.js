@@ -404,33 +404,6 @@ export default [
       "ops": [
         {
           "attributes": {
-            "bold": true
-          },
-          "insert": "Book"
-        },
-        {
-          "insert": "  "
-        },
-        {
-          "attributes": {
-            "link": "https://www.amazon.com/gp/product/0691133808/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=abuiles-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0691133808&linkId=d5303bcabfc8489fb917cb8f6a833f9c"
-          },
-          "insert": "Old Masters and Young Geniuses: The Two Life Cycles of Artistic Creativity\u00a0(\u00a0David W. Galenson)"
-        },
-        {
-          "insert": "\n\n\n\n"
-        }
-      ]
-    },
-    "end": 775.9425999499999,
-    "episodeId": "hallelujah",
-    "start": 752.0340044333333
-  },
-  {
-    "deltas": {
-      "ops": [
-        {
-          "attributes": {
             "color": "#0077cc",
             "link": "https://en.wikipedia.org/wiki/Leonard_Cohen"
           },

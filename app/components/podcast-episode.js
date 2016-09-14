@@ -8,17 +8,14 @@ export default Ember.Component.extend({
     this.set('feedbackLoop', 10);
   },
   references: Ember.computed.filterBy('model.references', 'isNew', false),
-  // sortedReferences: Ember.computed.alias('references'),
   sortedReferences: Ember.computed.sort('references', function(a,b) {
-    let weight = 0;
-
-    if (a.get('deltas')) {
-      weight = -1;
-    } else if (b.get('deltas')) {
-      weight = 1;
+    if (a.get('start') > b.get('starts')) {
+      return 1;
+    } else if (a.get('start') < b.get('starts')) {
+      return -1;
     }
 
-    return weight;
+    return 0;
   }),
   currentTime: null,
   timeupdate(event) {
