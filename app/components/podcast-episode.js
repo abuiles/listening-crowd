@@ -80,5 +80,17 @@ export default Ember.Component.extend({
     payload.episodeId = reference.get('episode.id');
     references.push(payload);
     window.localStorage.setItem(id, JSON.stringify(references));
+  },
+  play(start) {
+    if (this.get('player')) {
+      this.get('player').play(start);
+    }
+  },
+  didUpdateAttrs() {
+    this._super(...arguments);
+    let at = parseInt(this.get('at'));
+    if (at > 0) {
+      this.play(at);
+    }
   }
 });

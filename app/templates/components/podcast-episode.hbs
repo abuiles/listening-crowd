@@ -12,6 +12,7 @@
       deleteRegion=(action deleteRegion)
       region=region
       feedbackLoop=feedbackLoop
+      startAt=at
     }}
     <div class="mt1">
       {{#liquid-if reference}}
@@ -37,13 +38,15 @@
     {{#each sortedReferences as |reference|}}
       {{#if reference.deltas}}
         {{#text-editor
-          deltas=reference.deltas
-          readOnly=true
-          class="col-4 border"
+           deltas=reference.deltas
+           readOnly=true
+           class="col-4 mt2 mb2"
         }}
           <div class="toolbar ql-snow">
             <span class="ql-formats">
-              <a><i class="fa fa-play" aria-hidden="true"></i></a>
+              {{#link-to "podcasts.show.episode" model.podcast model (query-params at=reference.start)}}
+                <i class="fa fa-play" aria-hidden="true"></i>
+              {{/link-to}}
             </span>
             <span class="ql-formats">
               <a class=""

@@ -32,6 +32,12 @@ export default Ember.Component.extend({
 
       wavesurfer.on('ready', () => {
         Ember.run(() => {
+          let startAt = parseInt(this.get('startAt'));
+
+          if (startAt >0) {
+            wavesurfer.skip(startAt);
+          }
+
           if (this.registerPlayer) {
             this.registerPlayer(wavesurfer);
           }
