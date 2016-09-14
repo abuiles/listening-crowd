@@ -1,221 +1,799 @@
 export default [
-  {"end":2135.399368144409,"start":2122.3999807476034,"deltas":{"ops":[{"insert":"Without the obsessives and the perpetually dissatisfied, and the artist who go back over and over again, repainting what other see as finished, we would never have seen the beauty of deportee."},{"attributes":{"blockquote":true},"insert":"\n"}]},"episodeId":"hallelujah"},{"end":104.9950520511182,"start":95.99547616102237,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Elvis_Costello"},"insert":"Elvis Costello"},{"attributes":{"header":2},"insert":"\n"}]},"episodeId":"hallelujah"},{"end":184.82549902944993,"start":166.1590256724413,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Clive_Langer"},"insert":"Clive Langer"},{"insert":"\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Alan_Winstanley"},"insert":"Alan Winstanley"},{"insert":"\n\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"},"insert":"Dexys Midnight Runners"},{"insert":"\n\n"},{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"},"insert":"Dexys Midnight Runners"},{"insert":" - Come on Eileen\n\n"},{"insert":{"video":"https://www.youtube.com/embed/rVxcwe7EcaY?showinfo=0"}},{"insert":"\n\n\n"}]},"episodeId":"hallelujah"},{"end":313.84080863290114,"start":297.5070853267381,"deltas":{"ops":[{"attributes":{"color":"#0077cc","link":"https://en.wikipedia.org/wiki/Punch_the_Clock"},"insert":"Punch the Clock - Elvis Costello albom produce by Clive AlLanger and Alan Winstaley"},{"insert":"\n\n"},{"insert":{"video":"https://upload.wikimedia.org/wikipedia/en/1/19/Ecaptc.jpg"}},{"insert":"\n\n\n"}]},"episodeId":"hallelujah"},{"end":346.7984307277839,"start":325.99852484791677,"deltas":{"ops":[{"insert":" Elvis Costello didn't like Punch the Clock because it was \"too commercial at that time\", he wanted something simpler, more light."},{"attributes":{"blockquote":true},"insert":"\n"}]},"episodeId":"hallelujah"},
   {
-    "kind": "",
-    "start":465.1308582333333,
-    "end":593.3678705499999,
-    "deltas": [{"insert":"The Deportee "},{"attributes":{"header":2},"insert":"\n"},{"insert":"\n"},{"insert":{"video":"https://www.youtube.com/embed/FIzTXbixEaQ?showinfo=0"}},{"insert":"\n"}],
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "Without the obsessives and the perpetually dissatisfied, and the artist who go back over and over again, repainting what other see as finished, we would never have seen the beauty of deportee."
+        },
+        {
+          "attributes": {
+            "blockquote": true
+          },
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 2135.399368144409,
+    "episodeId": "hallelujah",
+    "start": 2122.3999807476034
   },
   {
-    "kind": "link",
-    "url": "https://en.wikipedia.org/wiki/Shipbuilding_(song)",
-    "summary": "Shipbuilding from Punch the Clock",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Elvis_Costello"
+          },
+          "insert": "Elvis Costello"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 104.9950520511182,
+    "episodeId": "hallelujah",
+    "start": 95.99547616102237
   },
   {
-    "kind": "link",
-    "url": "http://www.elviscostello.info/wiki/index.php/Goodbye_Cruel_World_(1995)_liner_notes",
-    "summary": "Elvis Costello liner notes on Punch the Clock: \"Congratulations! You've just purchased our worst album.\"",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Clive_Langer"
+          },
+          "insert": "Clive Langer"
+        },
+        {
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Alan_Winstanley"
+          },
+          "insert": "Alan Winstanley"
+        },
+        {
+          "insert": "\n\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"
+          },
+          "insert": "Dexys Midnight Runners"
+        },
+        {
+          "insert": "\n\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Dexys_Midnight_Runners"
+          },
+          "insert": "Dexys Midnight Runners"
+        },
+        {
+          "insert": " - Come on Eileen\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/rVxcwe7EcaY?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n\n\n"
+        }
+      ]
+    },
+    "end": 184.82549902944993,
+    "episodeId": "hallelujah",
+    "start": 166.1590256724413
   },
   {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/12:35",
-    "summary": "What happens when genious takes a sweet time to emerge?",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Punch_the_Clock"
+          },
+          "insert": "Punch the Clock - Elvis Costello albom produce by Clive AlLanger and Alan Winstaley"
+        },
+        {
+          "insert": "\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://upload.wikimedia.org/wikipedia/en/1/19/Ecaptc.jpg"
+          }
+        },
+        {
+          "insert": "\n\n\n"
+        }
+      ]
+    },
+    "end": 313.84080863290114,
+    "episodeId": "hallelujah",
+    "start": 297.5070853267381
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/David_Galenson",
-    "summary": "David Galenson",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "\u00a0Elvis Costello didn't like Punch the Clock because it was \"too commercial at that time\", he wanted something simpler, more light."
+        },
+        {
+          "attributes": {
+            "blockquote": true
+          },
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 346.7984307277839,
+    "episodeId": "hallelujah",
+    "start": 325.99852484791677
   },
   {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/13:35",
-    "summary": "David Galenson - Conceptual Innovators: make radical innovations in their field at a very early age",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": [
+      {
+        "insert": "The Deportee "
+      },
+      {
+        "attributes": {
+          "header": 2
+        },
+        "insert": "\n"
+      },
+      {
+        "insert": "\n"
+      },
+      {
+        "insert": {
+          "video": "https://www.youtube.com/embed/FIzTXbixEaQ?showinfo=0"
+        }
+      },
+      {
+        "insert": "\n"
+      }
+    ],
+    "end": 593.3678705499999,
+    "episodeId": "hallelujah",
+    "start": 465.1308582333333
   },
   {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/14:15",
-    "summary": "David Galenson - Experimental Innovators: innovations develop slowly over a long period of experimentation and refinement",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "http://www.elviscostello.info/wiki/index.php/Goodbye_Cruel_World_(1995)_liner_notes"
+          },
+          "insert": "Congratulations! You've just purchased our worst album."
+        },
+        {
+          "attributes": {
+            "blockquote": true
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "Elvis Costello"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 543.3077296613419,
+    "episodeId": "hallelujah",
+    "start": 537.8079888396165
   },
   {
-    "kind": "book",
-    "url": "http://amzn.to/2agNU3p",
-    "summary": "Old Masters and Young Geniuses: The Two Life Cycles of Artistic Creativity",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "\u00a0"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/David_Galenson"
+          },
+          "insert": "David Galenson"
+        },
+        {
+          "insert": ",  the economist who came out with the theory about conceptual and experimental innovators.\n\n"
+        },
+        {
+          "attributes": {
+            "bold": true
+          },
+          "insert": "Experimental Innovators:"
+        },
+        {
+          "attributes": {
+            "italic": true
+          },
+          "insert": " innovations develop slowly over a long period of experimentation and refinement."
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "bold": true
+          },
+          "insert": "Conceptual Innovators:"
+        },
+        {
+          "insert": " make radical innovations in their field at a very early age."
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 887.2915192383387,
+    "episodeId": "hallelujah",
+    "start": 787.4628903833863
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Pablo_Picasso",
-    "summary": "Pablo Picasso - Conceptualist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "C\u00e9zanne  required 100 sittings from "
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Ambroise_Vollard"
+          },
+          "insert": "Ambroise Vollard"
+        },
+        {
+          "insert": " (his art dealer) to make him a portrait.\n\n"
+        }
+      ]
+    },
+    "end": 1066.2830841635782,
+    "episodeId": "hallelujah",
+    "start": 1044.6174385022362
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/F._Scott_Fitzgerald",
-    "summary": "F. Scott Fitzgerald - Conceptualist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "Conceptualist"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Pablo_Picasso"
+          },
+          "insert": "Pablo Picasso"
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/F._Scott_Fitzgerald"
+          },
+          "insert": "F. Scott Fitzgerald "
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Orson_Welles"
+          },
+          "insert": "Orson Welles "
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "Experimentalists"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Alfred_Hitchcock"
+          },
+          "insert": "Alfred Hitchcock"
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Mark_Twain"
+          },
+          "insert": "Mark Twain"
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Paul_C%C3%A9zanne"
+          },
+          "insert": "Paul C\u00e9zanne"
+        },
+        {
+          "attributes": {
+            "list": "bullet"
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1119.8638924722045,
+    "episodeId": "hallelujah",
+    "start": 1069.699589825559
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Orson_Welles",
-    "summary": "Orson Welles - Conceptualist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "bold": true
+          },
+          "insert": "Book"
+        },
+        {
+          "insert": "  "
+        },
+        {
+          "attributes": {
+            "link": "https://www.amazon.com/gp/product/0691133808/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=abuiles-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0691133808&linkId=d5303bcabfc8489fb917cb8f6a833f9c"
+          },
+          "insert": "Old Masters and Young Geniuses: The Two Life Cycles of Artistic Creativity\u00a0(\u00a0David W. Galenson)"
+        },
+        {
+          "insert": "\n\n\n\n"
+        }
+      ]
+    },
+    "end": 775.9425999499999,
+    "episodeId": "hallelujah",
+    "start": 752.0340044333333
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Alfred_Hitchcock",
-    "summary": "Alfred Hitchcock - Experimentalist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Leonard_Cohen"
+          },
+          "insert": "Leonard Cohen"
+        },
+        {
+          "insert": "\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/ttEMYvpoR-k?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n\nCovers"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "header": 3
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "Rufus "
+        },
+        {
+          "attributes": {
+            "color": "#000000"
+          },
+          "insert": "Wainwright"
+        },
+        {
+          "attributes": {
+            "header": 3
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/xR0DKOGco_o?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n\n\nBob Dylan"
+        },
+        {
+          "attributes": {
+            "header": 3
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/cuLmf7DMPPo?showinfo=0"
+          }
+        },
+        {
+          "insert": "\nU2"
+        },
+        {
+          "attributes": {
+            "header": 3
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/_gQo_OIXS6c?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n\n\n"
+        }
+      ]
+    },
+    "end": 1162.8271455833333,
+    "episodeId": "hallelujah",
+    "start": 1138.9185500666665
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Mark_Twain",
-    "summary": "Mark Twain - Experimentalist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "\u00a0"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Alan_Light"
+          },
+          "insert": "Alan Light"
+        },
+        {
+          "insert": " wrote a book about the song song Allelujah: "
+        },
+        {
+          "attributes": {
+            "link": "https://www.amazon.com/gp/product/1451657854/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=abuiles-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1451657854&linkId=54a1775263060588c60cf807aadaa883"
+          },
+          "insert": "The Holy or the Broken: Leonard Cohen, Jeff Buckley, and the Unlikely Ascent of \"Hallelujah"
+        },
+        {
+          "insert": "\"\n\n\n"
+        }
+      ]
+    },
+    "end": 1229.99443424214,
+    "episodeId": "hallelujah",
+    "start": 1194.7945935223652
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Paul_C%C3%A9zanne",
-    "summary": "Paul Cézanne - Experimentalist",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "Bob Dylan asked Leonard how long it took him to write Hallelujah and he lied saying \"2 years\". Leonard asked him how long did it take him to write \"I and I\" and Dylan said: \"oh, like 15 minutes\"."
+        },
+        {
+          "attributes": {
+            "header": 3
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://open.spotify.com/track/4gE7FaS7lkB44bqWkbJejw"
+          }
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1309.394074956633,
+    "episodeId": "hallelujah",
+    "start": 1278.394215231831
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Ambroise_Vollard",
-    "summary": "Ambroise Vollard (Cézanne art dealer)",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "Leonard Cohen spent 5 years writing allelujah"
+        },
+        {
+          "attributes": {
+            "blockquote": true
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1325.3940025565305,
+    "episodeId": "hallelujah",
+    "start": 1322.5940152265487
   },
   {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/17:24",
-    "summary": "Cézanne portrait of Ambroise Vollard took a hundred sittings",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "color": "#474b4e"
+          },
+          "insert": "[Allelujah] is so hyperserious that it's almost satire."
+        },
+        {
+          "attributes": {
+            "blockquote": true
+          },
+          "insert": "\n"
+        },
+        {
+          "attributes": {
+            "color": "#474b4e",
+            "link": "http://krick.3feetunder.com/hallelujah/"
+          },
+          "insert": "Michael Barthel on Alle"
+        },
+        {
+          "insert": "lujah"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1382.1937455361676,
+    "episodeId": "hallelujah",
+    "start": 1370.9937962162392
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Leonard_Cohen",
-    "summary": "Leonard Cohen",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/John_Cale"
+          },
+          "insert": "John Cale"
+        },
+        {
+          "insert": " (from the\u00a0"
+        },
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/The_Velvet_Underground"
+          },
+          "insert": "The Velvet Underground"
+        },
+        {
+          "insert": ") listens to Allelujah while Cohen is playing it. He likes it and asks Cohen to send him the lyrics.\n\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/DinEKqtCDkg?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1459.1933971106755,
+    "episodeId": "hallelujah",
+    "start": 1435.793502995825
   },
   {
-    "kind": "linkk",
-    "url": "https://en.wikipedia.org/wiki/Hallelujah_(Leonard_Cohen_song)",
-    "summary": "Hallelujah",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": "\u00a0A woman called \"Jeanne\" had a copy of \""
+        },
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/I%27m_Your_Fan"
+          },
+          "insert": "I'm your fan\" "
+        },
+        {
+          "insert": "who was good\u00a0friend with"
+        },
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/Grace_(Jeff_Buckley_album)"
+          },
+          "insert": " "
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Grace_(Jeff_Buckley_album)"
+          },
+          "insert": "Jeff Buckle"
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Jeff_Buckley"
+          },
+          "insert": "y"
+        },
+        {
+          "insert": ". He sees the CD, plays it and decides to do his own version. Then he performs his version in "
+        },
+        {
+          "attributes": {
+            "color": "#0077cc",
+            "link": "https://en.wikipedia.org/wiki/Sin-%C3%A9"
+          },
+          "insert": "Sin-\u00e9 (a bar in the East Villag"
+        },
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/Sin-%C3%A9"
+          },
+          "insert": "e)"
+        },
+        {
+          "insert": " where he's heard by an executive from columbia records, ending in his only album: "
+        },
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/Grace_(Jeff_Buckley_album)"
+          },
+          "insert": "Grace"
+        },
+        {
+          "insert": ".\n\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/y8AWFf7EAc4?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 1583.5928341998806,
+    "episodeId": "hallelujah",
+    "start": 1539.9930314901594
   },
   {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Alan_Light",
-    "summary": "Alan Light",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "attributes": {
+            "link": "https://en.wikipedia.org/wiki/Shipbuilding_(song)"
+          },
+          "insert": "Shipbuilding"
+        },
+        {
+          "attributes": {
+            "header": 2
+          },
+          "insert": "\n"
+        },
+        {
+          "insert": "\n"
+        },
+        {
+          "insert": {
+            "video": "https://www.youtube.com/embed/fprYfInkErg?showinfo=0"
+          }
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 308.7986026780267,
+    "episodeId": "hallelujah",
+    "start": 298.3986497380932
   },
   {
-    "kind": "book",
-    "url": "http://amzn.to/2agOkag",
-    "summary": "The Holy or the Broken: Leonard Cohen, Jeff Buckley, and the Unlikely Ascent of \"Hallelujah\"",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/21:10",
-    "summary": "Bob Dylan asked Leonard how long it took him to write Hallelujah and he lied saying \"2 years\". Leonard asked him how long did it take him to write \"I and I\" and Dylan said: \"oh, like 15 minutes\".",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Bob_Dylan",
-    "summary": "Bob Dylan",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://open.spotify.com/track/4gE7FaS7lkB44bqWkbJejw",
-    "summary": "I and I - Bob Dylan",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/23:55",
-    "summary": "John Cale listens to Allelujah while Cohen is playing it. He likes it and asks Cohen to send him the lyrics.",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/John_Cale",
-    "summary": "John Cale",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://en.wikipedia.org/wiki/The_Velvet_Underground",
-    "summary": "The Velvet Underground",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/25:50",
-    "summary": "A woman called \"Jeanne\" had a copy of \"I'm your fan\" who was good friend with Jeff Buckley. He sees the CD, plays it and decides to do his own version.",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "person",
-    "url": "https://en.wikipedia.org/wiki/Jeff_Buckley",
-    "summary": "Jeff Buckley",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://en.wikipedia.org/wiki/Sin-%C3%A9",
-    "summary": "Sin-é - Bar in the East Village",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://www.youtube.com/watch?v=y8AWFf7EAc4",
-    "summary": "Jeff Buckley - Hallelujah",
-    "time": "",
-    "episodeId": "hallelujah"
-  },
-  {
-    "kind": "link",
-    "url": "https://overcast.fm/+Gsa0SmddU/35:25",
-    "summary": "Without the obsessives and the perpetually dissatisfied, and the artist who go back over and over again, repainting what other see as finished, we would never have seen the beauty of deportee.",
-    "time": "",
-    "episodeId": "hallelujah"
+    "deltas": {
+      "ops": [
+        {
+          "insert": {
+            "video": "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=abuiles-20&marketplace=amazon&region=US&placement=0691133808&asins=0691133808&linkId=2d754d14028e6836d9e5fc9ff435fb4d&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"
+          }
+        },
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "end": 234.7389378,
+    "episodeId": "hallelujah",
+    "start": 28.25561288333333
   },
   {
     "kind": "link",
