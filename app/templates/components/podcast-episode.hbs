@@ -36,11 +36,29 @@
   <div class="flex flex-wrap content-start border">
     {{#each sortedReferences as |reference|}}
       {{#if reference.deltas}}
-        {{text-editor
+        {{#text-editor
           deltas=reference.deltas
           readOnly=true
           class="col-4 border"
         }}
+          <div class="toolbar ql-snow">
+            <span class="ql-formats">
+              <a><i class="fa fa-play" aria-hidden="true"></i></a>
+            </span>
+            <span class="ql-formats">
+              <a class=""
+                 href="https://facebook.com">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                Share on facebook
+              </a>
+              <a class="twitter-share-button"
+                 href="https://twitter.com/intent/tweet?text=Hello%20world">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                Tweet
+              </a>
+            </span>
+          </div>
+        {{/text-editor}}
       {{else}}
         <div class="col-4 border mt6 p4">
           {{#if (eq reference.kind "person")}}

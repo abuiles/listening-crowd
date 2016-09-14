@@ -9,9 +9,9 @@ export default Ember.Component.extend({
   },
   references: Ember.computed.filterBy('model.references', 'isNew', false),
   sortedReferences: Ember.computed.sort('references', function(a,b) {
-    if (a.get('start') > b.get('starts')) {
+    if (a.get('start') > b.get('start')) {
       return 1;
-    } else if (a.get('start') < b.get('starts')) {
+    } else if (a.get('start') < b.get('start')) {
       return -1;
     }
 
