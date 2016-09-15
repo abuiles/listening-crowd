@@ -12,6 +12,12 @@
           <p class="mt1 mb3">Podcasts distilled</p>
         </div>
       </div>
+      {{#if session.isAuthenticated}}
+        <h3>You are currently logged as: {{session.data.authenticated.profile.email}}</h3>
+        <a {{ action "logout" }}>Logout</a>
+      {{else}}
+        <a {{ action "login" }}>Login</a>
+      {{/if}}
       <div id="side-content">
       </div>
     </sidebar>

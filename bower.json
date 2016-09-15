@@ -9,7 +9,9 @@
     "Faker": "~3.1.0",
     "plyr": "abuiles/plyr#use-forEach",
     "juration": "*",
-    "wavesurfer.js": "katspaugh/wavesurfer.js#master"
+    "wavesurfer.js": "katspaugh/wavesurfer.js#master",
+    "auth0-lock": "^7.10.2",
+    "jsrsasign": "^5.0.1"
   },
   "resolutions": {
     "ember": "canary"

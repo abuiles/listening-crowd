@@ -20,6 +20,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "auth0-ember-simple-auth": "git://github.com/auth0/auth0-ember-simple-auth.git#da157a737e534f8881a82420237c2b4ee9f144d0",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
     "ember-browserify": "1.1.12",
@@ -44,6 +45,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-pagefront": "0.11.1",
     "ember-resolver": "^2.0.3",
+    "ember-simple-auth": "1.1.0",
     "ember-tether": "0.3.1",
     "ember-truncate": "0.1.3",
     "ember-truth-helpers": "1.2.0",

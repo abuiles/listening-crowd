@@ -44,5 +44,16 @@ module.exports = function(environment) {
     };
   }
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'index',
+    routeAfterAuthentication: 'index',
+    routeIfAlreadyAuthenticated: 'index'
+  };
+
+  ENV['auth0-ember-simple-auth'] = {
+    clientID: "C0w5wRMTjDHHrefy0ObWhYNzhU1f5CQz",
+    domain: "llc-dev.auth0.com"
+  };
+
   return ENV;
 };
