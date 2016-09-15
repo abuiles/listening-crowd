@@ -15,6 +15,9 @@ Router.map(function() {
       });
     });
   });
+  this.route('profile');
+  this.route('login');
+  this.route('protected');
 });
 
 export default Router;

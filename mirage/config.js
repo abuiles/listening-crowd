@@ -31,7 +31,8 @@ export default function() {
   this.passthrough(
     'https://podzy.herokuapp.com/**',
     'http://ia902606.us.archive.org/**',
-    '/waveforms.json'
+    '/waveforms.json',
+    'https://llc-dev.auth0.com/**'
   );
 
   $.getJSON('/waveforms.json').then((data) => {
