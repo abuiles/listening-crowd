@@ -15,7 +15,7 @@
       startAt=at
     }}
     <div class="mt1">
-      {{#liquid-if reference}}
+      {{#liquid-if annotation}}
         <form class="mt2 mb2">
           <div class="flex-auto center m1 p1 border border-lime">
             <h3>New annotation</h3>
@@ -23,7 +23,7 @@
             <p> Double click outside region to dismiss</p>
           </div>
           {{text-editor
-            textChanged=(action (mut reference.deltas))
+            textChanged=(action (mut annotation.deltas))
             class="text-editor-container"
           }}
         </form>
@@ -35,16 +35,16 @@
 <div class="p1">
   <h3>Community Annotations</h3>
   <div class="flex flex-wrap content-start border">
-    {{#each sortedReferences as |reference|}}
-      {{#if reference.deltas}}
+    {{#each sortedAnnotations as |annotation|}}
+      {{#if annotation.deltas}}
         {{#text-editor
-           deltas=reference.deltas
+           deltas=annotation.deltas
            readOnly=true
            class="col-4 mt2 mb2"
         }}
           <div class="toolbar ql-snow">
             <span class="ql-formats">
-              {{#link-to "podcasts.show.episode" model.podcast model (query-params at=reference.start)}}
+              {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
                 <i class="fa fa-play" aria-hidden="true"></i>
               {{/link-to}}
             </span>
@@ -64,27 +64,27 @@
         {{/text-editor}}
       {{else}}
         <div class="col-4 border mt6 p4">
-          {{#if (eq reference.kind "person")}}
+          {{#if (eq annotation.kind "person")}}
             <i class="fa fa-user" aria-hidden="true"></i>
-            {{#if reference.wikiLink }}
+            {{#if annotation.wikiLink }}
               <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
             {{/if}}
-            {{ else if (eq reference.kind "book") }}
+            {{ else if (eq annotation.kind "book") }}
             <i class="fa fa-book" aria-hidden="true"></i>
-            {{ else if reference.wikiLink }}
+            {{ else if annotation.wikiLink }}
             <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
-            {{ else if  reference.youtubeVideo}}
+            {{ else if  annotation.youtubeVideo}}
             <i class="fa fa-youtube" aria-hidden="true"></i>
           {{else}}
             <i class="fa fa-link" aria-hidden="true"></i>
           {{/if}}
-          {{#if reference.youtubeVideo}}
-            <p>{{reference.summary}}</p>
+          {{#if annotation.youtubeVideo}}
+            <p>{{annotation.summary}}</p>
             {{#plyr-player mediaTag="div"}}
-              <div data-type="youtube" data-video-id={{reference.youtubeVideo}}></div>
+              <div data-type="youtube" data-video-id={{annotation.youtubeVideo}}></div>
             {{/plyr-player}}
           {{else}}
-            <a href={{reference.url}}>{{reference.summary}}</a>
+            <a href={{annotation.url}}>{{annotation.summary}}</a>
           {{/if}}
         </div>
       {{/if}}

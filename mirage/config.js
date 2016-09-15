@@ -45,15 +45,15 @@ export default function() {
 
   this.db.episodes.forEach((episode) => {
     let item = window.localStorage.getItem(episode.id);
-    let references;
+    let annotations;
 
     if (item) {
-      references = JSON.parse(item);
+      annotations = JSON.parse(item);
     } else {
-      references = [];
+      annotations = [];
     }
 
-    references.forEach((ref) => {
+    annotations.forEach((ref) => {
       this.create('reference', ref);
     });
   });
@@ -74,8 +74,8 @@ export default function() {
   this.get('/waveforms');
   this.get('/waveforms/:id');
 
-  this.get('/references');
-  this.get('/references/:id');
-  this.post('/references');
-  this.patch('/references/:id');
+  this.get('/annotations');
+  this.get('/annotations/:id');
+  this.post('/annotations');
+  this.patch('/annotations/:id');
 }

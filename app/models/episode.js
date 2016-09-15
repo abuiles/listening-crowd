@@ -14,15 +14,10 @@ export default DS.Model.extend({
   guid: DS.attr(),
   podcast: DS.belongsTo('podcast'),
   waveform: DS.belongsTo('waveform'),
-  references: DS.hasMany('references'),
-  groupedReferences: Ember.computed('refences.[]', {
+  annotations: DS.hasMany('annotations'),
+  groupedAnnotations: Ember.computed('annotations.[]', {
     get() {
-      return this.get('references').reduce(function(mem, item) {
-        mem[item.get('kind')] = mem[item.get('kind')] || [];
-        mem[item.get('kind')].push(item);
-
-        return mem;
-      }, {});
+      return {};
     }
   }).readOnly(),
   podzyUrl: Ember.computed('enclosure.url', {

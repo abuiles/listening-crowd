@@ -7,8 +7,8 @@ export default Ember.Component.extend({
     this.set('currentTime', 0);
     this.set('feedbackLoop', 10);
   },
-  references: Ember.computed.filterBy('model.references', 'isNew', false),
-  sortedReferences: Ember.computed.sort('references', function(a,b) {
+  annotations: Ember.computed.filterBy('model.annotations', 'isNew', false),
+  sortedAnnotations: Ember.computed.sort('annotations', function(a,b) {
     if (a.get('start') > b.get('start')) {
       return 1;
     } else if (a.get('start') < b.get('start')) {
@@ -23,11 +23,11 @@ export default Ember.Component.extend({
   },
   regionCreated(region) {
     if (!this.get('region')) {
-      let reference = this.get('model').get('references').createRecord({
+      let annotation = this.get('model').get('annotations').createRecord({
         episode: this.get('model')
         // timestamp: currentTime
       });
-      this.set('reference', reference);
+      this.set('annotation', annotation);
     }
     this.set('region', Ember.Object.create(region));
   },
@@ -41,45 +41,45 @@ export default Ember.Component.extend({
       let region = this.get('region');
       this.get('player').regions.list[region.get('id')].remove();
       this.setProperties({
-        reference: null,
+        annotation: null,
         region: null
       });
     }
   },
   save() {
-    let reference = this.get('reference');
+    let annotation = this.get('annotation');
     let region = this.get('region');
-    reference.setProperties({
+    annotation.setProperties({
       start: region.get('start'),
       end: region.get('end')
     });
-    reference.save().then(() =>  {
+    annotation.save().then(() =>  {
       this.setProperties({
-        reference: null,
+        annotation: null,
         region: null
       });
-      this.saveLocally(this.get('model.id'), reference);
+      this.saveLocally(this.get('model.id'), annotation);
 
       this.get('player').regions.list[region.get('id')].remove();
     });
 
     return false;
   },
-  saveLocally(id, reference) {
+  saveLocally(id, annotation) {
     let item = window.localStorage.getItem(id);
-    let references;
+    let annotations;
 
     if (item) {
-      references = JSON.parse(item);
+      annotations = JSON.parse(item);
     } else {
-      references = [];
+      annotations = [];
     }
 
-    let payload = reference.getProperties('end', 'start', 'deltas');
+    let payload = annotation.getProperties('end', 'start', 'deltas');
 
-    payload.episodeId = reference.get('episode.id');
-    references.push(payload);
-    window.localStorage.setItem(id, JSON.stringify(references));
+    payload.episodeId = annotation.get('episode.id');
+    annotations.push(payload);
+    window.localStorage.setItem(id, JSON.stringify(annotations));
   },
   play(start) {
     if (this.get('player')) {
