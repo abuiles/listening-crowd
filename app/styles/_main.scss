@@ -1,9 +1,11 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
 sidebar {
-  @include flex(1 1 3/12*100%);
-  background-color: rgba(51,51,51,0.05);
+  @include flex(1 1 2/12*100%);
 }
 main {
-  @include flex(1 1 9/12*100%);
+  @include flex(1 1 10/12*100%);
 }
 
 [data-ember-action]:not(:disabled) {
@@ -16,4 +18,23 @@ main {
 
 .text-preview {
   height: 200px;
+}
+// masonry layout
+.mcc--3 {
+  column-count: 1;
+  column-gap: 0;
+}
+.mcard {
+  break-inside: avoid;
+}
+
+@media (min-width: 768px) {
+  .mcc--3 {
+    column-count: 2;
+  }
+}
+@media (min-width: 1200px) {
+  .mcc--3 {
+    column-count: 3;
+  }
 }

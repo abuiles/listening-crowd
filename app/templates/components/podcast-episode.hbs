@@ -1,93 +1,77 @@
-<div class="flex p1">
+<div class="flex">
   <div class="flex-auto">
-    <h2><a href={{model.podcast.link}}>{{model.title}}</a></h2>
-    {{lc-player
-      src=model.podzyUrl
-      waveformData=model.waveform.points
-      registerPlayer=(action (mut player))
-      unregisterPlayer=(action (mut player null))
-      timeupdate=(action timeupdate)
-      regionCreated=(action regionCreated)
-      regionUpdated=(action regionUpdated)
-      deleteRegion=(action deleteRegion)
-      region=region
-      feedbackLoop=feedbackLoop
-      startAt=at
-    }}
-    <div class="mt1">
-      {{#liquid-if annotation}}
-        <form class="mt2 mb2">
-          <div class="flex-auto center m1 p1 border border-lime">
-            <h3>New annotation</h3>
-            <button class="btn" {{action save}}>Save</button>
-            <p> Double click outside region to dismiss</p>
-          </div>
+
+    <div class="container bgc--t">
+      <div class="pt3 pb3">
+        {{lc-player
+          src=model.podzyUrl
+          waveformData=model.waveform.points
+          registerPlayer=(action (mut player))
+          unregisterPlayer=(action (mut player null))
+          timeupdate=(action timeupdate)
+          regionCreated=(action regionCreated)
+          regionUpdated=(action regionUpdated)
+          deleteRegion=(action deleteRegion)
+          region=region
+          feedbackLoop=feedbackLoop
+          startAt=at
+        }}
+      </div>
+    </div>
+
+    <div class="container mt3">
+      {{#liquid-if reference}}
+        <form class="card-editor">
           {{text-editor
-            textChanged=(action (mut annotation.deltas))
-            class="text-editor-container"
+            textChanged=(action (mut reference.deltas))
+            class=""
           }}
+          <div class="tc mt3">
+            <button class="btn link f--h dim ph4 pv2 dib white bg-mid-gray" {{action save}}>Save Annotation</button>
+          </div>
         </form>
       {{/liquid-if}}
-      <p>{{{model.summary}}}</p>
-    </div>
-  </div>
-</div>
-<div class="p1">
-  <h3>Community Annotations</h3>
-  <div class="flex flex-wrap content-start border">
-    {{#each sortedAnnotations as |annotation|}}
-      {{#if annotation.deltas}}
-        {{#text-editor
-           deltas=annotation.deltas
-           readOnly=true
-           class="col-4 mt2 mb2"
-        }}
-          <div class="toolbar ql-snow">
-            <span class="ql-formats">
-              {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
-                <i class="fa fa-play" aria-hidden="true"></i>
-              {{/link-to}}
-            </span>
-            <span class="ql-formats">
-              <a class=""
-                 href="https://facebook.com">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                Share on facebook
-              </a>
-              <a class="twitter-share-button"
-                 href="https://twitter.com/intent/tweet?text=Hello%20world">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                Tweet
-              </a>
-            </span>
-          </div>
-        {{/text-editor}}
-      {{else}}
-        <div class="col-4 border mt6 p4">
-          {{#if (eq annotation.kind "person")}}
-            <i class="fa fa-user" aria-hidden="true"></i>
-            {{#if annotation.wikiLink }}
-              <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
-            {{/if}}
-            {{ else if (eq annotation.kind "book") }}
-            <i class="fa fa-book" aria-hidden="true"></i>
-            {{ else if annotation.wikiLink }}
-            <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
-            {{ else if  annotation.youtubeVideo}}
-            <i class="fa fa-youtube" aria-hidden="true"></i>
-          {{else}}
-            <i class="fa fa-link" aria-hidden="true"></i>
-          {{/if}}
-          {{#if annotation.youtubeVideo}}
-            <p>{{annotation.summary}}</p>
-            {{#plyr-player mediaTag="div"}}
-              <div data-type="youtube" data-video-id={{annotation.youtubeVideo}}></div>
-            {{/plyr-player}}
-          {{else}}
-            <a href={{annotation.url}}>{{annotation.summary}}</a>
-          {{/if}}
+      <div class="mt3 f0">
+        <div class="dib w-100 w-25-l v-mid pr4-l">
+          <img class="ba b--near-white db" src="http://panoply-prod.s3.amazonaws.com/podcasts/1427a2f4-2674-11e6-a3d7-cf7ee2a2c03c/image/uploads_2F1464956596674-zye6snpaow-1199f5fc375124c66575217a8ac7dbd1_2FPodcast%2BArtwork%2B-%2BNo%2BShadow.jpeg">
         </div>
-      {{/if}}
-    {{/each}}
+        <div class="dib w-100 w-75-l v-mid f5">
+          <h1 class="mt0"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
+          <p class="mb0">{{{model.summary}}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="mcc--3">
+        {{#each sortedReferences as |reference|}}
+          <div class="mcard pa2-ns pb-2">
+            <div class="cf bg-near-white">
+              {{#if reference.deltas}}
+                {{#text-editor
+                   deltas=reference.deltas
+                   readOnly=true
+                   class="f6"
+                }}
+                  <div class="toolbar bb b--white pa4 pt2 pb2">
+                    {{#link-to "podcasts.show.episode" model.podcast model (query-params at=reference.start)}}
+                      <i class="fa fa-play" aria-hidden="true"></i>
+                    {{/link-to}}
+                    <div class="fr">
+                      <a class="social-link f6 mr3" href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i> Share
+                      </a>
+                      <a class="social-link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                      </a>
+                    </div>
+                  </div>
+                {{/text-editor}}
+              {{/if}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
   </div>
 </div>

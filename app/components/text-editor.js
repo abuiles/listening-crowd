@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     ];
 
     let options = {
-      theme: 'snow'
+
     };
 
     if (this.get('readOnly')) {
@@ -28,6 +28,7 @@ export default Ember.Component.extend({
       };
       options.readOnly = true;
     } else {
+      options.theme = 'snow';
       options.modules = {
         toolbar: toolbarOptions,
         history: {

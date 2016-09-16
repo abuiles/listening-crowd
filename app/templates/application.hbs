@@ -1,27 +1,29 @@
+<nav class="dt w-100 border-box bb b--near-white pa3 pr5">
+  <a class="dtc v-mid mid-gray link dim w-25" href="#" title="Home">
+    <div class="dib cf">
+      <img src="http://www.clker.com/cliparts/3/0/c/8/1365225091802081299Soundwave Audio.svg.thumb.png" class="w3 dib mr2" alt="Site Name">
+      <div class="dib">
+        <h3 class="ma0">{{link-to "The Listening Crowd" "index"}}</h3>
+        <p class="ma0">Podcasts distilled</p>
+      </div>
+    </div>
+  </a>
+  <div class="dtc v-mid w-75 tr">
+    {{#if session.isAuthenticated}}
+      <p>You are currently logged as: {{session.data.authenticated.profile.email}}</p>
+      <a class="link dim dark-gray f6 f5-ns dib" {{ action "logout" }}>Logout</a>
+    {{else}}
+      <a class="link dim dark-gray f6 f5-ns dib" {{ action "login" }}>Login</a>
+    {{/if}}
+  </div>
+</nav>
 <div class="flex flex-column" style="min-height: 100vh;">
   <div class="flex" style="flex:1;">
-    <sidebar class="pr2 pl2 pt2">
-      <div class="flex">
-      <div class="">
-          <a href="http://www.clker.com/cliparts/3/0/c/8/1365225091802081299Soundwave Audio.svg.thumb.png">
-            <img src='http://www.clker.com/cliparts/3/0/c/8/1365225091802081299Soundwave Audio.svg.thumb.png' alt='Soundwave Audio clip art'/>
-          </a>
-        </div>
-        <div class="flex-auto ml1">
-          <h1 class="h2 m0">{{link-to "The Listening Crowd" "index"}}</h1>
-          <p class="mt1 mb3">Podcasts distilled</p>
-        </div>
-      </div>
-      {{#if session.isAuthenticated}}
-        <h3>You are currently logged as: {{session.data.authenticated.profile.email}}</h3>
-        <a {{ action "logout" }}>Logout</a>
-      {{else}}
-        <a {{ action "login" }}>Login</a>
-      {{/if}}
+    <sidebar class="pa3 bg-near-white dn db-l">
       <div id="side-content">
       </div>
     </sidebar>
-    <main class="pl4 pr4 pt2" role="main">
+    <main class="pa3 pr5-l pl5-l" role="main">
       {{liquid-outlet}}
     </main>
   </div>

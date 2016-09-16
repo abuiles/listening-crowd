@@ -4,9 +4,9 @@
      targetAttachment='top left'
      attachment='top left'
   }}
-    <img class="p1" src={{model.itunesImage}} style="width: 200px;">
+    {{!-- <img class="p1" src={{model.itunesImage}} style="width: 200px;"> --}}
+    <h4>{{model.title}}</h4>
     <ul>
-      <li>{{model.title}}</li>
       {{#each model.episodes as |episode|}}
         <li>
           {{link-to episode.title "podcasts.show.episode" model episode}}
