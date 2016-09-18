@@ -1,0 +1,26 @@
+.card-editor {
+  .editor {
+    height: 200px;
+  }
+}
+.mcard {
+  .toolbar {
+
+  }
+  .ql-editor {
+    padding: 32px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.375em;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Slab', serif;
+    }
+    ul {
+      padding-left:10px;
+    }
+    blockquote {
+      border-left: 3px #777 solid;
+      padding: 5px 0 5px 10px;
+      font-style: italic;
+    }
+  }
+}

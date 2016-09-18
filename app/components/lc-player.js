@@ -19,13 +19,14 @@ export default Ember.Component.extend({
     let promise = new Ember.RSVP.Promise((resolve, reject) => {
       const wavesurfer = Wavesurfer.create({
         backend: 'MediaElement',
-        barWidth: 2,
+        barWidth: 1,
         container: '#waveform',
         fillParent: true,
         hideScrollbar: false,
         normalize: true,
-        progressColor: 'purple',
-        waveColor: 'red'
+        progressColor: '#fff',
+        waveColor: '#274c5e',
+        cursorColor: '#fff'
       });
 
       wavesurfer.load(src, this.get('waveformData'));

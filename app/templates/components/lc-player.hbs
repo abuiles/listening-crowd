@@ -1,19 +1,20 @@
 <div id="waveform"></div>
 <div id="waveform-timeline"></div>
 
-<div style="text-align: center">
-  <p>{{currentTime}}</p>
-  <button class="btn btn-primary" onclick={{action play}}>
+<div class="mt3">
+  {{!-- replace 30:00 with total time --}}
+  <p class="white fr">{{currentTime}} / 30:00</p>
+  <button class="btn f6 link dim br2 ph3 pv2 dib bg-white mr3" onclick={{action play}}>
     <i class="glyphicon glyphicon-play"></i>
     {{if playing "Stop" "Play"}}
   </button>
   {{#if region}}
-    <button class="btn btn-outline btn-small" onclick={{action playAt region.start region.end }}>
+    <button class="btn f6 link dim br2 ph3 pv2 dib bg-white h" onclick={{action playAt region.start region.end }}>
       Restart
     </button>
   {{/if}}
 
-  <p class="row">
+  <p class="row dn">
     <div class="col-xs-1">
       <i class="glyphicon glyphicon-zoom-in"></i>
     </div>
