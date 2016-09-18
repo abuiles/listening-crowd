@@ -31,5 +31,19 @@ export default DS.Model.extend({
       let url = this.get('enclosure.url');
       return `https://podzy.herokuapp.com/${url}`;
     }
+  }).readOnly(),
+  waveformDataUrl: Ember.computed('slug', 'podcast.slug', {
+    get() {
+      let podcastSlug = this.get('podcast.slug');
+      let slug = this.get('slug');
+      return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform.json`;
+    }
+  }).readOnly(),
+  waveformImage: Ember.computed('slug', 'podcast.slug', {
+    get() {
+      let podcastSlug = this.get('podcast.slug');
+      let slug = this.get('slug');
+      return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform.png`;
+    }
   }).readOnly()
 });

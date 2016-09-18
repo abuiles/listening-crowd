@@ -3,19 +3,23 @@
 
     <div class="container bgc--t">
       <div class="pt3 pb3">
-        {{lc-player
-          src=model.podzyUrl
-          waveformData=model.waveform.points
-          registerPlayer=(action (mut player))
-          unregisterPlayer=(action (mut player null))
-          timeupdate=(action timeupdate)
-          regionCreated=(action regionCreated)
-          regionUpdated=(action regionUpdated)
-          deleteRegion=(action deleteRegion)
-          region=region
-          feedbackLoop=feedbackLoop
-          startAt=at
-        }}
+        {{#if waveformData}}
+          {{lc-player
+            src=model.podzyUrl
+            waveformData=waveformData
+            registerPlayer=(action (mut player))
+            unregisterPlayer=(action (mut player null))
+            timeupdate=(action timeupdate)
+            regionCreated=(action regionCreated)
+            regionUpdated=(action regionUpdated)
+            deleteRegion=(action deleteRegion)
+            region=region
+            feedbackLoop=feedbackLoop
+            startAt=at
+          }}
+        {{else}}
+          <img src={{model.waveformImage}}>
+        {{/if}}
       </div>
     </div>
 
