@@ -1,5 +1,47 @@
+$tt-primary: #333 !default;
+$tt-secondary: #274c5e;
+$bg-primary: #7f9eb2;
+$bg-secondary: #77919d;
+$bg-tertiaty: #274c5e;
+
+// resets
 body {
+  font-size: 16px;
+}
+body, .f--b {
   font-family: 'Roboto', sans-serif;
+  line-height: 1.375em;
+}
+h1, h2, h3, h4, h5, h6, .f--h {
+  font-family: 'Roboto Slab', serif;
+}
+a {
+  color: $tt-secondary;
+}
+[data-ember-action]:not(:disabled) {
+  cursor: pointer;
+}
+
+// utilities
+.bgc--p {
+  background-color: $bg-primary;
+}
+.bgc--s {
+  background-color: $bg-secondary;
+}
+.bgc--t {
+  background-color: $bg-tertiaty;
+}
+.btn {
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+}
+
+// layout
+.container {
+  padding: $spacing-medium $spacing-large;
 }
 sidebar {
   @include flex(1 1 2/12*100%);
@@ -8,17 +50,18 @@ main {
   @include flex(1 1 10/12*100%);
 }
 
-[data-ember-action]:not(:disabled) {
-  cursor: pointer;
-}
 
-.text-preview {
-  height: 200px;
+
+// episode
+.social-link {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }
-// masonry layout
 .mcc--3 {
   column-count: 1;
   column-gap: 0;
+  margin-right: -8px;
+  margin-left: -8px;
 }
 .mcard {
   break-inside: avoid;

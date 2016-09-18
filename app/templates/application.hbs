@@ -1,4 +1,4 @@
-<nav class="dt w-100 border-box bb b--near-white pa3 pr5">
+<nav class="dt w-100 border-box bb b--near-white pa3 pr4 pl4">
   <a class="dtc v-mid mid-gray link dim w-25" href="#" title="Home">
     <div class="dib cf">
       <img src="http://www.clker.com/cliparts/3/0/c/8/1365225091802081299Soundwave Audio.svg.thumb.png" class="w3 dib mr2" alt="Site Name">
@@ -9,6 +9,7 @@
     </div>
   </a>
   <div class="dtc v-mid w-75 tr">
+    <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">About</a>
     {{#if session.isAuthenticated}}
       <p>You are currently logged as: {{session.data.authenticated.profile.email}}</p>
       <a class="link dim dark-gray f6 f5-ns dib" {{ action "logout" }}>Logout</a>
@@ -19,11 +20,13 @@
 </nav>
 <div class="flex flex-column" style="min-height: 100vh;">
   <div class="flex" style="flex:1;">
-    <sidebar class="pa3 bg-near-white dn db-l">
-      <div id="side-content">
+    <sidebar class="bg-light-gray">
+      <div class="pa3 pl4">
+        <div id="side-content">
+        </div>
       </div>
     </sidebar>
-    <main class="pa3 pr5-l pl5-l" role="main">
+    <main role="main">
       {{liquid-outlet}}
     </main>
   </div>
