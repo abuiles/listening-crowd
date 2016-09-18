@@ -2,8 +2,8 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
-  kind: DS.attr('string'),
-  url: DS.attr('string'),
+  // kind: DS.attr('string'),
+  // url: DS.attr('string'),
   start: DS.attr('number'),
   end: DS.attr('number'),
   // timestampPretty: Ember.computed('timestamp', {
@@ -17,7 +17,7 @@ export default DS.Model.extend({
   //   }
   // }).readOnly(),
   deltas: DS.attr(),
-  summary : DS.attr('string'),
+  // summary : DS.attr('string'),
   episode: DS.belongsTo('episode'),
   wikiLink: Ember.computed('url', {
     get() {

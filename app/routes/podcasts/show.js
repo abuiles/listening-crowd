@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('podcast', params.podcast_id);
+    let id = params.podcastPermalink.split('-')[0];
+
+    return this.store.findRecord('podcast', id);
+  },
+  serialize(model) {
+    return { podcastPermalink: model.get('permalink') };
   }
 });

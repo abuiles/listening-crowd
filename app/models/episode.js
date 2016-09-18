@@ -2,6 +2,7 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
+  slug: DS.attr('string'),
   title: DS.attr('string'),
   pubDate: DS.attr('string'),
   description: DS.attr('string'),
@@ -15,6 +16,11 @@ export default DS.Model.extend({
   podcast: DS.belongsTo('podcast'),
   waveform: DS.belongsTo('waveform'),
   annotations: DS.hasMany('annotations'),
+  permalink: Ember.computed('id', 'slug', {
+    get() {
+      return `${this.get('id')}-${this.get('slug')}`;
+    }
+  }).readOnly(),
   groupedAnnotations: Ember.computed('annotations.[]', {
     get() {
       return {};
