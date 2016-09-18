@@ -42,9 +42,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV['ember-cli-mirage'] = {
-      enabled: true
-    };
   }
 
   ENV['ember-simple-auth'] = {

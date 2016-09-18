@@ -34,7 +34,8 @@ export default function() {
     '/waveforms.json',
     'https://llc-dev.auth0.com/**',
     'http://localhost:3000/v1/podcasts/**',
-    'http://localhost:3000/v1/episodes/**'
+    'http://localhost:3000/v1/episodes/**',
+    'https://pinna.herokuapp.com/v1/**'
   );
 
   $.getJSON('/waveforms.json').then((data) => {
