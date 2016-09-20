@@ -3,10 +3,7 @@
     height: 200px;
   }
 }
-.mcard {
-  .toolbar {
-
-  }
+.mboard_card {
   .ql-editor {
     padding: 32px;
     font-family: 'Roboto', sans-serif;
@@ -21,6 +18,12 @@
       border-left: 3px #777 solid;
       padding: 5px 0 5px 10px;
       font-style: italic;
+    }
+    a {
+      color: #4ea1d3;
+    }
+    a:hover, a:visited, a:active, a:focus {
+      color: darken(#4ea1d3, 25%);
     }
   }
 }

@@ -25,7 +25,7 @@ export default Ember.Component.extend({
         hideScrollbar: false,
         normalize: true,
         progressColor: '#fff',
-        waveColor: '#fff',
+        waveColor: 'rgba(255,255,255,0.3)',
         cursorColor: '#fff'
       });
 

@@ -52,6 +52,6 @@
     "liquid-fire": "envoy/liquid-fire#master",
     "loader.js": "^4.0.1",
     "prosemirror": "^0.10.0",
-    "quill": "^1.0.3"
+    "quill": "^1.0.4"
   }
 }
