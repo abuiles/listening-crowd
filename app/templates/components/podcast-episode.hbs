@@ -24,10 +24,10 @@
     </div>
 
     <div class="container mt3">
-      {{#liquid-if reference}}
+      {{#liquid-if annotation}}
         <form class="card-editor">
           {{text-editor
-            textChanged=(action (mut reference.deltas))
+            textChanged=(action (mut annotation.deltas))
             class=""
           }}
           <div class="tc mt3">
@@ -48,17 +48,17 @@
 
     <div class="container">
       <div class="mcc--3">
-        {{#each sortedAnnotations as |reference|}}
+        {{#each sortedAnnotations as |annotation|}}
           <div class="mcard pa2-ns pb-2">
             <div class="cf bg-near-white">
-              {{#if reference.deltas}}
+              {{#if annotation.deltas}}
                 {{#text-editor
-                   deltas=reference.deltas
+                   deltas=annotation.deltas
                    readOnly=true
                    class="f6"
                 }}
                   <div class="toolbar bb b--white pa4 pt2 pb2">
-                    {{#link-to "podcasts.show.episode" model.podcast model (query-params at=reference.start)}}
+                    {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
                       <i class="fa fa-play" aria-hidden="true"></i>
                     {{/link-to}}
                     <div class="fr">
