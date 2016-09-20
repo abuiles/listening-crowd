@@ -4,12 +4,12 @@
 <div class="mt3">
   {{!-- replace 30:00 with total time --}}
   <p class="white fr">{{currentTime}} / 30:00</p>
-  <button class="btn f6 link dim br2 ph3 pv2 dib bg-white mr3" onclick={{action play}}>
+  <button class="btn f6 link br2 ph3 pv2 dib bg-white mr2" onclick={{action play}}>
     <i class="glyphicon glyphicon-play"></i>
     {{if playing "Stop" "Play"}}
   </button>
   {{#if region}}
-    <button class="btn f6 link dim br2 ph3 pv2 dib bg-white h" onclick={{action playAt region.start region.end }}>
+    <button class="btn f6 link br2 ph3 pv2 dib bg-white h" onclick={{action playAt region.start region.end }}>
       Restart
     </button>
   {{/if}}

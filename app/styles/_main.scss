@@ -1,8 +1,8 @@
-$tt-primary: #333 !default;
-$tt-secondary: #274c5e;
-$bg-primary: #7f9eb2;
-$bg-secondary: #77919d;
-$bg-tertiaty: #274c5e;
+$tt-primary: #333;
+$tt-secondary: #4ea1d3;
+$bg-primary: #d8e9ef;
+$bg-secondary: #454552;
+$bg-tertiary: #4ea1d3;
 
 // resets
 body {
@@ -18,6 +18,9 @@ h1, h2, h3, h4, h5, h6, .f--h {
 a {
   color: $tt-secondary;
 }
+a:hover, a:active, a:focus {
+  color: darken($tt-secondary, 25%);
+}
 [data-ember-action]:not(:disabled) {
   cursor: pointer;
 }
@@ -30,13 +33,14 @@ a {
   background-color: $bg-secondary;
 }
 .bgc--t {
-  background-color: $bg-tertiaty;
+  background-color: $bg-tertiary;
 }
 .btn {
   border: none;
   border-radius: 3px;
   text-transform: uppercase;
   font-family: 'Roboto Slab', serif;
+  cursor: pointer;
 }
 
 // layout
@@ -50,30 +54,23 @@ main {
   @include flex(1 1 10/12*100%);
 }
 
-
-
 // episode
-.social-link {
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-}
-.mcc--3 {
+.mboard {
   column-count: 1;
   column-gap: 0;
   margin-right: -8px;
   margin-left: -8px;
 }
-.mcard {
+.mboard_card {
   break-inside: avoid;
 }
-
-@media (min-width: 768px) {
-  .mcc--3 {
+@media #{$breakpoint-medium} {
+  .mboard {
     column-count: 2;
   }
 }
-@media (min-width: 1200px) {
-  .mcc--3 {
+@media #{$breakpoint-large} {
+  .mboard {
     column-count: 3;
   }
 }

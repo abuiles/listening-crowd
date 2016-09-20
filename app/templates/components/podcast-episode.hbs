@@ -3,23 +3,19 @@
 
     <div class="container bgc--t">
       <div class="pt3 pb3">
-        {{#if waveformData}}
-          {{lc-player
-            src=model.podzyUrl
-            waveformData=waveformData
-            registerPlayer=(action (mut player))
-            unregisterPlayer=(action (mut player null))
-            timeupdate=(action timeupdate)
-            regionCreated=(action regionCreated)
-            regionUpdated=(action regionUpdated)
-            deleteRegion=(action deleteRegion)
-            region=region
-            feedbackLoop=feedbackLoop
-            startAt=at
-          }}
-        {{else}}
-          <img src={{model.waveformImage}}>
-        {{/if}}
+        {{lc-player
+          src=model.podzyUrl
+          waveformData=waveformData
+          registerPlayer=(action (mut player))
+          unregisterPlayer=(action (mut player null))
+          timeupdate=(action timeupdate)
+          regionCreated=(action regionCreated)
+          regionUpdated=(action regionUpdated)
+          deleteRegion=(action deleteRegion)
+          region=region
+          feedbackLoop=feedbackLoop
+          startAt=at
+        }}
       </div>
     </div>
 
@@ -31,25 +27,26 @@
             class=""
           }}
           <div class="tc mt3">
-            <button class="btn link f--h dim ph4 pv2 dib white bg-mid-gray" {{action save}}>Save Annotation</button>
+            <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action (mut annotation) null}}>Cancel</a>
+            <button class="btn link f--h ph4 pv2 dib white bg-mid-gray" {{action save}}>Save Annotation</button>
           </div>
         </form>
       {{/liquid-if}}
       <div class="mt3 f0">
-        <div class="dib w-100 w-25-l v-mid pr4-l">
+        <div class="dib w-100 w-25-l v-top pr4-l">
           <img class="ba b--near-white db" src="http://panoply-prod.s3.amazonaws.com/podcasts/1427a2f4-2674-11e6-a3d7-cf7ee2a2c03c/image/uploads_2F1464956596674-zye6snpaow-1199f5fc375124c66575217a8ac7dbd1_2FPodcast%2BArtwork%2B-%2BNo%2BShadow.jpeg">
         </div>
-        <div class="dib w-100 w-75-l v-mid f5">
-          <h1 class="mt0"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
+        <div class="dib w-100 w-75-l v-top f5">
+          <h1 class="mt0 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
           <p class="mb0">{{{model.summary}}}</p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="mcc--3">
+      <div class="mboard">
         {{#each sortedAnnotations as |annotation|}}
-          <div class="mcard pa2-ns pb-2">
+          <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-near-white">
               {{#if annotation.deltas}}
                 {{#text-editor
@@ -62,10 +59,10 @@
                       <i class="fa fa-play" aria-hidden="true"></i>
                     {{/link-to}}
                     <div class="fr">
-                      <a class="social-link f6 mr3" href="#">
+                      <a class="link f6 mr3" href="#">
                         <i class="fa fa-facebook" aria-hidden="true"></i> Share
                       </a>
-                      <a class="social-link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                      <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
                       </a>
                     </div>
                   </div>
