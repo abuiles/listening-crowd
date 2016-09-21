@@ -19,6 +19,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.pinnaHost = 'http://localhost:3000';
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
@@ -42,6 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.pinnaHost = 'https://pinna.herokuapp.com';
   }
 
   ENV['ember-simple-auth'] = {

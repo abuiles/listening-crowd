@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
+  licSession: Ember.inject.service(),
   init() {
     this._super(...arguments);
     this.set('currentTime', 0);
@@ -49,37 +50,24 @@ export default Ember.Component.extend({
   save() {
     let annotation = this.get('annotation');
     let region = this.get('region');
-    annotation.setProperties({
-      start: region.get('start'),
-      end: region.get('end')
-    });
-    annotation.save().then(() =>  {
-      this.setProperties({
-        annotation: null,
-        region: null
+    this.get('licSession.user').then((user) => {
+      annotation.setProperties({
+        start: region.get('start'),
+        end: region.get('end'),
+        user: user
       });
-      this.saveLocally(this.get('model.id'), annotation);
 
-      this.get('player').regions.list[region.get('id')].remove();
+      annotation.save().then(() =>  {
+        this.setProperties({
+          annotation: null,
+          region: null
+        });
+
+        this.get('player').regions.list[region.get('id')].remove();
+      });
     });
 
     return false;
-  },
-  saveLocally(id, annotation) {
-    let item = window.localStorage.getItem(id);
-    let annotations;
-
-    if (item) {
-      annotations = JSON.parse(item);
-    } else {
-      annotations = [];
-    }
-
-    let payload = annotation.getProperties('end', 'start', 'deltas');
-
-    payload.episodeId = annotation.get('episode.id');
-    annotations.push(payload);
-    window.localStorage.setItem(id, JSON.stringify(annotations));
   },
   play(start) {
     if (this.get('player')) {

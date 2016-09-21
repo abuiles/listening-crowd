@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+import config from 'listening-crowd/config/environment';
 
 export default DS.JSONAPIAdapter.extend({
   namespace: 'v1',
-  host: 'https://pinna.herokuapp.com'
+  host: config.pinnaHost
 });

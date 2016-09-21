@@ -46,21 +46,6 @@ export default function() {
 
   this.loadFixtures();
 
-  this.db.episodes.forEach((episode) => {
-    let item = window.localStorage.getItem(episode.id);
-    let annotations;
-
-    if (item) {
-      annotations = JSON.parse(item);
-    } else {
-      annotations = [];
-    }
-
-    annotations.forEach((ref) => {
-      this.create('reference', ref);
-    });
-  });
-
   this.get('/podcasts');
   this.get('/podcasts/:id');
   this.get('/episodes/:id');
