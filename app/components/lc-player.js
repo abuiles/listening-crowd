@@ -39,9 +39,9 @@ export default Ember.Component.extend({
       this.registerPlayer(peaks);
     }
 
-    this.$( "#peaks-container" ).dblclick(() =>  {
-      this.createSegment();
-    });
+    // this.$( "#peaks-container" ).dblclick(() =>  {
+    //   this.createSegment();
+    // });
 
     this.set('peaks', peaks);
   },
