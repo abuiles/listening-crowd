@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-import Wavesurfer from 'wavesurfer';
+import Peaks from 'npm:peaks.js/peaks.js';
 
 export default Ember.Component.extend({
   init() {
@@ -10,152 +10,62 @@ export default Ember.Component.extend({
       this._loading = false;
       Ember.Test.registerWaiter(() => this._loading === false);
     }
+
   },
   currentTime: 0,
+  loadwaveForms() {
+    let peaks = Peaks.init({
+      container: this.$('#peaks-container')[0],
+      mediaElement: this.$('#peaks-audio')[0],
+      dataUri: this.get('waveformData'),
 
-  loadWavesurferPromise() {
-    const src = this.get('src');
-
-    let promise = new Ember.RSVP.Promise((resolve, reject) => {
-      const wavesurfer = Wavesurfer.create({
-        backend: 'MediaElement',
-        barWidth: 1,
-        container: '#waveform',
-        fillParent: true,
-        hideScrollbar: false,
-        normalize: true,
-        progressColor: '#fff',
-        waveColor: 'rgba(255,255,255,0.3)',
-        cursorColor: '#fff'
-      });
-
-      wavesurfer.load(src, this.get('waveformData'));
-
-      wavesurfer.on('ready', () => {
-        Ember.run(() => {
-          let startAt = parseInt(this.get('startAt'));
-
-          if (startAt >0) {
-            wavesurfer.skip(startAt);
-          }
-
-          if (this.registerPlayer) {
-            this.registerPlayer(wavesurfer);
-          }
-          // Enable creating regions by dragging
-          wavesurfer.enableDragSelection({
-            slop: 0,
-            loop: true
-          });
-
-          resolve();
-        });
-      });
-
-      wavesurfer.on('play', () => {
-        this.set('playing', true);
-      });
-
-      wavesurfer.on('pause', () => {
-        this.set('playing', false);
-      });
-
-      wavesurfer.on('error', error => {
-        Ember.run(() => {
-          reject(error);
-        });
-      });
-
-      wavesurfer.on('audioprocess', () => {
-        let time = window.juration.stringify(
-          wavesurfer.getCurrentTime(),
-          {
-            format: 'chrono'
-          }
-        );
-        this.set('currentTime', time);
-      });
-
-      wavesurfer.on('seek', () => {
-        let time = window.juration.stringify(
-          wavesurfer.getCurrentTime(),
-          {
-            format: 'chrono'
-          }
-        );
-        this.set('currentTime', time);
-      });
-
-
-      document.querySelector('wave').addEventListener('dblclick',  (e) => {
-        if (this.deleteRegion) {
-          this.deleteRegion();
-        }
-      });
-
-
-      wavesurfer.on('region-created', (region) => {
-        wavesurfer.regions.clear();
-        if (this.regionCreated) {
-          this.regionCreated(region);
-        }
-      });
-
-      wavesurfer.on('region-updated', (region) => {
-        if (this.regionUpdated) {
-          this.regionUpdated(region);
-        }
-      });
-
-      this.set('wavesurfer', wavesurfer);
+      /** Optional config with defaults **/
+      height: 200, // height of the waveform canvases in pixels
+      zoomLevels: [4410, 8000, 12000], // Array of zoom levels in samples per pixel (big >> small)
+      keyboard: false, // Bind keyboard controls
+      nudgeIncrement: 0.01, // Keyboard nudge increment in seconds (left arrow/right arrow)
+      inMarkerColor: '#a0a0a0', // Colour for the in marker of segments
+      outMarkerColor: '#a0a0a0', // Colour for the out marker of segments
+      zoomWaveformColor: 'rgba(0, 225, 128, 1)', // Colour for the zoomed in waveform
+      overviewWaveformColor: 'rgba(0,0,0,0.2)', // Colour for the overview waveform
+      segmentColor: 'rgba(255, 161, 39, 1)', // Colour for segments on the waveform
+      randomizeSegmentColor: true
     });
 
-    if (Ember.testing) {
-      this._loading = true;
-      return promise.finally(() => this._loading = false);
+    if (this.registerPlayer) {
+      this.registerPlayer(peaks);
     }
 
-    return promise;
-  },
+    this.$( "#peaks-container" ).dblclick(() =>  {
+      this.createSegment();
+    });
 
-  loadWavesurfer() {
-    this.loadWavesurferPromise()
-      .then(() => {
-        Ember.Logger.log('waveform loaded');
-      })
-      .catch( error => {
-        Ember.Logger.log('waveform error : ', error);
-      });
+    this.set('peaks', peaks);
   },
 
   didInsertElement() {
-    Ember.run.scheduleOnce('afterRender', this, this.loadWavesurfer);
-
-    var slider = this.$('#slider')[0];
-
-    slider.oninput =  () => {
-      var zoomLevel = Number(slider.value);
-      this.zoom(zoomLevel);
-    };
+    Ember.run.scheduleOnce('afterRender', this, this.loadwaveForms);
   },
-
-  play() {
-    if (this.get('wavesurfer')) {
-      this.get('wavesurfer').playPause();
+  createSegment() {
+    if (!this.get('region')) {
+      let peaks  = this.get('peaks');
+      let startTime = peaks.time.getCurrentTime();
+      let endTime = startTime + 10;
+      let editable = true;
+      peaks.segments.add({startTime, endTime, editable});
+      let region = peaks.segments.getSegments()[0];
+      this.regionCreated({
+        start: startTime,
+        end: endTime,
+        region
+      });
     }
   },
-  playAt(start, end) {
-    this.get('wavesurfer').play(start, end);
+
+  zoomOut() {
+    this.get('peaks').zoom.zoomOut();
   },
-  zoom(zoomLevel) {
-    if (this.get('wavesurfer')) {
-      Ember.Logger.log('zoom : ', zoomLevel);
-      this.get('wavesurfer').zoom(zoomLevel);
-    }
-  },
-  willDestroyElement() {
-    if (this.unregisterPlayer) {
-      this.unregisterPlayer(this.get('wavesurfer'));
-    }
+  zoomIn() {
+    this.get('peaks').zoom.zoomIn();
   }
 });

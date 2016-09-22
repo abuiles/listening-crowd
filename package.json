@@ -51,6 +51,7 @@
     "ember-truth-helpers": "1.2.0",
     "liquid-fire": "envoy/liquid-fire#master",
     "loader.js": "^4.0.1",
+    "peaks.js": "^0.5.0",
     "prosemirror": "^0.10.0",
     "quill": "^1.0.4"
   }

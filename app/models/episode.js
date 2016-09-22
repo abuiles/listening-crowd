@@ -14,7 +14,6 @@ export default DS.Model.extend({
   itunesExplicit: DS.attr('string'),
   guid: DS.attr(),
   podcast: DS.belongsTo('podcast'),
-  waveform: DS.belongsTo('waveform'),
   annotations: DS.hasMany('annotations'),
   permalink: Ember.computed('id', 'slug', {
     get() {

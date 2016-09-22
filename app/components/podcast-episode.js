@@ -63,7 +63,7 @@ export default Ember.Component.extend({
           region: null
         });
 
-        this.get('player').regions.list[region.get('id')].remove();
+        this.get('player').segments.removeAll();
       });
     });
 
@@ -71,8 +71,15 @@ export default Ember.Component.extend({
   },
   play(start) {
     if (this.get('player')) {
-      this.get('player').play(start);
+      this.get('player').time.setCurrentTime(start);
     }
+  },
+  cancel() {
+    this.get('player').segments.removeAll();
+    this.setProperties({
+      annotation: null,
+      region: null
+    });
   },
   didUpdateAttrs() {
     this._super(...arguments);

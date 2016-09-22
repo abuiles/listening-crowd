@@ -5,12 +5,11 @@
       <div class="pt3 pb3">
         {{lc-player
           src=model.podzyUrl
-          waveformData=waveformData
+          waveformData=model.waveformDataUrl
           registerPlayer=(action (mut player))
           unregisterPlayer=(action (mut player null))
           timeupdate=(action timeupdate)
           regionCreated=(action regionCreated)
-          regionUpdated=(action regionUpdated)
           deleteRegion=(action deleteRegion)
           region=region
           feedbackLoop=feedbackLoop
@@ -27,7 +26,7 @@
             class=""
           }}
           <div class="tc mt3">
-            <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action (mut annotation) null}}>Cancel</a>
+            <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel}}>Cancel</a>
             <button class="btn link f--h ph4 pv2 dib white bg-mid-gray" {{action save}}>Save Annotation</button>
           </div>
         </form>

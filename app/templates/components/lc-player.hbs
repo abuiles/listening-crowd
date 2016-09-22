@@ -1,31 +1,12 @@
-<div id="waveform"></div>
-<div id="waveform-timeline"></div>
-
-<div class="mt3">
-  {{!-- replace 30:00 with total time --}}
-  <p class="white fr">{{currentTime}} / 30:00</p>
-  <button class="btn f6 link br2 ph3 pv2 dib bg-white mr2" onclick={{action play}}>
-    <i class="glyphicon glyphicon-play"></i>
-    {{if playing "Stop" "Play"}}
-  </button>
-  {{#if region}}
-    <button class="btn f6 link br2 ph3 pv2 dib bg-white h" onclick={{action playAt region.start region.end }}>
-      Restart
-    </button>
-  {{/if}}
-
-  <p class="row">
-    <div class="col-xs-1">
-      <i class="glyphicon glyphicon-zoom-in"></i>
-    </div>
-
-    <div class="col-xs-10">
-      <input id="slider" type="range" min="1" max="6" value="1" style="width: 100%" />
-    </div>
-
-    <div class="col-xs-1">
-      <i class="glyphicon glyphicon-zoom-out"></i>
-    </div>
-  </p>
+<div id="peaks-container"></div>
+<div class="peaks-control">
+  <div class="peaks-audio">
+    <audio id="peaks-audio" controls="controls">
+      <source src={{src}} type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <button onclick={{action zoomIn}} class="button">Zoom In</button>
+  <button onclick={{action zoomOut}} id="zoomOut" class="button">Zoom Out</button>
+  <button onclick={{action createSegment}} class="button">New annotation</button>
 </div>
-{{yield}}

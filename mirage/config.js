@@ -59,9 +59,6 @@ export default function() {
     return collection;
   });
 
-  this.get('/waveforms');
-  this.get('/waveforms/:id');
-
   this.get('/annotations');
   this.get('/annotations/:id');
   this.post('/annotations');
