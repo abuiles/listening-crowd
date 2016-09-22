@@ -35,7 +35,7 @@ export default DS.Model.extend({
     get() {
       let podcastSlug = this.get('podcast.slug');
       let slug = this.get('slug');
-      return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform.json`;
+      return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform`;
     }
   }).readOnly(),
   waveformImage: Ember.computed('slug', 'podcast.slug', {

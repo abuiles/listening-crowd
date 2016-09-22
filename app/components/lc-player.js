@@ -17,7 +17,10 @@ export default Ember.Component.extend({
     let peaks = Peaks.init({
       container: this.$('#peaks-container')[0],
       mediaElement: this.$('#peaks-audio')[0],
-      dataUri: this.get('waveformData'),
+      dataUri: {
+        arraybuffer: `${this.get('waveformData')}.dat`,
+        json: `${this.get('waveformData')}.json`
+      },
 
       /** Optional config with defaults **/
       height: 200, // height of the waveform canvases in pixels
