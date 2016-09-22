@@ -69,9 +69,31 @@ export default Ember.Component.extend({
 
     return false;
   },
-  play(start) {
+  currentTimeAnnotations() {
+    return this.get('model.annotations').then((annotations) => {
+      let filtered =  annotations.filterBy('start', this.get('at'));
+
+      if (this.get('player')) {
+        let segments = filtered.map(function(annotation) {
+          return {
+            startTime: annotation.get('start'),
+            endTime: annotation.get('end'),
+            editable: false,
+            id: annotation.get('id'),
+            labelText: 'Selected annotation'
+          };
+        });
+        this.get('player').segments.add(segments);
+      }
+
+      return filtered;
+    });
+  },
+  play(start ) {
     if (this.get('player')) {
       this.get('player').time.setCurrentTime(start);
+      this.get('player').player.play();
+      this.currentTimeAnnotations();
     }
   },
   cancel() {

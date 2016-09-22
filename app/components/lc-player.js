@@ -14,9 +14,10 @@ export default Ember.Component.extend({
   },
   currentTime: 0,
   loadwaveForms() {
+    let mediaElement = this.$('#peaks-audio')[0];
     let peaks = Peaks.init({
       container: this.$('#peaks-container')[0],
-      mediaElement: this.$('#peaks-audio')[0],
+      mediaElement: mediaElement,
       dataUri: {
         arraybuffer: `${this.get('waveformData')}.dat`,
         json: `${this.get('waveformData')}.json`
@@ -25,23 +26,36 @@ export default Ember.Component.extend({
       /** Optional config with defaults **/
       height: 200, // height of the waveform canvases in pixels
       zoomLevels: [4410, 8000, 12000], // Array of zoom levels in samples per pixel (big >> small)
-      keyboard: false, // Bind keyboard controls
+      keyboard: true, // Bind keyboard controls
       nudgeIncrement: 0.01, // Keyboard nudge increment in seconds (left arrow/right arrow)
       inMarkerColor: '#a0a0a0', // Colour for the in marker of segments
       outMarkerColor: '#a0a0a0', // Colour for the out marker of segments
       zoomWaveformColor: 'rgba(0, 225, 128, 1)', // Colour for the zoomed in waveform
       overviewWaveformColor: 'rgba(0,0,0,0.2)', // Colour for the overview waveform
       segmentColor: 'rgba(255, 161, 39, 1)', // Colour for segments on the waveform
-      randomizeSegmentColor: true
+      randomizeSegmentColor: true,
+      waveformBuilderOptions: {
+        scale: 12000,
+        scale_adjuster: 127
+      },
+      segments: []
     });
+
+    if (this.get('startAt')) {
+      peaks.time.setCurrentTime(this.get('startAt'));
+      peaks.player.play();
+    }
 
     if (this.registerPlayer) {
       this.registerPlayer(peaks);
     }
 
-    // this.$( "#peaks-container" ).dblclick(() =>  {
-    //   this.createSegment();
-    // });
+    if (Ember.testing) {
+      this._loading = true;
+      peaks.on('segments.ready', () =>{
+        this._loading = false;
+      });
+    }
 
     this.set('peaks', peaks);
   },
