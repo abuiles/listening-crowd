@@ -1,15 +1,32 @@
 <div class="flex">
   <div class="flex-auto">
     <div class="container">
-      <div class="f0">
+      <div class="fboard f0">
         {{#each model as |episode|}}
-          <div class="w-25-l w-50-m w-100 dib pa2-ns pb2 f5 v-top">
+          <div class="w-third-l w-50-m w-100 dib pa3-ns pb3 f5 v-top">
             <div class="bg-near-white ba b--near-white">
-              <img class="img" src={{episode.podcast.itunesImage}}>
+              <div class="relative">
+                <img class="img db" src={{episode.podcast.itunesImage}}>
+                <div class="card_ovl absolute top-0 bottom-0 left-0 right-0 pa3 white cf flex flex-column items-center justify-center bgc--t">
+                  <div class="w-100 flex-auto flex">
+                    <div class="w-100 tc self-center">
+                      <p class="w-100 ma0 f-6 f--h lh-solid">150</p>
+                      <p class="f3 ma0 f--h lh-copy">annotations</p>
+                    </div>
+                  </div>
+                  <div class="self-end w-100 cf">
+                    <p class="ma0 fl">Aired on: Sep 25</p>
+                    <p class="ma0 fr">30:00</p>
+                  </div>
+                </div>
+              </div>
+               {{!-- the inline style shouldnt be necessary in the future. with word count control --}}
               <div class="pa3 cf">
-                <h3>{{link-to episode.title "podcasts.show.episode" episode.podcast episode}}</h3>
-                {{!-- the inline style shouldnt be necessary in the future. The literal html is causing this --}}
-                <p style="word-wrap:break-word">{{episode.summary}}</p>
+                <div style="max-height:140px;overflow:hidden;">
+                  <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
+                  {{!-- the inline style shouldnt be necessary in the future. The literal html is causing this --}}
+                  <p class="ma0" style="word-wrap:break-word;">{{episode.summary}}</p>
+                </div>
               </div>
             </div>
           </div>

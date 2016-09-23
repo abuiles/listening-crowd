@@ -1,8 +1,8 @@
-$tt-primary: #333;
+$tt-primary: #333333;
 $tt-secondary: #4ea1d3;
 $bg-primary: #d8e9ef;
-$bg-secondary: #454552;
-$bg-tertiary: #4ea1d3;
+$bg-secondary: #4ea1d3;
+$bg-tertiary: #e85a71;
 
 // resets
 body {
@@ -54,6 +54,18 @@ main {
   @include flex(1 1 10/12*100%);
 }
 
+// index
+.card_ovl {
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+    transition:opacity .15s ease-in;
+  }
+}
+.fboard {
+  margin-right: -16px;
+  margin-left: -16px;
+}
 // episode
 .mboard {
   column-count: 1;
