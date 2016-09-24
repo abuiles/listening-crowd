@@ -1,0 +1,12 @@
+<sidebar class="bg-light-gray dn db-l">
+  <div class="pa3 pl4">
+    <h3 class="dn db-l">{{model.title}}</h3>
+    <ul class="list pl0 dn db-l">
+      {{#each model.episodes as |episode|}}
+        <li>
+          {{link-to episode.title "podcasts.show.episode" model episode}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</sidebar>
