@@ -28,18 +28,23 @@ export default Ember.Component.extend({
       zoomLevels: [4410, 8000, 12000], // Array of zoom levels in samples per pixel (big >> small)
       keyboard: true, // Bind keyboard controls
       nudgeIncrement: 0.01, // Keyboard nudge increment in seconds (left arrow/right arrow)
-      inMarkerColor: '#a0a0a0', // Colour for the in marker of segments
-      outMarkerColor: '#a0a0a0', // Colour for the out marker of segments
-      zoomWaveformColor: 'rgba(0, 225, 128, 1)', // Colour for the zoomed in waveform
-      overviewWaveformColor: 'rgba(0,0,0,0.2)', // Colour for the overview waveform
-      segmentColor: 'rgba(255, 161, 39, 1)', // Colour for segments on the waveform
-      randomizeSegmentColor: true,
+      inMarkerColor: '#454552', // Colour for the in marker of segments
+      outMarkerColor: '#454552', // Colour for the out marker of segments
+      zoomWaveformColor: 'rgba(250,250,250,1)', // Colour for the zoomed in waveform
+      overviewWaveformColor: 'rgba(250,250,250,0.2)', // Colour for the overview waveform
+      segmentColor: '#e85a71', // Colour for segments on the waveform
+      overviewHighlightRectangleColor: 'white',
+      playheadColor: '#454552',
+      randomizeSegmentColor: false,
       waveformBuilderOptions: {
         scale: 12000,
         scale_adjuster: 127
       },
       segments: []
     });
+
+
+
 
     if (this.get('startAt')) {
       peaks.time.setCurrentTime(this.get('startAt'));
