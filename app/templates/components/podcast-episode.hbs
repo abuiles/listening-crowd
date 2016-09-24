@@ -1,7 +1,7 @@
 <div class="flex">
   <div class="flex-auto">
 
-    <div class="container bgc--s">
+    <div class="container bgc--s relative">
       <div class="pt3 pb3">
         {{lc-player
           src=model.podzyUrl
@@ -17,20 +17,22 @@
         }}
       </div>
     </div>
-
-    <div class="container mt3">
+    <div class="bgc--p container">
       {{#liquid-if annotation}}
         <form class="card-editor">
           {{text-editor
             textChanged=(action (mut annotation.deltas))
-            class=""
+            class="bg-white w-100"
           }}
           <div class="tc mt3">
             <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel}}>Cancel</a>
-            <button class="btn link f--h ph4 pv2 dib white bg-mid-gray" {{action save}}>Save Annotation</button>
+            <button class="btn link f--h ph4 pv2 dib white bg-mid-gray mb3" {{action save}}>Save Annotation</button>
           </div>
         </form>
       {{/liquid-if}}
+    </div>
+
+    <div class="container mt3">
       <div class="mt3 f0">
         <div class="dib w-100 w-25-l v-top pr4-l">
           <img class="ba b--near-white db" src="http://panoply-prod.s3.amazonaws.com/podcasts/1427a2f4-2674-11e6-a3d7-cf7ee2a2c03c/image/uploads_2F1464956596674-zye6snpaow-1199f5fc375124c66575217a8ac7dbd1_2FPodcast%2BArtwork%2B-%2BNo%2BShadow.jpeg">
