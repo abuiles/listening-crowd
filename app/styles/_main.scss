@@ -47,12 +47,6 @@ a:hover, a:active, a:focus {
 .container {
   padding: $spacing-medium $spacing-large;
 }
-sidebar {
-  @include flex(1 1 2/12*100%);
-}
-main {
-  @include flex(1 1 10/12*100%);
-}
 
 // index
 .card_ovl {
@@ -82,6 +76,12 @@ main {
   }
 }
 @media #{$breakpoint-large} {
+  sidebar {
+    @include flex(1 1 2/12*100%);
+  }
+  .main {
+    @include flex(1 1 10/12*100%);
+  }
   .mboard {
     column-count: 3;
   }
