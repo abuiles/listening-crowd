@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('profile');
   this.route('login');
   this.route('protected');
+  this.route('directory');
 });
 
 export default Router;

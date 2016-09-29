@@ -9,6 +9,7 @@
     </div>
   </a>
   <div class="dtc v-mid w-40 tr">
+    {{link-to "Directory" "directory" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
     <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns">About</a>
     {{#if session.isAuthenticated}}
       <p>You are currently logged as: {{session.data.authenticated.profile.email}}</p>
