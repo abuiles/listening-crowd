@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+import googlePageview from 'listening-crowd/mixins/google-pageview';
 
-export default Ember.Route.extend(ApplicationRouteMixin, {
+export default Ember.Route.extend(ApplicationRouteMixin, googlePageview, {
   licSession: Ember.inject.service(),
   actions: {
     login () {

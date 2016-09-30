@@ -19,8 +19,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.pinnaHost = 'https://pinna.herokuapp.com';
-    ENV.pinnaHost = 'http://localhost:3000';
+    ENV.pinnaHost = 'https://pinna.herokuapp.com';
+    // ENV.pinnaHost = 'http://localhost:3000';
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
@@ -56,6 +56,10 @@ module.exports = function(environment) {
   ENV['auth0-ember-simple-auth'] = {
     clientID: "C0w5wRMTjDHHrefy0ObWhYNzhU1f5CQz",
     domain: "llc-dev.auth0.com"
+  };
+
+  ENV.googleAnalytics = {
+    webPropertyId: 'UA-84989389-1'
   };
 
   return ENV;
