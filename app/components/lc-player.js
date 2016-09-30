@@ -71,7 +71,6 @@ export default Ember.Component.extend({
   },
   didUpdateAttrs({oldAttrs, newAttrs}) {
     this._super(...arguments);
-    console.log('did update attrs in lc-player');
 
     if (oldAttrs.src.value !== newAttrs.src.value) {
       if (this.get('peaks')) {
