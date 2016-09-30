@@ -26,7 +26,7 @@ export default Ember.Component.extend({
 
       /** Optional config with defaults **/
       height: 200, // height of the waveform canvases in pixels
-      zoomLevels: [4410, 8000, 12000], // Array of zoom levels in samples per pixel (big >> small)
+      zoomLevels: [4800, 8000, 12000], // Array of zoom levels in samples per pixel (big >> small)
       keyboard: true, // Bind keyboard controls
       nudgeIncrement: 0.01, // Keyboard nudge increment in seconds (left arrow/right arrow)
       inMarkerColor: '#454552', // Colour for the in marker of segments
@@ -101,5 +101,10 @@ export default Ember.Component.extend({
   },
   zoomIn() {
     this.get('peaks').zoom.zoomIn();
+  },
+  willDestroy() {
+    if (this.get('peaks')) {
+      this.get('peaks').destroy();
+    };
   }
 });
