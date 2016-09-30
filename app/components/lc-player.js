@@ -5,6 +5,7 @@ import Peaks from 'npm:peaks.js/peaks.js';
 export default Ember.Component.extend({
   init() {
     this._super(...arguments);
+    this.set('showAudio', true);
 
     if (Ember.testing) {
       this._loading = false;
@@ -67,6 +68,18 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     Ember.run.scheduleOnce('afterRender', this, this.loadwaveForms);
+  },
+  didUpdateAttrs({oldAttrs, newAttrs}) {
+    this._super(...arguments);
+    console.log('did update attrs in lc-player');
+
+    if (oldAttrs.src.value !== newAttrs.src.value) {
+      if (this.get('peaks')) {
+        this.get('peaks').destroy();
+        this.$('audio')[0].load();
+        Ember.run.scheduleOnce('afterRender', this, this.loadwaveForms);
+      }
+    }
   },
   createSegment() {
     if (!this.get('region')) {
