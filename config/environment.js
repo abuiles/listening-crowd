@@ -2,6 +2,15 @@
 
 module.exports = function(environment) {
   var ENV = {
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['development', 'production'],
+        config: {
+          id: 'UA-84989389-1'
+        }
+      }
+    ],
     modulePrefix: 'listening-crowd',
     environment: environment,
     baseURL: '/',
@@ -12,9 +21,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
-      wavesurferPlugins: ['regions']
     }
   };
 
@@ -56,10 +63,6 @@ module.exports = function(environment) {
   ENV['auth0-ember-simple-auth'] = {
     clientID: "C0w5wRMTjDHHrefy0ObWhYNzhU1f5CQz",
     domain: "llc-dev.auth0.com"
-  };
-
-  ENV.googleAnalytics = {
-    webPropertyId: 'UA-84989389-1'
   };
 
   return ENV;
