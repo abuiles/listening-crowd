@@ -11,7 +11,8 @@
     "juration": "*",
     "wavesurfer.js": "katspaugh/wavesurfer.js#master",
     "auth0-lock": "^7.10.2",
-    "jsrsasign": "^5.0.1"
+    "jsrsasign": "^5.0.1",
+    "blueimp-md5": "2.1.0"
   },
   "resolutions": {
     "ember": "canary"

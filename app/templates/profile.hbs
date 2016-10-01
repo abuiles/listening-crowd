@@ -1,1 +1,11 @@
-{{outlet}}
+<article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+  <div class="tc">
+    {{gravatar-image
+      email=session.data.authenticated.profile.email
+      class="br-100 h3 w3 dib"
+    }}
+    <input class="f4" value="" placeholder="Your name">
+    <p class="">{{session.data.authenticated.profile.email}}</p>
+    <hr class="mw3 bb bw1 b--black-10">
+  </div>
+</article>

@@ -10,10 +10,10 @@
     {{link-to "Directory" "directory" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
     {{link-to "About" "about" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
     {{#if session.isAuthenticated}}
-      <p>You are currently logged as: {{session.data.authenticated.profile.email}}</p>
+      {{link-to "My profile" "profile" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
       <a class="link dim dark-gray f6 f5-ns dib" {{ action "logout" }}>Logout</a>
     {{else}}
-      <a class="link dim dark-gray f6 f5-ns dib" {{ action "login" }}>Login</a>
+      <a class="link dim dark-gray f6 f5-ns dib" {{ action "login" }}>Log in or sign up</a>
     {{/if}}
   </div>
 </nav>
