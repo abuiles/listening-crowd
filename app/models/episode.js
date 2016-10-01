@@ -15,14 +15,10 @@ export default DS.Model.extend({
   guid: DS.attr(),
   podcast: DS.belongsTo('podcast'),
   annotations: DS.hasMany('annotations'),
+  annotationsCount: DS.attr('number'),
   permalink: Ember.computed('id', 'slug', {
     get() {
       return `${this.get('id')}-${this.get('slug')}`;
-    }
-  }).readOnly(),
-  groupedAnnotations: Ember.computed('annotations.[]', {
-    get() {
-      return {};
     }
   }).readOnly(),
   podzyUrl: Ember.computed('enclosure.url', {
@@ -38,11 +34,18 @@ export default DS.Model.extend({
       return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform`;
     }
   }).readOnly(),
-  waveformImage: Ember.computed('slug', 'podcast.slug', {
+  prettyDuration: Ember.computed('itunesDuration.content', {
     get() {
-      let podcastSlug = this.get('podcast.slug');
-      let slug = this.get('slug');
-      return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform.png`;
+      let duration = this.get('itunesDuration.content');
+      if (typeof duration === 'string') {
+        if (duration.indexOf(':') < 0) {
+          duration = window.juration.stringify(duration, {
+            format: 'chrono'
+          });
+        }
+      }
+
+      return duration;
     }
   }).readOnly()
 });

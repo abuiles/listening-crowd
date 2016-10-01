@@ -10,17 +10,17 @@
                 <div class="card_ovl absolute top-0 bottom-0 left-0 right-0 pa3 white cf flex flex-column items-center justify-center bgc--t">
                   <div class="w-100 flex-auto flex">
                     <div class="w-100 tc self-center">
-                      <p class="w-100 ma0 f-6 f--h lh-solid">150</p>
+                      <p class="w-100 ma0 f-6 f--h lh-solid">{{episode.annotationsCount}}</p>
                       <p class="f3 ma0 f--h lh-copy">annotations</p>
                     </div>
                   </div>
                   <div class="self-end w-100 cf">
-                    <p class="ma0 fl">Aired on: Sep 25</p>
-                    <p class="ma0 fr">30:00</p>
+                    <p class="ma0 fl">Aired on: {{moment-format episode.pubDate "MMM D"}}</p>
+                    <p class="ma0 fr">{{episode.prettyDuration}}</p>
                   </div>
                 </div>
               </div>
-               {{!-- the inline style shouldnt be necessary in the future. with word count control --}}
+              {{!-- the inline style shouldnt be necessary in the future. with word count control --}}
               <div class="pa3 cf">
                 <div style="max-height:140px;overflow:hidden;">
                   <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
