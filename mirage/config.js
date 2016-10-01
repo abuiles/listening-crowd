@@ -38,12 +38,6 @@ export default function() {
     'https://pinna.herokuapp.com/v1/**'
   );
 
-  $.getJSON('/waveforms.json').then((data) => {
-    // data.forEach((waveform) => {
-    //   this.db.waveforms.update(waveform.id, waveform);
-    // });
-  });
-
   this.loadFixtures();
 
   this.get('/podcasts');

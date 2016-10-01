@@ -105,6 +105,6 @@ export default Ember.Component.extend({
   willDestroy() {
     if (this.get('peaks')) {
       this.get('peaks').destroy();
-    };
+    }
   }
 });

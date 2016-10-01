@@ -48,7 +48,7 @@ export default Ember.Component.extend({
         quill.setContents(this.get('deltas'));
       });
     } else {
-      quill.on('text-change', (delta, oldDelta, source) => {
+      quill.on('text-change', () => {
         if (this.textChanged) {
           this.textChanged(this.get('quill').getContents());
         }
