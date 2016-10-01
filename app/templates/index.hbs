@@ -20,13 +20,9 @@
                   </div>
                 </div>
               </div>
-              {{!-- the inline style shouldnt be necessary in the future. with word count control --}}
               <div class="pa3 cf">
-                <div style="max-height:140px;overflow:hidden;">
-                  <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
-                  {{!-- the inline style shouldnt be necessary in the future. The literal html is causing this --}}
-                  <p class="ma0" style="word-wrap:break-word;">{{episode.summary}}</p>
-                </div>
+                <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
+                <p class="ma0" >{{episode.itunesSubtitle}}</p>
               </div>
             </div>
           </div>

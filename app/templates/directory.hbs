@@ -9,11 +9,8 @@
                 <img class="img db" src={{podcast.itunesImage}}>
               </div>
               <div class="pa3 cf">
-                <div style="max-height:140px;overflow:hidden;">
-                  <h3 class="mt0 mb2 f4">{{link-to podcast.title "podcasts.show" podcast class="link"}}</h3>
-                  {{!-- the inline style shouldnt be necessary in the future. The literal html is causing this --}}
-                  <p class="ma0" style="word-wrap:break-word;">{{podcast.description}}</p>
-                </div>
+                <h3 class="mt0 mb2 f4">{{link-to podcast.title "podcasts.show" podcast class="link"}}</h3>
+                <p class="ma0">{{truncate-multiline text=podcast.description lines=3}}</p>
               </div>
             </div>
           </div>

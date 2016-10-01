@@ -39,6 +39,7 @@
         </div>
         <div class="dib w-100 w-75-l v-top f5">
           <h1 class="mt0 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
+          <p>Aired on: {{moment-format model.pubDate "MMM D"}}</p>
           <p class="mb0">{{{model.summary}}}</p>
         </div>
       </div>
