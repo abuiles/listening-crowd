@@ -1,0 +1,18 @@
+<div class="flex">
+  <div class="flex-auto">
+    <div class="container mt3">
+      <div class="mt3 f0">
+        <div class="dib w-100 w-25-l v-top pr4-l">
+          <img class="ba b--near-white db" src={{model.itunesImage}}>
+        </div>
+        <div class="dib w-100 w-75-l v-top f5">
+          <h1 class="mt0 lh-solid-ns"><a class="link" href={{model.link}}>{{model.title}}</a></h1>
+          <p class="mb0">{{{model.description}}}</p>
+          <p class="mb0">{{model.copyright}}</p>
+          <p class="mb0">Categories: {{model.itunesCategories}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{outlet}}
