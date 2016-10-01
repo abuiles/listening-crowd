@@ -8,15 +8,22 @@ export default Ember.Route.extend({
   },
   setupController(controller, model) {
     this._super(...arguments);
+    model.query('episodes', { sort: '-pub-date' }).then(function(episodes) {
+      controller.set('episodes', episodes);
+    });
 
     this.render('podcasts/sidebar', {
       into: 'application',
       outlet: 'sidebar',
-      model: model
+      model: model,
+      controller: 'podcasts/show'
     });
   },
   serialize(model) {
     return { podcastPermalink: model.get('permalink') };
+  },
+  deactivate() {
+    this.controller.set('episodes', []);
   },
   metrics: Ember.inject.service(),
   _trackPage() {

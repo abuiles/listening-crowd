@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 import Ember from 'ember';
+import HasManyQuery from 'ember-data-has-many-query';
 
-export default DS.Model.extend({
+export default DS.Model.extend(HasManyQuery.ModelMixin, {
   title: DS.attr('string'),
   link: DS.attr('string'),
   description: DS.attr('string'),
