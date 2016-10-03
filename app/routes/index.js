@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       sort: '-pub-date',
       page: {
         offset: 0,
-        limit: 200
+        limit: 100
       }
     });
   },
