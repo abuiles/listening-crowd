@@ -7,13 +7,13 @@
     </div>
   </div>
   <div class="dtc v-mid w-40 tr">
-    {{link-to "Directory" "directory" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
+    {{link-to "Podcasts" "directory" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
     {{link-to "About" "about" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
     {{#if session.isAuthenticated}}
       {{link-to "My profile" "profile" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns"}}
       <a class="link dim dark-gray f6 f5-ns dib" {{ action "logout" }}>Logout</a>
     {{else}}
-      <a class="link dim dark-gray f6 f5-ns dib" {{ action "login" }}>Log in or sign up</a>
+      <a class="link dim dark-gray f6 f5-ns dib" {{ action "login" }}>Log in</a>
     {{/if}}
   </div>
 </nav>

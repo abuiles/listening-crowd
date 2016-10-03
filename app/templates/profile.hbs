@@ -1,11 +1,17 @@
-<article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
-  <div class="tc">
+<div class="container">
+  <div class="w-25 ba b--near-white dib">
     {{gravatar-image
       email=session.data.authenticated.profile.email
-      class="br-100 h3 w3 dib"
+      class="db w-100"
     }}
-    <input class="f4" value="" placeholder="Your name">
-    <p class="">{{session.data.authenticated.profile.email}}</p>
-    <hr class="mw3 bb bw1 b--black-10">
+    <div class="pa4 cf">
+      <form class="db">
+        <input class="ph2 pv1 w-100 border-box mb2" value="" placeholder="Your Name">
+        <input class="ph2 pv1 w-100 border-box mb3" value="{{session.data.authenticated.profile.email}}" placeholder="Your Email">
+
+        <input class="btn link dim dib ph4 pv2 bgc--t white f6" type="submit" value="Save">
+      </form>
+     {{!--  <a class="btn link dim dib ph4 pv2 bgc--t white f6" {{ action "logout" }}>Logout</a> --}}
+    </div>
   </div>
-</article>
+</div>
