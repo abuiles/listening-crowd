@@ -1,6 +1,5 @@
 export default function(){
   this.transition(
-    this.fromRoute('index'),
     this.toRoute('podcasts.show'),
     this.use('toLeft'),
     this.reverse('toRight')
@@ -10,5 +9,13 @@ export default function(){
     this.toRoute('podcasts.show.episode'),
     this.use('crossFade'),
     this.reverse('crossFade')
+  );
+  this.transition(
+    this.toRoute('directory'),
+    this.use('toLeft')
+  );
+  this.transition(
+    this.toRoute('index'),
+    this.use('toRight')
   );
 }
