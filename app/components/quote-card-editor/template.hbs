@@ -1,0 +1,14 @@
+<form {{action save quote quotee on="submit"}}>
+  <div class="pa4">
+    <blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
+      <p class="">
+        {{textarea value=quote  placeholder="To be, or not to be: that is the question"}}
+      </p>
+      <cite class="">
+        {{input value=quotee placeholder="William Shakespeare"}}
+      </cite>
+    </blockquote>
+    <button type="submit">Save</button>
+    <button {{action cancel}}>Cancel</button>
+  </div>
+</form>

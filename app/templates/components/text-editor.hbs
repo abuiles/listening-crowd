@@ -51,6 +51,15 @@
     <li class="dib mobiledoc-toolbar__control">
       <button
           type="button"
+          title="Quote"
+          class="mobiledoc-toolbar__button"
+          {{action addCard editor "quote-card"}}>
+        Quote
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
           title="Pull Quote"
           class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isPullQuote 'active'}}"
           {{action editor.toggleSection 'pull-quote'}}>

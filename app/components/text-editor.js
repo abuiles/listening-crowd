@@ -8,7 +8,8 @@ export default Ember.Component.extend({
     return [
       createComponentCard('video-card'),
       createComponentCard('song-card'),
-      createComponentCard('amazon-card')
+      createComponentCard('amazon-card'),
+      createComponentCard('quote-card')
     ];
   }),
   addCard(editor, card) {

@@ -11,7 +11,8 @@ export default Ember.Component.extend({
   cardNames: [
     'video-card',
     'song-card',
-    'amazon-card'
+    'amazon-card',
+    'quote-card'
   ],
   annotations: Ember.computed.filterBy('model.annotations', 'isNew', false),
   sortedAnnotations: Ember.computed.sort('annotations', function(a,b) {
