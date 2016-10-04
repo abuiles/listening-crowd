@@ -1,3 +1,113 @@
-{{yield this}}
-<div class="editor">
-</div>
+{{#mobiledoc-editor
+   mobileDoc=mobileDoc
+   cards=cards
+   on-change=(action textChanged) as |editor|}}
+  <ul class="list cf toolbar">
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Bold"
+          class="mobiledoc-toolbar__button {{if editor.activeMarkupTagNames.isStrong 'active'}}"
+          {{action editor.toggleMarkup 'strong'}}>
+        Bold
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Italic"
+          class="mobiledoc-toolbar__button {{if editor.activeMarkupTagNames.isEm 'active'}}"
+          {{action editor.toggleMarkup 'em'}}>
+        Italic
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Link"
+          class="mobiledoc-toolbar__button"
+          {{action toggleLink editor}}>
+        Link
+      </button>
+    </li>
+        <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Heading"
+          class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isH1 'active'}}"
+          {{action editor.toggleSection 'h1'}}>
+        Headline
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Subheading"
+          class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isH2 'active'}}"
+          {{action editor.toggleSection 'h2'}}>
+        Subheadline
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Pull Quote"
+          class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isPullQuote 'active'}}"
+          {{action editor.toggleSection 'pull-quote'}}>
+        Pull-quote
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Youtube or Vimeo video"
+          class="mobiledoc-toolbar__button"
+          {{action addCard editor "video-card"}}>
+        Youtube or Vimeo link
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Spotify link"
+          class="mobiledoc-toolbar__button"
+          {{action addCard editor "song-card"}}>
+        Spotify link
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Spotify link"
+          class="mobiledoc-toolbar__button"
+          {{action addCard editor "amazon-card"}}>
+        Amazon associates
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="List"
+          class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isUl 'active'}}"
+          {{action editor.toggleSection 'ul'}}>
+        Unordered List
+      </button>
+    </li>
+    <li class="dib mobiledoc-toolbar__control">
+      <button
+          type="button"
+          title="Numbered List"
+          class="mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isOl 'active'}}"
+          {{action editor.toggleSection 'ol'}}>
+        Ordered List
+      </button>
+    </li>
+  </ul>
+  <div class="ml1">
+    {{#if linkOffsets}}
+      {{mobiledoc-link-prompt
+        on-submit=(action completeLink editor)
+        on-cancel=(action (mut linkOffsets) null)}}
+    {{/if}}
+  </div>
+{{/mobiledoc-editor}}

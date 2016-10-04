@@ -8,6 +8,11 @@ export default Ember.Component.extend({
     this.set('currentTime', 0);
     this.set('feedbackLoop', 10);
   },
+  cardNames: [
+    'video-card',
+    'song-card',
+    'amazon-card'
+  ],
   annotations: Ember.computed.filterBy('model.annotations', 'isNew', false),
   sortedAnnotations: Ember.computed.sort('annotations', function(a,b) {
     if (a.get('start') > b.get('start')) {

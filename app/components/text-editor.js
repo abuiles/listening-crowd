@@ -1,58 +1,41 @@
 import Ember from 'ember';
-import Quill from 'npm:quill/dist/quill';
+
+import createComponentCard from 'ember-mobiledoc-editor/utils/create-component-card';
+
 
 export default Ember.Component.extend({
-  didInsertElement() {
-    this._super(...arguments);
-    var toolbarOptions = [
-      [{ 'header': [2, 3, 4, false] }],
-      ['bold', 'italic', 'underline'],    // toggled buttons
-      ['blockquote', 'link'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      [{ 'indent': '-1'}, { 'indent': '+1' }],      // outdent/indent
-      ['video'],
-      [{ 'color': [] }, { 'background': [] }],      // dropdown with defaults from theme
-      [{ 'align': [] }],
-      [{ 'direction': 'rtl' }]                     // text direction
-
-      ['clean']                          // remove formatting button
+  cards: Ember.computed(function() {
+    return [
+      createComponentCard('video-card'),
+      createComponentCard('song-card'),
+      createComponentCard('amazon-card')
     ];
-
-    let options = {
-
-    };
-
-    if (this.get('readOnly')) {
-      options.modules = {
-        toolbar: this.$('.toolbar')[0]
-      };
-      options.readOnly = true;
-    } else {
-      options.theme = 'snow';
-      options.modules = {
-        toolbar: toolbarOptions,
-        history: {
-          delay: 2000,
-          maxStack: 500
-        }
-      };
+  }),
+  addCard(editor, card) {
+    if (!editor.editor.hasCursor()) {
+      editor.editor.focus();
+    }
+    editor.addCardInEditMode(card, {});
+  },
+  toggleLink({editor}) {
+    if (!editor.hasCursor()) {
+      return ;
     }
 
-    let container = this.$('.editor')[0];
-    let quill = new Quill(container, options);
-
-    this.set('quill', quill);
-
-    if (this.get('deltas')) {
-      Ember.run.next(() => {
-        quill.setContents(this.get('deltas'));
-      });
+    if (editor.hasActiveMarkup('a')) {
+      editor.toggleMarkup('a');
     } else {
-      quill.on('text-change', () => {
-        if (this.textChanged) {
-          this.textChanged(this.get('quill').getContents());
-        }
-      });
+      this.set('linkOffsets', editor.range);
     }
+  },
+  completeLink({editor}, href) {
+    let offsets = this.get('linkOffsets');
+    this.set('linkOffsets', null);
+    editor.run(postEditor => {
+      let markup = postEditor.builder.createMarkup('a', {href});
+      // offsets.isCollapsed = false;
+      // postEditor.addMarkupToRange(offsets, markup);
+      postEditor.insertTextWithMarkup(offsets.tail, href, [markup]);
+    });
   }
 });
