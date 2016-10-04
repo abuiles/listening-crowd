@@ -22,7 +22,9 @@
               </div>
               <div class="pa3 cf">
                 <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
-                <p class="ma0" >{{truncate-multiline text=episode.itunesSubtitle MoreButtonText="Show More"}}</p>
+                {{#if episode.itunesSubtitle}}
+                  <p class="ma0" >{{truncate-multiline text=episode.itunesSubtitle MoreButtonText="Show More"}}</p>
+                {{/if}}
               </div>
             </div>
           </div>
