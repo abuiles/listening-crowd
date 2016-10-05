@@ -29,6 +29,8 @@ export default Ember.Component.extend({
     this.set('currentTime', event.target.currentTime);
   },
   regionCreated(region) {
+    this.requireUser();
+
     if (!this.get('region')) {
       let annotation = this.get('model').get('annotations').createRecord({
         episode: this.get('model')
