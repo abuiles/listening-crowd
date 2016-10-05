@@ -20,11 +20,12 @@
     <div class="bgc--p ph4">
       {{#liquid-if annotation}}
         {{text-editor
+          mobiledoc=annotation.deltas
           textChanged=(action (mut annotation.deltas))
           class="cf bg-white w-100 ph4 pb4"
         }}
         <div class="tc mt3">
-          <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel}}>Cancel</a>
+          <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel annotation}}>Cancel</a>
           <button class="btn link f--h ph4 pv2 dib white bg-mid-gray mb3" {{action save}}>Save Annotation</button>
         </div>
       {{/liquid-if}}
@@ -53,11 +54,16 @@
                   <i class="fa fa-play" aria-hidden="true"></i>
                 {{/link-to}}
                 <div class="fr">
+                  {{!--
+                  <a class="link f6 mr3" href="#" {{action edit annotation}}>
+                    <i class="" aria-hidden="true"></i> Edit
+                  </a>
                   <a class="link f6 mr3" href="#">
                     <i class="fa fa-facebook" aria-hidden="true"></i> Share
                   </a>
                   <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
                   </a>
+                  --}}
                 </div>
               </div>
               {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}

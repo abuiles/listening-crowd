@@ -1,7 +1,7 @@
 {{#mobiledoc-editor
-  mobileDoc=mobileDoc
-  cards=cards
-  on-change=(action textChanged) as |editor|}}
+   mobiledoc=mobiledoc
+   cards=cards
+   on-change=(action textChanged) as |editor|}}
   <div class="cf toolbar ph0 pv2 ma0 bb b--light-gray w-100">
 
     <div class="dib pr3 br b--light-gray v-mid">
@@ -65,7 +65,7 @@
           <i class="fa fa-list-ol" aria-hidden="true"></i>
         </button>
       </div>
-       <div class="dib mobiledoc-toolbar__control">
+      <div class="dib mobiledoc-toolbar__control">
         <button
             type="button"
             title="Quote"
@@ -75,14 +75,14 @@
         </button>
       </div>
       {{!-- <div class="dib mobiledoc-toolbar__control">
-        <button
-            type="button"
-            title="Pull Quote"
-            class="bg-white btn mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isPullQuote 'active'}}"
-            {{action editor.toggleSection 'pull-quote'}}>
-          Pull-quote
-        </button>
-      </div> --}}
+              <button
+              type="button"
+              title="Pull Quote"
+              class="bg-white btn mobiledoc-toolbar__button {{if editor.activeSectionTagNames.isPullQuote 'active'}}"
+              {{action editor.toggleSection 'pull-quote'}}>
+              Pull-quote
+              </button>
+              </div> --}}
     </div>
 
     <div class="dib ph3 br b--light-gray v-mid">

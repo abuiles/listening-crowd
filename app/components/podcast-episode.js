@@ -57,6 +57,7 @@ export default Ember.Component.extend({
   },
   save() {
     let annotation = this.get('annotation');
+
     let region = this.get('region');
     this.get('licSession.user').then((user) => {
       annotation.setProperties({
@@ -76,6 +77,9 @@ export default Ember.Component.extend({
     });
 
     return false;
+  },
+  edit(annotation) {
+    this.set('annotation', annotation);
   },
   currentTimeAnnotations() {
     return this.get('model.annotations').then((annotations) => {
@@ -104,8 +108,13 @@ export default Ember.Component.extend({
       this.currentTimeAnnotations();
     }
   },
-  cancel() {
+  cancel(annotation) {
     this.get('player').segments.removeAll();
+
+    if (!annotation.get('isNew')) {
+      annotation.rollbackAttributes();
+    }
+
     this.setProperties({
       annotation: null,
       region: null
