@@ -3,6 +3,8 @@
     <p class="f5 f4-m f3-l lh-copy measure mt0">
       {{quote}}
     </p>
-    <cite class="f6 ttu tracked fs-normal">―{{quotee}}</cite>
+    {{#if quotee}}
+      <cite class="f6 ttu tracked fs-normal">―{{quotee}}</cite>
+    {{/if}}
   </blockquote>
 </div>

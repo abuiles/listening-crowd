@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     this.set('quotee', this.attrs.payload.value.quotee || '');
   },
   save(quote, quotee) {
-    if (quote && quotee) {
+    if (quote) {
       this.saveCard({quote, quotee});
     } else {
       this.cancel();

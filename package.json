@@ -63,7 +63,6 @@
     "liquid-fire": "0.26.1",
     "loader.js": "^4.0.1",
     "peaks.js": "abuiles/____peaks_temp",
-    "prosemirror": "^0.10.0",
-    "quill": "^1.0.4"
+    "prosemirror": "^0.10.0"
   }
 }

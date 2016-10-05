@@ -115,5 +115,8 @@ export default Ember.Component.extend({
     if (at > 0) {
       this.play(at);
     }
+  },
+  delete(annotation) {
+    annotation.destroyRecord();
   }
 });
