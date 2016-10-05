@@ -48,45 +48,23 @@
         {{#each sortedAnnotations as |annotation|}}
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
-              {{#if annotation.deltas.ops}}
-                {{#render-quill
-                   deltas=annotation.deltas
-                   readOnly=true
-                   class="f6"
-                }}
-                  <div class="toolbar bb b--light-gray pa4 pt2 pb2">
-                    {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
-                      <i class="fa fa-play" aria-hidden="true"></i>
-                    {{/link-to}}
-                    <div class="fr">
-                      <a class="link f6 mr3" href="#">
-                        <i class="fa fa-facebook" aria-hidden="true"></i> Share
-                      </a>
-                      <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
-                      </a>
-                    </div>
-                  </div>
-                {{/render-quill}}
-              {{else}}
-                <div class="toolbar bb b--light-gray pa4 pt2 pb2">
-                  {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                  {{/link-to}}
-                  <div class="fr">
-                    <a class="link f6 mr3" href="#">
-                      <i class="fa fa-facebook" aria-hidden="true"></i> Share
-                    </a>
-                    <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
-                    </a>
-                  </div>
+              <div class="toolbar bb b--light-gray pa4 pt2 pb2">
+                {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                {{/link-to}}
+                <div class="fr">
+                  <a class="link f6 mr3" href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i> Share
+                  </a>
+                  <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                  </a>
                 </div>
-                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
-              {{/if}}
+              </div>
+              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
             </div>
           </div>
         {{/each}}
       </div>
     </div>
-
   </div>
 </div>
