@@ -1,6 +1,7 @@
 {{#mobiledoc-editor
    mobiledoc=mobiledoc
    cards=cards
+   options=mobileDocOptions
    on-change=(action textChanged) as |editor|}}
   <div class="cf toolbar ph0 pv2 ma0 bb b--light-gray w-100">
 
@@ -100,7 +101,7 @@
             type="button"
             title="Image"
             class="bg-white dim btn mobiledoc-toolbar__button"
-            {{action addCard editor "video-card"}}>
+            {{action addCard editor "image-card"}}>
           <i class="fa fa-picture-o" aria-hidden="true"></i>
         </button>
       </div>
@@ -150,6 +151,11 @@
       {{mobiledoc-link-prompt
         on-submit=(action completeLink editor)
         on-cancel=(action (mut linkOffsets) null)}}
+    {{/if}}
+    {{#if imgPrompt}}
+      {{mobiledoc-link-prompt
+        on-submit=(action addImg editor)
+        on-cancel=(action (mut imgPromt) null)}}
     {{/if}}
   </div>
 {{/mobiledoc-editor}}
