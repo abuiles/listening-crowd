@@ -17,11 +17,11 @@
         }}
       </div>
     </div>
-    <div class="bgc--p container">
+    <div class="bgc--p ph4">
       {{#liquid-if annotation}}
         {{text-editor
           textChanged=(action (mut annotation.deltas))
-          class="cf bg-white w-100"
+          class="cf bg-white w-100 ph4 pb4"
         }}
         <div class="tc mt3">
           <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel}}>Cancel</a>
@@ -33,7 +33,7 @@
     <div class="container mt3">
       <div class="mt3 f0">
         <div class="dib w-100 w-25-l v-top pr4-l">
-          <img class="ba b--near-white db" src={{model.podcast.itunesImage}}>
+          <img class="ba b--light-gray db" src={{model.podcast.itunesImage}}>
         </div>
         <div class="dib w-100 w-75-l v-top f5">
           <h1 class="mt0 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
@@ -47,8 +47,8 @@
       <div class="mboard">
         {{#each sortedAnnotations as |annotation|}}
           <div class="mboard_card pa2-ns pb2">
-            <div class="cf bg-near-white">
-              <div class="toolbar bb b--white pa4 pt2 pb2">
+            <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
+              <div class="toolbar bb b--light-gray pa4 pt2 pb2">
                 {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
                   <i class="fa fa-play" aria-hidden="true"></i>
                 {{/link-to}}
@@ -60,12 +60,11 @@
                   </a>
                 </div>
               </div>
-              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames}}
+              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
             </div>
           </div>
         {{/each}}
       </div>
     </div>
-
   </div>
 </div>

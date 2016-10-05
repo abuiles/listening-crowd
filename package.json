@@ -63,6 +63,6 @@
     "liquid-fire": "0.26.1",
     "loader.js": "^4.0.1",
     "peaks.js": "abuiles/____peaks_temp",
-    "prosemirror": "^0.10.0"
+    "spotify-uri": "^1.0.0"
   }
 }

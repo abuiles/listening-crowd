@@ -1,3 +1,4 @@
+// color palette https://cl.ly/3h2p0Q0r000w
 $tt-primary: #333333;
 $tt-secondary: #4ea1d3;
 $bg-primary: #d8e9ef;
@@ -46,6 +47,12 @@ a:hover, a:active, a:focus {
 // layout
 .container {
   padding: $spacing-medium $spacing-large;
+}
+sidebar {
+  background-color: rgba(#454552, 0.07);
+}
+.main {
+  background-color: rgba(#454552, 0.02);
 }
 
 // index

@@ -1,9 +1,9 @@
-<sidebar class="bg-light-gray dn db-l">
+<sidebar class="dn db-l br b--light-gray">
   <div class="pa3 pl4">
     <h3 class="dn db-l">{{link-to model.title "podcasts.show" model class="link"}}</h3>
     <ul class="list pl0 dn db-l">
       {{#each episodes as |episode|}}
-        <li>
+        <li class="f6 mb2 lh-title">
           {{link-to episode.title "podcasts.show.episode" model episode}}
         </li>
       {{/each}}
