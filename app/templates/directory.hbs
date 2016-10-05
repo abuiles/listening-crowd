@@ -1,12 +1,12 @@
 <div class="flex">
   <div class="flex-auto">
     <div class="container">
-      <div class="fboard f0">
+      <div class="fboard f0 flex flex-wrap">
         {{#each model as |podcast|}}
-          <div class="w-25-l w-50-m w-100 dib pa3-ns pb3 f5 v-top">
-            <div class="bg-near-white ba b--near-white">
+          <div class="w-25-l w-50-m w-100 dib pa3-ns pb3 f5 v-top flex">
+            <div class="bg-white ba b--light-gray flex flex-auto flex-column">
               <div class="relative">
-                <img class="img db" src={{podcast.itunesImage}}>
+                <img class="img db bb b--light-gray" src={{podcast.itunesImage}}>
               </div>
               <div class="pa3 cf">
                 <h3 class="mt0 mb2 f4">{{link-to podcast.title "podcasts.show" podcast class="link"}}</h3>
