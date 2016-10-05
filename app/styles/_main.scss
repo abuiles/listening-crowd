@@ -16,6 +16,12 @@ body, .f--b {
 h1, h2, h3, h4, h5, h6, .f--h {
   font-family: 'Roboto Slab', serif;
 }
+h1 {
+  line-height: 1.05em;
+}
+h2, h3 {
+  line-height: 1.25em;
+}
 a {
   color: $tt-secondary;
 }
@@ -47,12 +53,6 @@ a:hover, a:active, a:focus {
 // layout
 .container {
   padding: $spacing-medium $spacing-large;
-}
-sidebar {
-  background-color: rgba(#454552, 0.07);
-}
-.main {
-  background-color: rgba(#454552, 0.02);
 }
 nav .active {
   font-weight: bold;

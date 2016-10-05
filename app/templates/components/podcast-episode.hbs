@@ -49,7 +49,7 @@
         {{#each sortedAnnotations as |annotation|}}
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
-              <div class="toolbar bb b--light-gray pa4 pt2 pb2">
+              <div class="toolbar bb b--light-gray bg-near-white pa4 pt2 pb2">
                 {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
                   <i class="fa fa-play" aria-hidden="true"></i>
                 {{/link-to}}
