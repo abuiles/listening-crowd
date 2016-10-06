@@ -20,6 +20,9 @@ Router.map(function() {
   this.route('protected');
   this.route('directory');
   this.route('about');
+  this.route('listener', {
+    path: 'listener/:slug'
+  });
 });
 
 export default Router;

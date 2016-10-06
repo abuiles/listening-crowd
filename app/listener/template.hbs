@@ -1,0 +1,29 @@
+<div class="flex">
+  <div class="flex-auto">
+    <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+      <div class="tc">
+        <h1 class="f4">{{model.username}}</h1>
+        <hr class="mw3 bb bw1 b--black-10">
+      </div>
+      <p class="lh-copy measure center f6 black-70">
+        Quite affectionate and outgoing.
+      </p>
+    </article>
+    <div class="container">
+      <div class="mboard">
+        {{#each model.annotations as |annotation|}}
+          <div class="mboard_card pa2-ns pb2">
+            <div class="cf bg-white shadow-1">
+              <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
+                {{#link-to "podcasts.show.episode" annotation.episode.podcast annotation.episode (query-params at=annotation.start)}}
+                  {{annotation.episode.podcast.title}}: {{annotation.episode.title}}
+                {{/link-to}}
+              </div>
+              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=licSession.cardNames class="ph4 pv3"}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

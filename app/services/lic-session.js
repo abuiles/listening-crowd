@@ -5,6 +5,13 @@ export default Ember.Service.extend({
   session: Ember.inject.service(),
   ajax: Ember.inject.service(),
   store: Ember.inject.service(),
+  cardNames: [
+    'video-card',
+    'song-card',
+    'amazon-card',
+    'quote-card',
+    'image-card'
+  ],
   user: Ember.computed('session.data.authenticated.jwt', {
     get() {
       let jwt = this.get('session.data.authenticated.jwt');
