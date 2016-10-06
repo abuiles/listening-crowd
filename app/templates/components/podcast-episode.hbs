@@ -16,7 +16,7 @@
         }}
       </div>
     </div>
-    <div class="ph4">
+    <div class="container">
       {{#liquid-if annotation}}
         {{#if annotation}}
           {{text-editor
@@ -25,23 +25,22 @@
             class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
           }}
         {{/if}}
-        <div class="tc mt3">
-          <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel annotation}}>Cancel</a>
-          <button class="btn link f--h ph4 pv2 dib white bg-mid-gray mb3" {{action save}}>Save Annotation</button>
+        <div class="tc mv3">
+          <a class="btn link f--h ph4 pv2 dib white bgc--b" onclick={{action cancel annotation}}>Cancel</a>
+          <button class="btn link f--h ph4 pv2 dib white bgc--b ml2" {{action save}}>Save Annotation</button>
         </div>
       {{/liquid-if}}
     </div>
 
-    <div class="container mt3">
-      <div class="mt3 f0">
-        <div class="dib w-100 w-25-l v-top pr4-l">
-          <img class="ba b--light-gray db" src={{model.podcast.itunesImage}}>
-        </div>
-        <div class="dib w-100 w-75-l v-top f5">
-          <h1 class="mt0 mb3 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
-          <p class="f--h f6 ttu tracked">Aired on: {{moment-format model.pubDate "MMM D"}}</p>
-          <p class="mb0">{{{model.summary}}}</p>
-        </div>
+    <div class="container f0">
+      <div class="dib w-100 w-25-l v-top pr4-l">
+        <img class="ba b--light-gray db" src={{model.podcast.itunesImage}}>
+      </div>
+      <div class="dib w-100 w-75-l v-top f5">
+        <h1 class="mt0 mb3 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
+        <p class="f--h f6 ttu tracked">Aired on: {{moment-format model.pubDate "MMM D"}}</p>
+        {{!-- {{episode.prettyDuration}} --}}
+        <p class="mb0">{{{model.summary}}}</p>
       </div>
     </div>
 
@@ -49,36 +48,32 @@
       <div class="mboard">
         {{#each sortedAnnotations as |annotation|}}
           <div class="mboard_card pa2-ns pb2">
-            <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
-              <div class="toolbar bb b--light-gray bg-near-white">
+            <div class="cf bg-white shadow-1">
+              <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
                 <a {{action playAnnotation model annotation}}>
-                  <div class="ph4 pv2 dib">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                  </div>
+                  <i class="fa fa-play " aria-hidden="true"></i>
                 </a>
-                <div class="fr">
-                  {{#deferred-content licSession.user as |d|}}
-                    {{#d.fulfilled as |currentUser|}}
-                      {{#if (eq currentUser.id annotation.user.id)}}
-                        <a class="link" href="#" {{action edit annotation}}>
-                          Edit
-                        </a>
-                        <a class="link" href="#">
-                          Delete
-                        </a>
-                      {{/if}}
-                    {{/d.fulfilled}}
-                  {{/deferred-content}}
-                  <a class="link f6 mr3" href="#">
-                    <i class="fa fa-facebook" aria-hidden="true"></i> Share
+                {{!-- <div class="fr">
+                  <a class="link f6 mr3 fw3" href="#">Share
                   </a>
-                  <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                  <a class="link f6 fw3" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet
                   </a>
-                </div>
+                </div> --}}
               </div>
               {{#unless annotation.hasDirtyAttributes}}
-                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
+                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
               {{/unless}}
+              <div class="ph4 tr">
+                {{!-- <p class="ma0 dib f6 black-40 i">By <a href="">{{userName}}</a></p> --}}
+                {{#deferred-content licSession.user tagName="" as |d|}}
+                  {{#d.fulfilled tagName="" as |currentUser|}}
+                    {{#if (eq currentUser.id annotation.user.id)}}
+                      <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      {{!-- <a class="link dib" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a> --}}
+                    {{/if}}
+                  {{/d.fulfilled}}
+                {{/deferred-content}}
+              </div>
             </div>
           </div>
         {{/each}}

@@ -54,3 +54,26 @@
   coursor:pointer;
 }
 
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+
+/* BOX-SHADOW */
+
+.shadow-1 { box-shadow: 0 1px 3px 0 #eee,0 0 0 1px #eee; }
+
+@media #{$breakpoint-not-small} {
+  .shadow-1-ns { box-shadow: 0 1px 3px 0 #eee,0 0 0 1px #eee; }
+}
+
+@media #{$breakpoint-medium} {
+  .shadow-1-m { box-shadow: 0 1px 3px 0 #eee,0 0 0 1px #eee; }
+}
+
+@media #{$breakpoint-large} {
+  .shadow-1-l { box-shadow: 0 1px 3px 0 #eee,0 0 0 1px #eee; }
+}
+
