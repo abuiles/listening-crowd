@@ -69,7 +69,7 @@
                   {{#d.fulfilled tagName="" as |currentUser|}}
                     {{#if (eq currentUser.id annotation.user.id)}}
                       <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                      {{!-- <a class="link dib" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a> --}}
+                      <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     {{/if}}
                   {{/d.fulfilled}}
                 {{/deferred-content}}

@@ -143,5 +143,5 @@ export default Ember.Component.extend({
     });
 
     this.transitionTo(annotation.get('start'));
-  }
+  },
 });
