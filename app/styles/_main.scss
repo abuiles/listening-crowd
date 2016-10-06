@@ -4,6 +4,7 @@ $tt-secondary: #4ea1d3;
 $bg-primary: #d8e9ef;
 $bg-secondary: #4ea1d3;
 $bg-tertiary: #e85a71;
+$bg-dark: #454552;
 
 // resets
 body {
@@ -46,6 +47,9 @@ a:hover, a:active, a:focus {
 .bgc--t {
   background-color: $bg-tertiary;
 }
+.bgc--b {
+  background-color: $bg-dark;
+}
 .btn {
   border: none;
   border-radius: 3px;
@@ -63,13 +67,6 @@ nav .active {
 }
 
 // index
-.card_ovl {
-  opacity: 0;
-  &:hover {
-    opacity: 1;
-    transition:opacity .15s ease-in;
-  }
-}
 .fboard {
   margin-right: -16px;
   margin-left: -16px;

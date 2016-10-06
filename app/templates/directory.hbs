@@ -4,7 +4,7 @@
       <div class="fboard f0 flex flex-wrap">
         {{#each model as |podcast|}}
           <div class="w-25-l w-50-m w-100 dib pa3-ns pb3 f5 v-top flex">
-            <div class="bg-white ba b--light-gray flex flex-auto flex-column">
+            <div class="bg-white flex flex-auto flex-column shadow-1">
               <div class="relative">
                 {{#link-to "podcasts.show" podcast}}
                   <img class="img db bb b--light-gray" src={{podcast.itunesImage}}>
