@@ -64,14 +64,18 @@
                 {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
               {{/unless}}
               <div class="ph4 tr pb2">
-                <p class="ma0 dib f6 black black-40 i">By {{annotation.user.username}}</p>
-                {{#deferred-content licSession.user tagName="" as |d|}}
-                  {{#d.fulfilled tagName="" as |currentUser|}}
-                    {{#if (eq currentUser.id annotation.user.id)}}
-                      <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                      <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    {{/if}}
-                  {{/d.fulfilled}}
+                {{#deferred-content annotation.user tagName="" as |promise|}}
+                  {{#promise.fulfilled tagName="" as |annotationOwner|}}
+                    <p class="ma0 dib f6 black black-40 i">By {{annotationOwner.username}}</p>
+                  {{/promise.fulfilled}}
+                  {{#deferred-content licSession.user tagName="" as |d|}}
+                    {{#d.fulfilled tagName="" as |currentUser|}}
+                      {{#if (eq currentUser.id annotation.user.id)}}
+                        <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      {{/if}}
+                    {{/d.fulfilled}}
+                  {{/deferred-content}}
                 {{/deferred-content}}
               </div>
             </div>
