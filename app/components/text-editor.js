@@ -83,7 +83,6 @@ export default Ember.Component.extend({
       let markup = postEditor.builder.createMarkup('img', {src});
       let offsets = editor.range;
 
-      debugger;
       if (offsets.isCollapsed) {
         postEditor.toggleMarkup(markup);
       } else {
