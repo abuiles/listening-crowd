@@ -14,5 +14,8 @@ export default Ember.Route.extend({
     if (!model) {
       this.transitionTo('index');
     }
+  },
+  serialize(model) {
+    return { slug: model.get('slug') };
   }
 });

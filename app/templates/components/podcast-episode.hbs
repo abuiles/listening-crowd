@@ -66,7 +66,9 @@
               <div class="ph4 tr pb2">
                 {{#deferred-content annotation.user tagName="" as |promise|}}
                   {{#promise.fulfilled tagName="" as |annotationOwner|}}
-                    <p class="ma0 dib f6 black black-40 i">By {{annotationOwner.username}}</p>
+                    {{#link-to "listener" annotationOwner class="ma0 dib f6 black black-40 i"}}
+                      By {{annotationOwner.username}}
+                    {{/link-to}}
                   {{/promise.fulfilled}}
                   {{#deferred-content licSession.user tagName="" as |d|}}
                     {{#d.fulfilled tagName="" as |currentUser|}}
@@ -79,6 +81,7 @@
                 {{/deferred-content}}
               </div>
             </div>
+
           </div>
         {{/each}}
       </div>
