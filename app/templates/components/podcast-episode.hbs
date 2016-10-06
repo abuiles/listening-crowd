@@ -56,16 +56,23 @@
                   </div>
                 {{/link-to}}
                 <div class="fr">
-                  {{!--
-                  <a class="link f6 mr3" href="#" {{action edit annotation}}>
-                    <i class="" aria-hidden="true"></i> Edit
-                  </a>
+                  {{#deferred-content licSession.user as |d|}}
+                    {{#d.fulfilled as |currentUser|}}
+                      {{#if (eq currentUser.id annotation.user.id)}}
+                        <a class="link" href="#" {{action edit annotation}}>
+                          Edit
+                        </a>
+                        <a class="link" href="#">
+                          Delete
+                        </a>
+                      {{/if}}
+                    {{/d.fulfilled}}
+                  {{/deferred-content}}
                   <a class="link f6 mr3" href="#">
                     <i class="fa fa-facebook" aria-hidden="true"></i> Share
                   </a>
                   <a class="link f6" href="https://twitter.com/intent/tweet?text=Hello%20world">  <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
                   </a>
-                  --}}
                 </div>
               </div>
               {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
