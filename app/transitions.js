@@ -12,10 +12,10 @@ export default function(){
   );
   this.transition(
     this.toRoute('directory'),
-    this.use('toLeft')
+    this.use('toLeft', { duration: 80, easing: 'easeInOut' })
   );
   this.transition(
     this.toRoute('index'),
-    this.use('toRight')
+    this.use('toRight', { duration: 80, easing: 'easeInOut' })
   );
 }
