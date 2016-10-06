@@ -64,7 +64,7 @@
                 {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
               {{/unless}}
               <div class="ph4 tr">
-                {{!-- <p class="ma0 dib f6 black-40 i">By <a href="">{{userName}}</a></p> --}}
+                <p class="ma0 dib f6 black black-40 i">By {{annotation.user.username}}</p>
                 {{#deferred-content licSession.user tagName="" as |d|}}
                   {{#d.fulfilled tagName="" as |currentUser|}}
                     {{#if (eq currentUser.id annotation.user.id)}}
