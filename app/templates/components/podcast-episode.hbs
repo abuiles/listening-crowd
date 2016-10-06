@@ -9,9 +9,8 @@
           registerPlayer=(action (mut player))
           unregisterPlayer=(action (mut player null))
           timeupdate=(action timeupdate)
-          regionCreated=(action regionCreated)
-          deleteRegion=(action deleteRegion)
-          region=region
+          segmentCreated=(action segmentCreated)
+          segment=segment
           feedbackLoop=feedbackLoop
           startAt=at
         }}
@@ -19,11 +18,13 @@
     </div>
     <div class="container">
       {{#liquid-if annotation}}
-        {{text-editor
-          mobiledoc=annotation.deltas
-          textChanged=(action (mut annotation.deltas))
-          class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
-        }}
+        {{#if annotation}}
+          {{text-editor
+            mobiledoc=annotation.deltas
+            textChanged=(action (mut annotation.deltas))
+            class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
+          }}
+        {{/if}}
         <div class="tc mv3">
           <a class="btn link f--h ph4 pv2 dib white bgc--b" onclick={{action cancel annotation}}>Cancel</a>
           <button class="btn link f--h ph4 pv2 dib white bgc--b ml2" {{action save}}>Save Annotation</button>
@@ -49,9 +50,9 @@
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white shadow-1">
               <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
-                {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
+                <a {{action playAnnotation model annotation}}>
                   <i class="fa fa-play " aria-hidden="true"></i>
-                {{/link-to}}
+                </a>
                 {{!-- <div class="fr">
                   <a class="link f6 mr3 fw3" href="#">Share
                   </a>
@@ -59,7 +60,9 @@
                   </a>
                 </div> --}}
               </div>
-              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
+              {{#unless annotation.hasDirtyAttributes}}
+                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
+              {{/unless}}
               <div class="ph4 tr">
                 {{!-- <p class="ma0 dib f6 black-40 i">By <a href="">{{userName}}</a></p> --}}
                 {{#deferred-content licSession.user tagName="" as |d|}}
