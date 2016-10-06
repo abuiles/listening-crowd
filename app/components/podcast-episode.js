@@ -29,48 +29,35 @@ export default Ember.Component.extend({
   timeupdate(event) {
     this.set('currentTime', event.target.currentTime);
   },
-  regionCreated(region) {
+  segmentCreated(segment, annotation = null) {
     this.requireUser();
 
-    if (!this.get('region')) {
-      let annotation = this.get('model').get('annotations').createRecord({
-        episode: this.get('model')
-        // timestamp: currentTime
-      });
+    if (!this.get('segment')) {
+      if (!annotation) {
+        annotation = this.get('model').get('annotations').createRecord({
+          episode: this.get('model')
+        });
+      }
+
       this.set('annotation', annotation);
     }
-    this.set('region', Ember.Object.create(region));
-  },
-  regionUpdated(region) {
-    if (this.get('region')) {
-      this.get('region').setProperties(region);
-    }
-  },
-  deleteRegion() {
-    if (this.get('region')) {
-      let region = this.get('region');
-      this.get('player').regions.list[region.get('id')].remove();
-      this.setProperties({
-        annotation: null,
-        region: null
-      });
-    }
+    this.set('segment', segment);
   },
   save() {
     let annotation = this.get('annotation');
 
-    let region = this.get('region');
+    let segment = this.get('segment');
     this.get('licSession.user').then((user) => {
       annotation.setProperties({
-        start: region.get('start'),
-        end: region.get('end'),
+        start: segment.startTime,
+        end: segment.endTime,
         user: user
       });
 
       annotation.save().then(() =>  {
         this.setProperties({
           annotation: null,
-          region: null
+          segment: null
         });
 
         this.get('player').segments.removeAll();
@@ -80,7 +67,18 @@ export default Ember.Component.extend({
     return false;
   },
   edit(annotation) {
-    this.set('annotation', annotation);
+    let payload = {
+      startTime: annotation.get('start'),
+      endTime: annotation.get('end'),
+      editable: true,
+      id: annotation.get('id'),
+      labelText: ''
+    };
+    this.get('player').segments.removeAll();
+    this.get('player').segments.add([payload]);
+
+    let segment = this.get('player').segments.getSegments()[0];
+    this.segmentCreated(segment, annotation);
   },
   currentTimeAnnotations() {
     return this.get('model.annotations').then((annotations) => {
@@ -118,7 +116,7 @@ export default Ember.Component.extend({
 
     this.setProperties({
       annotation: null,
-      region: null
+      segment: null
     });
   },
   didUpdateAttrs() {
@@ -130,5 +128,14 @@ export default Ember.Component.extend({
   },
   delete(annotation) {
     annotation.destroyRecord();
+  },
+  playAnnotation(episode, annotation) {
+    this.get('player').segments.removeAll();
+    this.setProperties({
+      annotation: null,
+      region: null
+    });
+
+    this.transitionTo(annotation.get('start'));
   }
 });

@@ -9,9 +9,8 @@
           registerPlayer=(action (mut player))
           unregisterPlayer=(action (mut player null))
           timeupdate=(action timeupdate)
-          regionCreated=(action regionCreated)
-          deleteRegion=(action deleteRegion)
-          region=region
+          segmentCreated=(action segmentCreated)
+          segment=segment
           feedbackLoop=feedbackLoop
           startAt=at
         }}
@@ -19,11 +18,13 @@
     </div>
     <div class="ph4">
       {{#liquid-if annotation}}
-        {{text-editor
-          mobiledoc=annotation.deltas
-          textChanged=(action (mut annotation.deltas))
-          class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
-        }}
+        {{#if annotation}}
+          {{text-editor
+            mobiledoc=annotation.deltas
+            textChanged=(action (mut annotation.deltas))
+            class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
+          }}
+        {{/if}}
         <div class="tc mt3">
           <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel annotation}}>Cancel</a>
           <button class="btn link f--h ph4 pv2 dib white bg-mid-gray mb3" {{action save}}>Save Annotation</button>
@@ -50,11 +51,11 @@
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
               <div class="toolbar bb b--light-gray bg-near-white">
-                {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
+                <a {{action playAnnotation model annotation}}>
                   <div class="ph4 pv2 dib">
                     <i class="fa fa-play" aria-hidden="true"></i>
                   </div>
-                {{/link-to}}
+                </a>
                 <div class="fr">
                   {{#deferred-content licSession.user as |d|}}
                     {{#d.fulfilled as |currentUser|}}
@@ -75,7 +76,9 @@
                   </a>
                 </div>
               </div>
-              {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
+              {{#unless annotation.hasDirtyAttributes}}
+                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pt3 pb4"}}
+              {{/unless}}
             </div>
           </div>
         {{/each}}

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: 'at',
-  at: 0,
+  at: -1,
   session: Ember.inject.service(),
   requireUser() {
     if (!this.get('session.isAuthenticated')) {

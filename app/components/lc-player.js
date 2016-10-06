@@ -44,9 +44,6 @@ export default Ember.Component.extend({
       segments: []
     });
 
-
-
-
     if (this.get('startAt')) {
       peaks.time.setCurrentTime(this.get('startAt'));
       peaks.player.play();
@@ -81,18 +78,14 @@ export default Ember.Component.extend({
     }
   },
   createSegment() {
-    if (!this.get('region')) {
+    if (!this.get('segment')) {
       let peaks  = this.get('peaks');
       let startTime = peaks.time.getCurrentTime();
       let endTime = startTime + 10;
       let editable = true;
       peaks.segments.add({startTime, endTime, editable});
-      let region = peaks.segments.getSegments()[0];
-      this.regionCreated({
-        start: startTime,
-        end: endTime,
-        region
-      });
+      let segment = peaks.segments.getSegments()[0];
+      this.segmentCreated(segment);
     }
   },
 
