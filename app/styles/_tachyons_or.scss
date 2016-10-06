@@ -52,6 +52,9 @@
 /* LINKS */
 .link {
   coursor:pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 
