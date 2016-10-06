@@ -12,9 +12,13 @@ body {
 body, .f--b {
   font-family: 'Roboto', sans-serif;
   line-height: 1.375em;
+  font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6, .f--h {
   font-family: 'Roboto Slab', serif;
+}
+.f--h {
+  font-weight: 400;
 }
 h1 {
   line-height: 1.05em;
@@ -22,7 +26,7 @@ h1 {
 h2, h3 {
   line-height: 1.25em;
 }
-a {
+a, .a {
   color: $tt-secondary;
 }
 a:hover, a:active, a:focus {

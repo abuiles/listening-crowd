@@ -17,12 +17,12 @@
         }}
       </div>
     </div>
-    <div class="bgc--p ph4">
+    <div class="ph4">
       {{#liquid-if annotation}}
         {{text-editor
           mobiledoc=annotation.deltas
           textChanged=(action (mut annotation.deltas))
-          class="cf bg-white w-100 ph4 pb4"
+          class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
         }}
         <div class="tc mt3">
           <a class="btn link f--h ph4 pv2 dib white bg-mid-gray" onclick={{action cancel annotation}}>Cancel</a>
@@ -49,9 +49,11 @@
         {{#each sortedAnnotations as |annotation|}}
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee;">
-              <div class="toolbar bb b--light-gray bg-near-white pa4 pt2 pb2">
+              <div class="toolbar bb b--light-gray bg-near-white">
                 {{#link-to "podcasts.show.episode" model.podcast model (query-params at=annotation.start)}}
-                  <i class="fa fa-play" aria-hidden="true"></i>
+                  <div class="ph4 pv2 dib">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                  </div>
                 {{/link-to}}
                 <div class="fr">
                   {{!--

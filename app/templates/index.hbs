@@ -4,28 +4,39 @@
       <div class="fboard f0 flex flex-wrap">
         {{#each model as |episode|}}
           <div class="w-25-l w-50-m w-100 pa3-ns pb3 f5 v-top flex">
-            <div class="bg-white ba b--light-gray flex flex-auto flex-column">
-              <div class="relative">
-                <img class="img flex-auto bb b--light-gray" src={{episode.podcast.itunesImage}}>
-                <div class="card_ovl absolute top-0 bottom-0 left-0 right-0 pa3 white cf flex flex-column items-center justify-center bgc--t">
-                  <div class="w-100 flex-auto flex">
-                    <div class="w-100 tc self-center">
-                      <p class="w-100 ma0 f-6 f--h lh-solid">{{episode.annotationsCount}}</p>
-                      <p class="f3 ma0 f--h lh-copy">annotations</p>
-                    </div>
-                  </div>
-                  <div class="self-end w-100 cf">
-                    <p class="ma0 fl">Aired on: {{moment-format episode.pubDate "MMM D"}}</p>
-                    <p class="ma0 fr">{{episode.prettyDuration}}</p>
+            <div class="bg-white flex flex-auto flex-column" style="box-shadow:0 1px 3px 0 #eee,0 0 0 1px #eee">
+              {{#link-to "podcasts.show.episode" episode.podcast episode}}
+                <img class="img db bb b--light-gray" src={{episode.podcast.itunesImage}}>
+              {{/link-to}}
+              {{!-- <div class="card_ovl absolute top-0 bottom-0 left-0 right-0 pa3 white cf flex flex-column items-center justify-center bgc--t">
+                <div class="w-100 flex-auto flex">
+                  <div class="w-100 tc self-center">
+                    <p class="w-100 ma0 f-6 f--h lh-solid">{{episode.annotationsCount}}</p>
+                    <p class="f3 ma0 f--h lh-copy">annotations</p>
                   </div>
                 </div>
-              </div>
-              <div class="pa3 cf">
+                <div class="self-end w-100 cf">
+                  <p class="ma0 fl">Aired on: {{moment-format episode.pubDate "MMM D"}}</p>
+                  <p class="ma0 fr">{{episode.prettyDuration}}</p>
+                </div>
+              </div> --}}
+
+              <div class="ph3 pt3 cf flex-auto">
                 <h3 class="mt0 mb2 f4">{{link-to episode.title "podcasts.show.episode" episode.podcast episode class="link"}}</h3>
                 {{#if episode.itunesSubtitle}}
-                  <p class="ma0" >{{truncate-multiline text=episode.itunesSubtitle MoreButtonText="Show More"}}</p>
+                  <p class="ma0">{{truncate-multiline text=episode.itunesSubtitle}}</p>
                 {{/if}}
               </div>
+
+              <div class="ph3 pv2 mt3 cf bt b--black-10 black-40 f6 f--h ttu tracked">
+                {{moment-format episode.pubDate "MMM D"}}
+                <div class="fr">
+                  {{#link-to "podcasts.show.episode" episode.podcast episode class="link black-40"}}
+                    <i class="fa fa-comment" aria-hidden="true"></i> {{episode.annotationsCount}} annotations
+                  {{/link-to}}
+                </div>
+              </div>
+
             </div>
           </div>
         {{/each}}
