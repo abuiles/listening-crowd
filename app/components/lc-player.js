@@ -44,7 +44,7 @@ export default Ember.Component.extend({
       segments: []
     });
 
-    if (this.get('startAt')) {
+    if (this.get('startAt') >= 0) {
       peaks.time.setCurrentTime(this.get('startAt'));
       peaks.player.play();
     }

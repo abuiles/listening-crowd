@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service(),
   licSession: Ember.inject.service(),
+  scroller: Ember.inject.service(),
   init() {
     this._super(...arguments);
     this.set('currentTime', 0);
@@ -79,6 +80,11 @@ export default Ember.Component.extend({
 
     let segment = this.get('player').segments.getSegments()[0];
     this.segmentCreated(segment, annotation);
+    Ember.run.scheduleOnce('afterRender', () => {
+      this.get('scroller').scrollVertical('#peaks-container', {
+        duration: 200
+      });
+    });
   },
   currentTimeAnnotations() {
     return this.get('model.annotations').then((annotations) => {
