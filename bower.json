@@ -1,15 +1,12 @@
 {
   "name": "listening-crowd",
   "dependencies": {
-    "ember": "2.8.1",
+    "ember": "2.8.2",
     "ember-cli-shims": "0.1.1",
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "pretender": "~1.1.0",
-    "Faker": "~3.1.0",
-    "auth0-lock": "^7.10.2",
-    "jsrsasign": "^5.0.1",
-    "blueimp-md5": "2.1.0"
+    "Faker": "~3.1.0"
   },
   "resolutions": {
     "ember": "canary"

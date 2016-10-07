@@ -3,17 +3,19 @@
 
     <div class="container bgc--s relative">
       <div class="pt3 pb3">
-        {{lc-player
-          src=model.podzyUrl
-          waveformData=model.waveformDataUrl
-          registerPlayer=(action (mut player))
-          unregisterPlayer=(action (mut player null))
-          timeupdate=(action timeupdate)
-          segmentCreated=(action segmentCreated)
-          segment=segment
-          feedbackLoop=feedbackLoop
-          startAt=at
-        }}
+        {{#unless fastboot.isFastBoot}}
+          {{lc-player
+            src=model.podzyUrl
+            waveformData=model.waveformDataUrl
+            registerPlayer=(action (mut player))
+            unregisterPlayer=(action (mut player null))
+            timeupdate=(action timeupdate)
+            segmentCreated=(action segmentCreated)
+            segment=segment
+            feedbackLoop=feedbackLoop
+            startAt=at
+          }}
+        {{/unless}}
       </div>
     </div>
     <div class="container annotationEditor">

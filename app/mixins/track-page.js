@@ -5,7 +5,7 @@ export default Ember.Mixin.create({
   fastboot: Ember.inject.service(),
   _trackPage() {
     Ember.run.scheduleOnce('afterRender', this, () => {
-      let page = 'woot';
+      let page = document.location.pathname;
       let title = this.getWithDefault('currentRouteName', 'unknown');
 
       this.get('metrics').trackPage({ page, title });
