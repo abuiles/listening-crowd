@@ -1,0 +1,36 @@
+.container {
+  padding: $spacing-medium $spacing-large;
+}
+
+// index
+.fboard {
+  margin-right: -16px;
+  margin-left: -16px;
+}
+
+// episode
+.mboard {
+  column-count: 1;
+  column-gap: 0;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+.mboard_card {
+  break-inside: avoid;
+}
+@media #{$breakpoint-medium} {
+  .mboard {
+    column-count: 2;
+  }
+}
+@media #{$breakpoint-large} {
+  sidebar {
+    @include flex(1 1 2/12*100%);
+  }
+  .main {
+    @include flex(1 1 10/12*100%);
+  }
+  .mboard {
+    column-count: 3;
+  }
+}

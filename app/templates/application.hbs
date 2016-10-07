@@ -2,22 +2,24 @@
   <div class="dib cf">
     <img src="https://d3vv6lp55qjaqc.cloudfront.net/items/1B1P0X2k1J3G460h0T1S/lc-logo.png" class="w3 dib mr2" alt="Site Name">
     <div class="dib">
-      <h3 class="ma0">{{link-to "The Listening Crowd" "index"}}</h3>
+      <h3 class="ma0 f4">{{link-to "The Listening Crowd" "index"}}</h3>
       <p class="ma0">Podcasts distilled</p>
     </div>
   </div>
+
   <div class="dtc v-mid w-40 tr">
-    {{link-to "Podcasts" "directory" class="link dark-gray f6 dib f--h ttu tracked mr3 mr4-ns normal"}}
-    <a href="https://abuiles.typeform.com/to/URFF2D" class="link dark-gray f6 dib f--h ttu tracked mr3 mr4-ns normal">Add podcast</a>
-     {{link-to "About" "about" class="link dark-gray f6 dib f--h ttu tracked mr3 mr4-ns normal"}}
+    {{link-to "Podcasts" "directory" class="link f6 dib f--h ttu tracked mr3 mr4-ns normal nav_i nav_i--t"}}
+    <a href="https://abuiles.typeform.com/to/URFF2D" class="link f6 dib f--h ttu tracked mr3 mr4-ns normal nav_i nav_i--t">Add podcast</a>
+     {{link-to "About" "about" class="link f6 dib f--h ttu tracked mr3 mr4-ns normal nav_i nav_i--t"}}
     {{#if session.isAuthenticated}}
-      {{link-to "My profile" "profile" class="link dark-gray f6 f--h ttu tracked dib mr3 mr4-ns normal"}}
-      <a class="link dark-gray f6 dib f--h ttu tracked dib normal" {{ action "logout" }}>Logout</a>
+      {{link-to "My profile" "profile" class="link f6 f--h ttu tracked dib mr3 mr4-ns normal nav_i nav_i--t"}}
+      <a class="link f6 dib f--h ttu tracked dib normal nav_i nav_i--t" {{ action "logout" }}>Logout</a>
     {{else}}
-      <a class="link dark-gray f6 dib f--h ttu tracked normal" {{ action "login" }}>Log in or Signup</a>
+      <a class="link f6 dib f--h ttu tracked normal nav_i nav_i--t" {{ action "login" }}>Log in or Signup</a>
     {{/if}}
   </div>
 </nav>
+
 <div class="flex flex-column" style="min-height: 100vh;">
   <div class="flex" style="flex:1;">
     {{outlet "sidebar"}}
