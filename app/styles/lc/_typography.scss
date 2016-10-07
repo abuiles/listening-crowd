@@ -1,0 +1,27 @@
+body {
+  font-size: 16px;
+  color: #333;
+}
+body, .f--b {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.375em;
+  font-weight: 300;
+}
+.f--h, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+}
+h1 {
+  @extend .f1;
+  line-height: 1.05em;
+}
+h2 {
+  @extend .f2;
+  line-height: 1.25em;
+}
+h3 {
+  @extend .f3;
+  line-height: 1.25em;
+}
+h4 {
+  @extend .f4;
+}

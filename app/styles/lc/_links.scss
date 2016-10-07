@@ -1,0 +1,24 @@
+[data-ember-action]:not(:disabled) {
+  cursor: pointer;
+}
+
+a, .a {
+  color: $secondary;
+  &:hover, &:active, &:focus {
+    color: darken($secondary, 25%);
+  }
+}
+
+// nav items
+.nav_i--s {
+  &.active {
+    font-weight: 400;
+    color: darken($secondary, 25%);
+  }
+}
+.nav_i--t {
+  color: rgba(#000, 0.4);
+  &:hover, &:active, &:focus, &.active {
+    color: $text;
+  }
+}
