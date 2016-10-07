@@ -34,19 +34,5 @@ export default DS.Model.extend(HasManyQuery.ModelMixin, {
       let slug = this.get('slug');
       return `https://cdn.listeningcrowd.com/waveforms/${podcastSlug}/${slug}/waveform`;
     }
-  }).readOnly(),
-  prettyDuration: Ember.computed('itunesDuration.content', {
-    get() {
-      let duration = this.get('itunesDuration.content');
-      if (typeof duration === 'string') {
-        if (duration.indexOf(':') < 0) {
-          duration = window.juration.stringify(duration, {
-            format: 'chrono'
-          });
-        }
-      }
-
-      return duration;
-    }
   }).readOnly()
 });
