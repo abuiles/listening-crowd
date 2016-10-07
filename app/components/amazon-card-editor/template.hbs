@@ -1,5 +1,6 @@
-<form {{action save href on="submit"}}>
-  {{input value=href placeholder="Paste code from amazon"}}
-  <button type="submit">Add</button>
-  <button {{action cancel}}>Cancel</button>
+<form class="w-600" {{action save href on="submit"}}>
+  {{input value=href placeholder="Paste code from amazon" class="ba b--light-gray input-reset w-100 pa2 db w-100 mb3 f5"}}
+  <button class="btn bgc--b white ph3 pv1 f6" {{action cancel}}>Cancel</button>
+  <button type="submit" class="btn bgc--b white ph3 pv1 f6">Add</button>
 </form>
+

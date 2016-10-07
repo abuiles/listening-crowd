@@ -4,8 +4,10 @@
 
 a, .a {
   color: $secondary;
-  &:hover, &:active, &:focus {
-    color: darken($secondary, 25%);
+  &:not(.btn) {
+    &:hover, &:active, &:focus {
+      color: darken($secondary, 25%);
+    }
   }
 }
 

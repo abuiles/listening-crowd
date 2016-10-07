@@ -1,5 +1,5 @@
-<form {{action save href on="submit"}}>
-  {{input value=href placeholder="Any link to spotify"}}
-  <button type="submit">Link</button>
-  <button {{action cancel}}>Cancel</button>
+<form class="w-100" {{action save href on="submit"}}>
+  {{input value=href placeholder="Any link to spotify" class="pa2 input-reset w-100 ba b--light-gray f5 mb3"}}
+  <button class="btn bgc--b white ph3 pv1 f6" {{action cancel}}>Cancel</button>
+  <button class="btn bgc--b white ph3 pv1 f6" type="submit">Link</button>
 </form>
