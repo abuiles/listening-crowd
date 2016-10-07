@@ -1,18 +1,14 @@
-<form {{action save src title alt on="submit"}} class="measure center">
-  <fieldset class="ba b--transparent ph0 mh0">
-    <div class="">
-      <label class="db fw6 lh-copy f6" for="src">Link</label>
-      {{input name="src" value=src placeholder="Link to an image" class="pa2 input-reset w-100"}}
+<form {{action save src title alt on="submit"}} class="measure center w-600">
+  <fieldset class="ba b--transparent pa0 mh0">
+    <div>
+      <label class="db f--h f6 mb1 lh-solid" for="src">URL</label>
+      {{input name="src" value=src placeholder="Image URL" class="pa2 input-reset w-100 ba b--light-gray f5"}}
     </div>
     <div class="mv3">
-      <label class="db fw6 lh-copy f6" for="title">Title</label>
-      {{input name="title" value=title placeholder="Title (optional)" class="pa2 input-reset w-100"}}
-    </div>
-    <div class="mv3">
-      <label class="db fw6 lh-copy f6" for="alt">Description</label>
-      {{input name="alt" value=alt placeholder="Description (optional)" class="pa2 input-reset w-100"}}
+      <label class="db f--h f6 mb1 lh-solid" for="title">Title</label>
+      {{input name="title" value=title placeholder="Title (optional)" class="pa2 input-reset w-100 ba b--light-gray f5"}}
     </div>
   </fieldset>
-  <button type="submit" class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib">Add</button>
-  <button {{action cancel}} class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib">Cancel</button>
+  <button {{action cancel}} class="btn bgc--b white ph3 pv1 f6">Cancel</button>
+  <button type="submit" class="btn bgc--b white ph3 pv1 f6">Add</button>
 </form>

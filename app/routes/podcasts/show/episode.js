@@ -1,29 +1,30 @@
 import Ember from 'ember';
+import TrackPage from 'listening-crowd/mixins/track-page';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(TrackPage, {
   ajax: Ember.inject.service(),
+  headData: Ember.inject.service(),
   model(params) {
     let id = params.episodePermalink.split('-')[0];
     return this.store.findRecord('episode', id, {
       include: 'podcast'
     });
   },
+  afterModel(model) {
+    let meta = {
+      card: 'summary_large_image',
+      title: model.get('title'),
+      description: model.get('itunesSubtitle'),
+      site: '@listeningcrowd',
+      creator: '@listeningcrowd',
+      image: model.get('podcast.itunesImage')
+    };
+
+    for (var m in meta) {
+      this.get('headData').set(m, meta[m]);
+    }
+  },
   serialize(model) {
     return { episodePermalink: model.get('permalink') };
-  },
-  metrics: Ember.inject.service(),
-  _trackPage() {
-    Ember.run.scheduleOnce('afterRender', this, () => {
-      const page = document.location.pathname;
-      const title = 'podcasts.show.episode';
-
-      this.get('metrics').trackPage({ page, title });
-    });
-  },
-  actions: {
-    didTransition: function() {
-      this._trackPage();
-      return true;
-    }
   }
 });

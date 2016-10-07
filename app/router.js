@@ -17,11 +17,13 @@ Router.map(function() {
   });
   this.route('profile');
   this.route('login');
-  this.route('protected');
   this.route('directory');
   this.route('about');
   this.route('listener', {
     path: 'listener/:slug'
+  });
+  this.route('annotation-card', {
+    path: 'annotation-card/:annotationId'
   });
 });
 

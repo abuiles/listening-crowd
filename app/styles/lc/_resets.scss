@@ -1,0 +1,6 @@
+input, textarea {
+  &:focus {
+    outline: none;
+    border-color: $secondary;
+  }
+}

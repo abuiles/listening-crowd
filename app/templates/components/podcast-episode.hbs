@@ -3,17 +3,19 @@
 
     <div class="container bgc--s relative">
       <div class="pt3 pb3">
-        {{lc-player
-          src=model.podzyUrl
-          waveformData=model.waveformDataUrl
-          registerPlayer=(action (mut player))
-          unregisterPlayer=(action (mut player null))
-          timeupdate=(action timeupdate)
-          segmentCreated=(action segmentCreated)
-          segment=segment
-          feedbackLoop=feedbackLoop
-          startAt=at
-        }}
+        {{#unless fastboot.isFastBoot}}
+          {{lc-player
+            src=model.podzyUrl
+            waveformData=model.waveformDataUrl
+            registerPlayer=(action (mut player))
+            unregisterPlayer=(action (mut player null))
+            timeupdate=(action timeupdate)
+            segmentCreated=(action segmentCreated)
+            segment=segment
+            feedbackLoop=feedbackLoop
+            startAt=at
+          }}
+        {{/unless}}
       </div>
     </div>
     <div class="container annotationEditor">
@@ -26,7 +28,7 @@
           }}
         {{/if}}
         <div class="tc mv3">
-          <a class="btn link f--h ph4 pv2 dib white bgc--b" onclick={{action cancel annotation}}>Cancel</a>
+          <a class="btn link f--h ph4 pv2 dib white bgc--b mr2" onclick={{action cancel annotation}}>Cancel</a>
           <button class="btn link f--h ph4 pv2 dib white bgc--b ml2" {{action save}}>Save Annotation</button>
         </div>
       {{/liquid-if}}
@@ -37,9 +39,8 @@
         <img class="ba b--light-gray db" src={{model.podcast.itunesImage}}>
       </div>
       <div class="dib w-100 w-75-l v-top f5">
-        <h1 class="mt0 mb3 lh-solid-ns f2"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
+        <h1 class="mt0 mb3 lh-solid-ns"><a class="link" href={{model.podcast.link}}>{{model.title}}</a></h1>
         <p class="f--h f6 ttu tracked">Aired on: {{moment-format model.pubDate "MMM D"}}</p>
-        {{!-- {{episode.prettyDuration}} --}}
         <p class="mb0">{{{model.summary}}}</p>
       </div>
     </div>

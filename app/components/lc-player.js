@@ -14,7 +14,12 @@ export default Ember.Component.extend({
 
   },
   currentTime: 0,
+  fastboot: Ember.inject.service(),
   loadwaveForms() {
+    if (this.get('fastboot.isFastBoot')) {
+      return;
+    }
+
     let mediaElement = this.$('#peaks-audio')[0];
     let peaks = Peaks.init({
       container: this.$('#peaks-container')[0],

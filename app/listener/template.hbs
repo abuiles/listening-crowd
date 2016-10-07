@@ -12,7 +12,7 @@
     <div class="container">
       <div class="mboard">
         {{#each model.annotations as |annotation|}}
-          <div class="mboard_card pa2-ns pb2">
+          <div class="mboard_card pa2-ns pb2" data-test-annotation-id={{annotation.id}}>
             <div class="cf bg-white shadow-1">
               <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
                 {{#link-to "podcasts.show.episode" annotation.episode.podcast annotation.episode (query-params at=annotation.start)}}

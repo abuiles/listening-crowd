@@ -11,17 +11,17 @@ body, .f--b {
   font-family: 'Roboto Slab', serif;
 }
 h1 {
-  @extend .f1;
+  @extend .f2;
   line-height: 1.05em;
 }
 h2 {
-  @extend .f2;
-  line-height: 1.25em;
-}
-h3 {
   @extend .f3;
   line-height: 1.25em;
 }
-h4 {
+h3 {
   @extend .f4;
+  line-height: 1.25em;
+}
+h4 {
+  @extend .f5;
 }
