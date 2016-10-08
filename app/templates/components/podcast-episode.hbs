@@ -51,9 +51,9 @@
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white shadow-1">
               <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
-                <a {{action playAnnotation model annotation}}>
+                {{#link-to "podcasts.show.episode.annotation" annotation}}
                   <i class="fa fa-play " aria-hidden="true"></i>
-                </a>
+                {{/link-to}}
                 {{!-- <div class="fr">
                   <a class="link f6 mr3 fw3" href="#">Share
                   </a>

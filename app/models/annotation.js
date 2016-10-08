@@ -5,5 +5,6 @@ export default DS.Model.extend({
   end: DS.attr('number'),
   deltas: DS.attr(),
   episode: DS.belongsTo('episode'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  slug: DS.attr('string')
 });
