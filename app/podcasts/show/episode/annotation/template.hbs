@@ -1,29 +1,12 @@
 <div class="mboard_card pa2-ns pb2">
   <div class="cf bg-white shadow-1">
     <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
-      <a href="fix-me">
-        <i class="fa fa-play " aria-hidden="true"></i>
-      </a>
+      {{#link-to "podcasts.show.episode" model.episode}}
+        <i class="fa fa-times " aria-hidden="true"></i>
+      {{/link-to}}
     </div>
-    {{#unless model.hasDirtyAttributes}}
-      {{render-mobiledoc mobiledoc=model.deltas cardNames=cardNames class="ph4 pv3"}}
-    {{/unless}}
+    {{render-mobiledoc mobiledoc=model.deltas cardNames=licSession.cardNames class="ph4 pv3"}}
     <div class="ph4 tr pb2">
-      {{#deferred-content model.user tagName="" as |promise|}}
-        {{#promise.fulfilled tagName="" as |annotationOwner|}}
-          {{#link-to "listener" annotationOwner class="ma0 dib f6 black black-40 i"}}
-            By {{annotationOwner.username}}
-          {{/link-to}}
-        {{/promise.fulfilled}}
-        {{#deferred-content licSession.user tagName="" as |d|}}
-          {{#d.fulfilled tagName="" as |currentUser|}}
-            {{#if (eq currentUser.id model.user.id)}}
-              <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-              <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-            {{/if}}
-          {{/d.fulfilled}}
-        {{/deferred-content}}
-      {{/deferred-content}}
     </div>
   </div>
 </div>
