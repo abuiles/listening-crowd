@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service(),
   licSession: Ember.inject.service(),
+  fastboot: Ember.inject.service(),
   currentPlayer: Ember.inject.service(),
   player: Ember.computed.readOnly('currentPlayer.player'),
   init() {

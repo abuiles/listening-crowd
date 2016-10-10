@@ -63,5 +63,9 @@ module.exports = function(environment) {
     domain: "llc-dev.auth0.com"
   };
 
+  ENV.fastboot = {
+    hostWhitelist: ['www.listeningcrowd.com', 'd6b13881.ngrok.io', /^localhost:\d+$/]
+  };
+
   return ENV;
 };
