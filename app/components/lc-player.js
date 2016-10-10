@@ -83,15 +83,13 @@ export default Ember.Component.extend({
     }
   },
   createSegment() {
-    if (!this.get('segment')) {
-      let peaks  = this.get('peaks');
-      let startTime = peaks.time.getCurrentTime();
-      let endTime = startTime + 10;
-      let editable = true;
-      peaks.segments.add({startTime, endTime, editable});
-      let segment = peaks.segments.getSegments()[0];
-      this.segmentCreated(segment);
-    }
+    let peaks  = this.get('peaks');
+    let startTime = peaks.time.getCurrentTime();
+    let endTime = startTime + 10;
+    let editable = true;
+    peaks.segments.add({startTime, endTime, editable});
+    let segment = peaks.segments.getSegments()[0];
+    this.segmentCreated(segment);
   },
 
   zoomOut() {

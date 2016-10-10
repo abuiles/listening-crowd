@@ -1,0 +1,12 @@
+<div class="mboard_card pa2-ns pb2">
+  <div class="cf bg-white shadow-1">
+    <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
+      {{#link-to "podcasts.show.episode" model.episode}}
+        <i class="fa fa-times " aria-hidden="true"></i>
+      {{/link-to}}
+    </div>
+    {{render-mobiledoc mobiledoc=model.deltas cardNames=licSession.cardNames class="ph4 pv3"}}
+    <div class="ph4 tr pb2">
+    </div>
+  </div>
+</div>

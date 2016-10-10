@@ -12,6 +12,13 @@ Router.map(function() {
     }, function() {
       this.route('episode', {
         path: ':episodePermalink'
+      }, function() {
+        this.route('annotate', {
+          path: 'annotate/:slug'
+        });
+        this.route('annotation', {
+          path: ':slug'
+        });
       });
     });
   });

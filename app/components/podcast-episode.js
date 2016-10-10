@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service(),
   licSession: Ember.inject.service(),
-  scroller: Ember.inject.service(),
+  currentPlayer: Ember.inject.service(),
+  player: Ember.computed.readOnly('currentPlayer.player'),
   init() {
     this._super(...arguments);
     this.set('currentTime', 0);
@@ -25,60 +26,20 @@ export default Ember.Component.extend({
     this.set('currentTime', event.target.currentTime);
   },
   segmentCreated(segment, annotation = null) {
-    this.requireUser();
-
-    if (!this.get('segment')) {
-      if (!annotation) {
-        annotation = this.get('model').get('annotations').createRecord({
-          episode: this.get('model')
-        });
-      }
-
-      this.set('annotation', annotation);
+    if (!annotation) {
+      annotation = this.get('model').get('annotations').createRecord({
+        episode: this.get('model')
+      });
     }
-    this.set('segment', segment);
-  },
-  save() {
-    let annotation = this.get('annotation');
 
-    let segment = this.get('segment');
-    this.get('licSession.user').then((user) => {
-      annotation.setProperties({
-        start: segment.startTime,
-        end: segment.endTime,
-        user: user
-      });
+    annotation._segment = segment;
 
-      annotation.save().then(() =>  {
-        this.setProperties({
-          annotation: null,
-          segment: null
-        });
-
-        this.get('player').segments.removeAll();
-      });
-    });
-
-    return false;
-  },
-  edit(annotation) {
-    let payload = {
-      startTime: annotation.get('start'),
-      endTime: annotation.get('end'),
-      editable: true,
-      id: annotation.get('id'),
-      labelText: ''
-    };
-    this.get('player').segments.removeAll();
-    this.get('player').segments.add([payload]);
-
-    let segment = this.get('player').segments.getSegments()[0];
-    this.segmentCreated(segment, annotation);
-    Ember.run.scheduleOnce('afterRender', () => {
-      this.get('scroller').scrollVertical('#peaks-container', {
-        duration: 200
-      });
-    });
+    this.transitionTo(
+      'podcasts.show.episode.annotate',
+      this.get('model.podcast'),
+      this.get('model'),
+      annotation
+    );
   },
   currentTimeAnnotations() {
     return this.get('model.annotations').then((annotations) => {
@@ -106,6 +67,9 @@ export default Ember.Component.extend({
       this.get('player').player.play();
       this.currentTimeAnnotations();
     }
+  },
+  stop() {
+    this.get('currentPlayer').pause();
   },
   cancel(annotation) {
     this.get('player').segments.removeAll();
@@ -137,5 +101,5 @@ export default Ember.Component.extend({
     });
 
     this.transitionTo(annotation.get('start'));
-  },
+  }
 });

@@ -1,0 +1,11 @@
+{{text-editor
+  mobiledoc=model.deltas
+  textChanged=(action (mut model.deltas))
+  class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
+}}
+<div class="tc mv3">
+  <a class="btn link f--h ph4 pv2 dib white bgc--b mr2" onclick={{action cancel model}}>Cancel</a>
+  <button class="btn link f--h ph4 pv2 dib white bgc--b ml2" onclick={{perform save model}}>
+    {{if save.isIdle "Save" "Saving"}} Annotation
+  </button>
+</div>
