@@ -7,8 +7,8 @@
           {{lc-player
             src=model.podzyUrl
             waveformData=model.waveformDataUrl
-            registerPlayer=(action (mut player))
-            unregisterPlayer=(action (mut player null))
+            registerPlayer=(action (mut currentPlayer.player))
+            unregisterPlayer=(action (mut currentPlayer.player null))
             timeupdate=(action timeupdate)
             segmentCreated=(action segmentCreated)
             segment=segment
@@ -19,19 +19,7 @@
       </div>
     </div>
     <div class="container annotationEditor">
-      {{#liquid-if annotation}}
-        {{#if annotation}}
-          {{text-editor
-            mobiledoc=annotation.deltas
-            textChanged=(action (mut annotation.deltas))
-            class="cf bg-white w-100 ph4 pb4 ba b--light-gray"
-          }}
-        {{/if}}
-        <div class="tc mv3">
-          <a class="btn link f--h ph4 pv2 dib white bgc--b mr2" onclick={{action cancel annotation}}>Cancel</a>
-          <button class="btn link f--h ph4 pv2 dib white bgc--b ml2" {{action save}}>Save Annotation</button>
-        </div>
-      {{/liquid-if}}
+      {{yield}}
     </div>
 
     <div class="container f0">
@@ -51,9 +39,15 @@
           <div class="mboard_card pa2-ns pb2">
             <div class="cf bg-white shadow-1">
               <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
-                {{#link-to "podcasts.show.episode.annotation" annotation}}
-                  <i class="fa fa-play " aria-hidden="true"></i>
-                {{/link-to}}
+                {{#if annotation.isPlaying}}
+                  <a class="link dib mh2" href="#" {{action stop}}>
+                    <i class="fa fa-stop " aria-hidden="true"></i>
+                  </a>
+                {{else}}
+                  {{#link-to "podcasts.show.episode.annotation" annotation}}
+                    <i class="fa fa-play " aria-hidden="true"></i>
+                  {{/link-to}}
+                {{/if}}
                 {{!-- <div class="fr">
                   <a class="link f6 mr3 fw3" href="#">Share
                   </a>
@@ -74,7 +68,9 @@
                   {{#deferred-content licSession.user tagName="" as |d|}}
                     {{#d.fulfilled tagName="" as |currentUser|}}
                       {{#if (eq currentUser.id annotation.user.id)}}
-                        <a class="link dib mh2" href="#" {{action edit annotation}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        {{#link-to "podcasts.show.episode.annotate" annotation class="link dib mh2"}}
+                          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        {{/link-to}}
                         <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                       {{/if}}
                     {{/d.fulfilled}}
