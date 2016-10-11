@@ -32,6 +32,9 @@ Router.map(function() {
   this.route('annotation-card', {
     path: 'annotation-card/:annotationId'
   });
+  this.route('shared-annotation', {
+    path: 'a/:slug'
+  });
 });
 
 export default Router;
