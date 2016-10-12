@@ -68,7 +68,7 @@
                   {{#deferred-content licSession.user tagName="" as |d|}}
                     {{#d.fulfilled tagName="" as |currentUser|}}
                       {{#if (eq currentUser.id annotation.user.id)}}
-                        {{#link-to "podcasts.show.episode.annotation" annotation.episode.podcast annotation.episode annotation class="link dib mh2"}}
+                        {{#link-to "podcasts.show.episode.annotate" annotation.episode.podcast annotation.episode annotation class="link dib mh2"}}
                           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         {{/link-to}}
                         <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
