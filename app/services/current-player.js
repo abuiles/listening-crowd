@@ -9,5 +9,9 @@ export default Ember.Service.extend({
   pause() {
     let player = this.get('player');
     player.player.pause();
+  },
+  setCurrentTime(startTime) {
+    let player = this.get('player');
+    player.time.setCurrentTime(startTime);
   }
 });

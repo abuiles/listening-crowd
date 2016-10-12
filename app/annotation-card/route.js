@@ -25,5 +25,5 @@ export default Ember.Route.extend({
       this.get('headData').set(m, meta[m]);
       // this.set('sharable.current.' + m, meta[m]);
     }
-  },
+  }
 });

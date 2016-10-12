@@ -21,8 +21,26 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   setupController(controller, model) {
     this._super(...arguments);
-
-    Ember.run.once('afterRender', () => {
+    if (!this.get('fastboot.isFastBoot')) {
+      Ember.run.scheduleOnce('afterRender', this, this.addSegment, controller, model);
+      Ember.run.scheduleOnce('afterRender', () => {
+        this.get('scroller').scrollVertical('#peaks-container', {
+          duration: 200
+        });
+      });
+    }
+  },
+  activate() {
+  },
+  deactivate() {
+    let model = this.controller.get('model');
+    delete model._segment;
+    this.get('currentPlayer.player').segments.removeAll();
+    this.get('currentPlayer.player').off('segments.dragged', this._callback);
+  },
+  addSegment(controller, model) {
+    if (this.get('currentPlayer.player') &&  this.get('currentPlayer.player').waveform.segments) {
+      let playerService = this.get('currentPlayer');
       if (!model._segment) {
         let payload = {
           startTime: model.get('start'),
@@ -31,10 +49,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           id: model.get('id'),
           labelText: ''
         };
-        this.get('currentPlayer.player').segments.removeAll();
-        this.get('currentPlayer.player').segments.add([payload]);
+        playerService.player.segments.removeAll();
+        playerService.player.segments.add([payload]);
 
-        model._segment = this.get('currentPlayer.player').segments.getSegments()[0];
+        model._segment = playerService.player.segments.getSegments()[0];
       }
 
       controller.setProperties({
@@ -42,19 +60,13 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         t: model._segment.endTime
       });
 
+      playerService.setCurrentTime(model._segment.startTime);
+
       this._callback  = (segment) =>  { this.updateSegmentDate(segment); };
       this.get('currentPlayer.player').on('segments.dragged', this._callback);
-    });
-  },
-  actiavate() {
-    this.get('scroller').scrollVertical('#peaks-container', {
-      duration: 200
-    });
-  },
-  deactivate() {
-    let model = this.controller.get('model');
-    delete model._segment;
-    this.get('currentPlayer.player').segments.removeAll();
+    } else {
+      Ember.run.later(this, this.addSegment, controller, model, 500);
+    }
   },
   updateSegmentDate(segment) {
     let controller = this.controller;
@@ -69,27 +81,3 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     };
   }
 });
-
-
-  // afterModel(model, transition) {
-  //   let promise = Ember.RSVP.resolve(null);
-
-  //   if (!this.get('session.isAuthenticated')) {
-  //     let lockOptions = {
-  //       authParams:{
-  //         scope: 'openid'
-  //       }
-  //     };
-
-  //     let episode = model.get('episode');
-  //     let podcast = episode.get('podcast');
-
-  //     promise = this.get('session').authenticate('simple-auth-authenticator:lock', lockOptions).then(() => {
-  //       this.transitionToRoute('podcasts.show.episode.annotate', podcast, episode, model);
-  //     }, () => {
-  //       return this.transitionToRoute('podcasts.show.episode', podcast, episode);
-  //     });
-  //   }
-
-  //   return promise;
-  // },
