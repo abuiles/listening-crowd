@@ -15,6 +15,10 @@ export default Ember.Route.extend({
     });
   },
   afterModel(model) {
+    if (!model) {
+      return this.transitionToRoute('index');
+    }
+
     let episode = model.get('episode');
     let meta = {
       card: 'summary_large_image',
