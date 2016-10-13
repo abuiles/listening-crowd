@@ -36,50 +36,51 @@
     <div class="container">
       <div class="mboard">
         {{#each sortedAnnotations as |annotation|}}
-          <div class="mboard_card pa2-ns pb2">
-            <div class="cf bg-white shadow-1">
-              <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
-                {{#if annotation.isPlaying}}
-                  <a class="link dib mh2" href="#" {{action stop}}>
-                    <i class="fa fa-stop " aria-hidden="true"></i>
-                  </a>
-                {{else}}
-                  {{#link-to "podcasts.show.episode.annotation" annotation.episode.podcast annotation.episode annotation}}
-                    <i class="fa fa-play " aria-hidden="true"></i>
-                  {{/link-to}}
-                {{/if}}
-                {{!-- <div class="fr">
+          {{#if (and (not annotation.hasDirtyAttributes) (not annotation.viewMode))}}
+            <div class="mboard_card pa2-ns pb2">
+              <div class="cf bg-white shadow-1">
+                <div class="toolbar bb b--light-gray bg-near-white ph4 pv2">
+                  {{#if annotation.isPlaying}}
+                    <a class="link dib mh2" href="#" {{action stop}}>
+                      <i class="fa fa-stop " aria-hidden="true"></i>
+                    </a>
+                  {{else}}
+                    {{#link-to "podcasts.show.episode.annotation" annotation.episode.podcast annotation.episode annotation}}
+                      <i class="fa fa-play " aria-hidden="true"></i>
+                    {{/link-to}}
+                  {{/if}}
+                  {{!-- <div class="fr">
                   <a class="link f6 mr3 fw3" href="#">Share
                   </a>
                   <a class="link f6 fw3" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet
                   </a>
-                </div> --}}
-              </div>
-              {{#if (and (not annotation.hasDirtyAttributes) (not annotation.viewMode))}}
-                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
-              {{/if}}
-              <div class="ph4 tr pb2">
-                {{#deferred-content annotation.user tagName="" as |promise|}}
-                  {{#promise.fulfilled tagName="" as |annotationOwner|}}
-                    {{#link-to "listener" annotationOwner class="ma0 dib f6 black black-40 i"}}
-                      By {{annotationOwner.username}}
-                    {{/link-to}}
-                  {{/promise.fulfilled}}
-                  {{#deferred-content licSession.user tagName="" as |d|}}
-                    {{#d.fulfilled tagName="" as |currentUser|}}
-                      {{#if (eq currentUser.id annotation.user.id)}}
-                        {{#link-to "podcasts.show.episode.annotate" annotation.episode.podcast annotation.episode annotation class="link dib mh2"}}
-                          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        {{/link-to}}
-                        <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                      {{/if}}
-                    {{/d.fulfilled}}
-                  {{/deferred-content}}
-                {{/deferred-content}}
-              </div>
-            </div>
+                  </div> --}}
+                </div>
 
-          </div>
+                {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
+                <div class="ph4 tr pb2">
+                  {{#deferred-content annotation.user tagName="" as |promise|}}
+                    {{#promise.fulfilled tagName="" as |annotationOwner|}}
+                      {{#link-to "listener" annotationOwner class="ma0 dib f6 black black-40 i"}}
+                        By {{annotationOwner.username}}
+                      {{/link-to}}
+                    {{/promise.fulfilled}}
+                    {{#deferred-content licSession.user tagName="" as |d|}}
+                      {{#d.fulfilled tagName="" as |currentUser|}}
+                        {{#if (eq currentUser.id annotation.user.id)}}
+                          {{#link-to "podcasts.show.episode.annotate" annotation.episode.podcast annotation.episode annotation class="link dib mh2"}}
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                          {{/link-to}}
+                          <a class="link dib" {{action delete annotation}}><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        {{/if}}
+                      {{/d.fulfilled}}
+                    {{/deferred-content}}
+                  {{/deferred-content}}
+                </div>
+              </div>
+
+            </div>
+          {{/if}}
         {{/each}}
       </div>
     </div>
