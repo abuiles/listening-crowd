@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from 'listening-crowd/config/environment';
 
 export default Ember.Mixin.create({
   metrics: Ember.inject.service(),
@@ -8,7 +9,9 @@ export default Ember.Mixin.create({
       let page = document.location.pathname;
       let title = this.getWithDefault('currentRouteName', 'unknown');
 
-      this.get('metrics').trackPage({ page, title });
+      if (config.environment === 'production') {
+        this.get('metrics').trackPage({ page, title });
+      }
     });
   },
   actions: {
