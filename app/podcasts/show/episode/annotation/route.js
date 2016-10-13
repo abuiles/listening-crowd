@@ -11,7 +11,10 @@ export default Ember.Route.extend({
       },
       include: 'episode,episode.podcast'
     }).then(function(result) {
-      return result.get('firstObject');
+      let model = result.get('firstObject');
+      model.set('viewMode', true);
+
+      return model;
     });
   },
   afterModel(model) {
@@ -64,6 +67,7 @@ export default Ember.Route.extend({
   deactivate() {
     let model = this.controller.get('model');
     model.set('isPlaying', false);
+    model.set('viewMode', false);
     if (!this.get('fastboot.isFastBoot')) {
       this.get('currentPlayer.player').segments.removeById(model.get('id'));
     }

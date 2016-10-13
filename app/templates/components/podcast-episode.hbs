@@ -55,9 +55,9 @@
                   </a>
                 </div> --}}
               </div>
-              {{#unless annotation.hasDirtyAttributes}}
+              {{#if (and (not annotation.hasDirtyAttributes) (not annotation.viewMode))}}
                 {{render-mobiledoc mobiledoc=annotation.deltas cardNames=cardNames class="ph4 pv3"}}
-              {{/unless}}
+              {{/if}}
               <div class="ph4 tr pb2">
                 {{#deferred-content annotation.user tagName="" as |promise|}}
                   {{#promise.fulfilled tagName="" as |annotationOwner|}}
