@@ -56,7 +56,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-metrics": "0.6.3",
-    "ember-mobiledoc-dom-renderer": "abuiles/ember-mobiledoc-dom-renderer#wormhole-bug",
+    "ember-mobiledoc-dom-renderer": "v0.5.3-beta.1",
     "ember-mobiledoc-editor": "0.5.6",
     "ember-mobiledoc-text-renderer": "0.3.0",
     "ember-moment": "7.0.0-beta.3",
