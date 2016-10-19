@@ -12,7 +12,7 @@ export default Ember.Route.extend(TrackPage, {
   },
   afterModel(model) {
     let meta = {
-      card: 'summary_large_image',
+      card: 'summary',
       title: model.get('title'),
       description: model.get('itunesSubtitle'),
       site: '@listeningcrowd',
