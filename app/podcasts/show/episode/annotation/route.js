@@ -24,7 +24,7 @@ export default Ember.Route.extend({
 
     let episode = model.get('episode');
     let meta = {
-      card: 'summary_large_image',
+      card: 'summary',
       title: episode.get('title'),
       description: episode.get('itunesSubtitle'),
       site: '@listeningcrowd',
