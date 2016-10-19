@@ -20,7 +20,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "auth0-ember-simple-auth": "abuiles/auth0-ember-simple-auth#fast-boot",
+    "auth0-ember-simple-auth": "https://github.com/abuiles/auth0-ember-simple-auth.git#f2ee280531b8422acb3e852939603aefcc452333",
     "broccoli-asset-rev": "^2.4.2",
     "dotenv": "^2.0.0",
     "ember-ajax": "2.4.1",
