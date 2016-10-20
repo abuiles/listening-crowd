@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import TrackPage from 'listening-crowd/mixins/track-page';
 
-export default Ember.Route.extend(TrackPage, {
+export default Ember.Route.extend({
   ajax: Ember.inject.service(),
   headData: Ember.inject.service(),
   model(params) {

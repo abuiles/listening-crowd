@@ -4,6 +4,13 @@ import config from 'listening-crowd/config/environment';
 export default Ember.Mixin.create({
   metrics: Ember.inject.service(),
   fastboot: Ember.inject.service(),
+  didTransition() {
+    this._super(...arguments);
+    let isFastBoot = this.get('fastboot.isFastBoot');
+    if (!isFastBoot) {
+      this._trackPage();
+    }
+  },
   _trackPage() {
     Ember.run.scheduleOnce('afterRender', this, () => {
       let page = document.location.pathname;
@@ -13,14 +20,5 @@ export default Ember.Mixin.create({
         this.get('metrics').trackPage({ page, title });
       }
     });
-  },
-  actions: {
-    didTransition() {
-      let isFastBoot = this.get('fastboot.isFastBoot');
-      if (!isFastBoot) {
-        this._trackPage();
-      }
-      return true;
-    }
   }
 });

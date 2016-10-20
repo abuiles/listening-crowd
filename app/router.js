@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import config from './config/environment';
+import TrackPage from 'listening-crowd/mixins/track-page';
 
-const Router = Ember.Router.extend({
+const Router = Ember.Router.extend(TrackPage, {
   location: config.locationType
 });
 

@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import TrackPage from 'listening-crowd/mixins/track-page';
 
-export default Ember.Route.extend(TrackPage, {
+export default Ember.Route.extend({
   model(params) {
     let id = params.podcastPermalink.split('-')[0];
 
