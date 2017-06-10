@@ -1,7 +1,16 @@
-# Listening-crowd
+# Listening Crowd
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+I wanted to "annotate" stuff from the podcasts I normally listen to. Listening Crowd is a proof of concept for podcast annotations.
+
+Things I learn while building this project:
+  - Docker + Amazon EC2 Container Service
+  - Amazon Simple Queue Service (SQS) 
+  - [Mobiledoc](https://github.com/bustle/mobiledoc-kit)
+  - Listening to podcast in a desktop is actually super boring, the ideal interface for this should be voice-over on mobile, hit me if you know something that does that, I still want it.
+  
+This is how the annotations look like out in the real world https://www.listeningcrowd.com/listener/abuiles
+
+## Development
 
 ## Prerequisites
 
